@@ -29,4 +29,7 @@ Landscape photography of Poland - mainly Upper Silesia. Photographs were taken b
 
 ### Tools
 
+## Testing
+
+Please see [Testing](https://github.com/malc-u/fostoria/blob/master/TESTING.md) for all my testing
 
