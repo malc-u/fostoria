@@ -18,3 +18,15 @@ Landscape photography of Poland - mainly Upper Silesia. Photographs were taken b
 - [CSS](https://www.w3schools.com/css/)
 - [Python](https://www.w3schools.com/python/)
 - [JavaScript](https://www.w3schools.com/js/)
+
+### Librares & frameworks
+
+- [JQuery](https://jquery.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [FontAwesome](https://fontawesome.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [Django](https://www.djangoproject.com/)
+
+### Tools
+
+
