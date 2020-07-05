@@ -33,3 +33,15 @@ Landscape photography of Poland - mainly Upper Silesia. Photographs were taken b
 
 Please see [Testing](https://github.com/malc-u/fostoria/blob/master/TESTING.md) for all my testing
 
+## Deployment
+
+
+## Credits
+
+This project has been created by me, however some content has been imported:
+
+- The photos used in this site were obtained from T. Zowada's [website](https://fostoria.pl/) and [Instagram](https://www.instagram.com/tomaszzowada_fostoria/)
+
+### Acknowledgements
+
+- [Simen Daehlin](https://github.com/Eventyret) - my Code Institute mentor
