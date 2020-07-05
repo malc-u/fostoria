@@ -1,6 +1,6 @@
 # FOSTORIA
 
-Landscape photography of Poland - mainly Upper Silesia. Photographs were taken by Tomasz Zowada who has passion and love for that region as well as Poland.
+Landscape photography of Poland with webshop. Photographs were taken by Tomasz Zowada who has passion and love for Upper Silesia region as well as Poland.
 
 ## UX
 
