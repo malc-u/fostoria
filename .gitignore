@@ -1,5 +1,9 @@
 #Folders
 env
+.vscode
+__pycache__
 
 #Files
 env.py
+*.sqlite3
+*.pyc
