@@ -4,6 +4,14 @@ Landscape photography of Poland with webshop. Photographs were taken by Tomasz Z
 
 ## UX
 
+### User Stories
+
+As a website user I need to be presented with possibility of:
+- easy registration that will allow me to open personal account
+- easy login that will allow me to acces my profile and personal information
+- easy logout that will allow me to stop unauthoristed access to my profile and account information
+- easy and secure password recovery that will allow me to recover my  access when I forget the password
+
 ## Features
 
 ### Existing Features
