@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,7 @@ AUTHENTICATION_BACKENDS = [
 
 # Required by 'allauth' - https://django-allauth.readthedocs.io/en/latest/installation.html
 SITE_ID = 1
+
 
 WSGI_APPLICATION = 'fostoria.wsgi.application'
 
