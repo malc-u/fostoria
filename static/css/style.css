@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #fdfdff;
+  color: #000;
+}
+
+.dark-mode {
+  background-color: #393d3f;
+  color: #fff;
+}
+
+.primiary-bg-color {
+  background-color: #fdfdff;
+}
+
+.secondary-bg-color {
+  background-color: #706f5c;
+}
+
+.tertiary-bg-color {
+  background-color: #393d3f;
+}
+
+.blue-color {
+  background-color: #758ecd;
+}
+
+.light-font {
+  color: #fff;
+}
+
+.dark-font {
+  color: #000;
+}
+
+.nav-link, .nav-link:hover, .nav-link:visited {
+  color: #000;
+}
