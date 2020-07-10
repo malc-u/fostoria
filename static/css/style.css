@@ -42,3 +42,7 @@ body {
 .nav-link, .nav-link:hover, .nav-link:visited {
   color: #000;
 }
+
+.brand-name {
+  font-family: 'Galada', sans-serif;
+}
