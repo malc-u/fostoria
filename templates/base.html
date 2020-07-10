@@ -9,10 +9,19 @@
 <meta name="author" content="Mal C-U">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 <title>Fostoria {% block title_extension %}{% endblock %}</title>
 </head>
 <body>
+    <header class="container-fluid fixed-top">
+        <div id="author-banner" class="row text-center">
+            <div class="col tertiary-bg-color light-font">
+                <p class="my-1">Landscape photography by T. Zowada</p>                
+            </div>            
+        </div>
+    </header>
+    {% block header %}
+    {% endblock %}
 
     {% block content %}
     {% endblock %}
@@ -20,5 +29,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
