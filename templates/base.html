@@ -39,9 +39,10 @@
                                 Gallery
                             </a>
                             <div class="dropdown-menu border-0" aria-labelledby="gallery-link">
+                                <a href="" class="dropdown-item">All photographs</a>
                                 <a href="" class="dropdown-item">Lakes &amp; Sea</a>
                                 <a href="" class="dropdown-item">Forests</a>
-                                <a href="" class="dropdown-item">Mountains</a>
+                                <a href="" class="dropdown-item">Fields &amp; Mountains</a>
                             </div>
                         </li>
                 
@@ -50,12 +51,21 @@
                                 Contact
                             </a>
                         </li>
+                        <li class="nav-item pl-lg-5">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                                    <div class="input-group-append">
+                                      <button class="btn tertiary-bg-color light-font" type="button"><i class="fas fa-search"></i></button>
+                                    </div>
+                                  </div>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </nav>
- 
-
         </div>
+
     </header>
     {% block header %}
     {% endblock %}
