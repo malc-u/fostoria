@@ -16,55 +16,15 @@
     <header class="container-fluid fixed-top">
 
         <div class="row" id="nav-row">
-            <nav class="navbar navbar-expand-lg w-100">
+            <nav class="navbar navbar-expand-lg col-lg-9">
                 <a class="navbar-brand nav-link d-none d-lg-flex text-center brand-name" href="#"><h4 class="my-auto">Fostoria</h4></a>
-                <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbar-custom" aria-controls="navbar-customt" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler navbar-light pt-0 mt-0 pb-2" type="button" data-toggle="collapse" data-target="#navbar-custom" aria-controls="navbar-customt" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
-                <div class="collapse navbar-collapse" id="navbar-custom">
-                    <ul class="navbar-nav w-auto mx-auto">
-                        <li class="nav-item">
-                            <a class="font-weight-bold nav-link mr-5" href="#" id="home-link">
-                                Home
-                            </a>
-                        </li>
+                  {% include 'includes/navbar.html' %}
 
-                        <li class="nav-item">
-                            <a class="font-weight-bold nav-link mr-5" href="#" id="about-link">
-                                About
-                            </a>
-                        </li>
-                
-                        <li class="nav-item dropdown">
-                            <a class="font-weight-bold nav-link mr-5" href="#" id="gallery-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Gallery
-                            </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="gallery-link">
-                                <a href="" class="dropdown-item">All photographs</a>
-                                <a href="" class="dropdown-item">Lakes &amp; Sea</a>
-                                <a href="" class="dropdown-item">Forests</a>
-                                <a href="" class="dropdown-item">Fields &amp; Mountains</a>
-                            </div>
-                        </li>
-                
-                        <li class="nav-item">
-                            <a class="font-weight-bold nav-link" href="#" id="contact-link">
-                                Contact
-                            </a>
-                        </li>
-                        <li class="nav-item pl-lg-5">
-                            <form>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
-                                    <div class="input-group-append">
-                                      <button class="btn tertiary-bg-color light-font" type="button"><i class="fas fa-search"></i></button>
-                                    </div>
-                                  </div>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
             </nav>
+
         </div>
     </header>
     {% block header %}
