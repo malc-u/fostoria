@@ -1,22 +1,22 @@
 <!--This is written after inspiration taken from the content of the Code Institute course module Project - Boutique Ado.-->
 <div id="top-buttons" class="pt-lg-2 d-none d-lg-flex col-lg-3">
     <div class="col-12 col-lg-6 my-auto">
-        <a class="nav-link" href="#" id="my-account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link pb-0" href="#" id="my-account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <i class="fas fa-user-alt fa-lg"></i>
                 <p>My Account</p>
             </div>
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="my-account">
+        <div class="dropdown-menu border-0 pt-0" aria-labelledby="my-account">
             {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-            <a href="" class="dropdown-item">Product Management</a>
-            {% endif %}
-            <a href="" class="dropdown-item">My Profile</a>
-            <a href="#" class="dropdown-item">Logout</a>
+                    {% if request.user.is_superuser %}
+                     <a href="" class="dropdown-item">Product Management</a>
+                    {% endif %}
+                <a href="" class="dropdown-item">My Profile</a>
+                <a href="#" class="dropdown-item">Logout</a>
             {% else %}
-            <a href="#" class="dropdown-item">Register</a>
-            <a href="#" class="dropdown-item">Login</a>
+                <a href="#" class="dropdown-item">Register</a>
+                <a href="#" class="dropdown-item">Login</a>
             {% endif %}
         </div>
     </div>
