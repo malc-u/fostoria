@@ -1,0 +1,36 @@
+<!--This is written after inspiration taken from the content of the Code Institute course module Project - Boutique Ado.-->
+<li class="list-inline-item dropdown pt-2">
+    <a class="nav-link d-block d-lg-none" href="#" id="my-account" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        <div class="text-center pt-1">
+            <i class="fas fa-user-alt fa-lg"></i>
+            <p>My Account</p>
+        </div>
+    </a>
+    <div class="dropdown-menu border-0" aria-labelledby="my-account">
+        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+        <a href="#" class="dropdown-item">Product Management</a>
+        {% endif %}
+        <a href="#" class="dropdown-item">My Profile</a>
+        <a href="#" class="dropdown-item">Logout</a>
+        {% else %}
+        <a href="#" class="dropdown-item">Register</a>
+        <a href="#" class="dropdown-item">Login</a>
+        {% endif %}
+    </div>
+</li>
+<li class="list-inline-item pt-2">
+    <a class="{% if grand_total %}font-weight-bold{% else %}dark-font{% endif %} nav-link d-block d-lg-none" href="">
+        <div class="text-center pt-1">
+            <i class="fas fa-shopping-cart"></i>
+            <p>
+                {% if grand_total %}
+                £{{ grand_total|floatformat:2 }}
+                {% else %}
+                £0.00
+                {% endif %}
+            </p>
+        </div>
+    </a>
+</li>
