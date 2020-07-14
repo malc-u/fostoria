@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Landscape photography - Poland, Upper Silesia"/>
+<meta name="author" content="Mal C-U">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<title>Fostoria {% block title_extension %}{% endblock %}</title>
+</head>
+<body>
+    <header class="container-fluid fixed-top">
+
+        <div class="row" id="nav-row">
+            <nav class="navbar navbar-expand-lg col-lg-9">
+                <a class="navbar-brand nav-link d-none d-lg-flex text-center brand-name" href="#"><h4 class="my-auto">Fostoria</h4></a>
+                <button class="navbar-toggler navbar-light pt-0 mt-0 pb-2" type="button" data-toggle="collapse" data-target="#navbar-custom" aria-controls="navbar-customt" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  {% include 'includes/navbar.html' %}
+                  {% include 'includes/nav-buttons-mobile.html' %}
+            </nav>
+            {% include 'includes/nav-buttons-desktop.html' %}
+        </div>
+    </header>
+    {% block header %}
+    {% endblock %}
+
+    <div class="container-fluid mt-5" id="page-content">
+    {% block content %}
+    {% endblock %}
+    </div>
+
+    <div class="container-fluid mt-4 pt-2 pb-5 secondary-bg-color" id="footer-info">
+        {% include 'includes/footer.html' %}
+    </div>
+    
+    <footer class="container-fluid fixed-bottom">
+        <div id="author-banner" class="row text-center">
+            <div class="col tertiary-bg-color light-font">
+                <p class="my-auto">Landscape photography by T. Zowada</p>                
+            </div>            
+        </div>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

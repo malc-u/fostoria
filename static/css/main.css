@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Galada&family=Lato&display=swap");
+/* Variables */
+/* Page body */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: #fdfdff;
+  color: #000;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Background and font classes */
+.dark-mode {
+  background-color: #393d3f;
+  color: #fff;
+}
+
+.primiary-bg-color {
+  background-color: #fdfdff;
+}
+
+.secondary-bg-color {
+  background-color: #706f5c;
+}
+
+.tertiary-bg-color {
+  background-color: #393d3f;
+}
+
+.blue-color {
+  background-color: #758ecd;
+}
+
+.light-font {
+  color: #fff;
+}
+
+.dark-font {
+  color: #000;
+}
+
+/* Navbar */
+#nav-row {
+  background-color: #fdfdff;
+}
+
+a,
+a:visited,
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.brand-name {
+  font-family: 'Galada', sans-serif;
+}
+
+/* Index page carousel */
+.index-carousel-item {
+  height: 72vh;
+  width: 100vw;
+}
+
+#carousel-img-1 {
+  background-image: url("https://i.ibb.co/9pdgkTY/LF6.jpg");
+  background-position: center center;
+}
+
+#carousel-img-2 {
+  background-image: url("https://i.ibb.co/613FSYx/CN7.jpg");
+  background-position: center center;
+}
+
+#carousel-img-3 {
+  background-image: url("https://i.ibb.co/hR8qmyX/MUS4.jpg");
+  background-position: center 80%;
+}
+
+.carousel-image {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Index page small images */
+#index-sm-img1 {
+  background-image: url("https://i.ibb.co/6WLwTZp/INSTA24.jpg");
+  background-position: center center;
+}
+
+#index-sm-img2 {
+  background-image: url("https://i.ibb.co/5vmqtkj/INSTA17.jpg");
+  background-position: center center;
+}
+
+#index-sm-img3 {
+  background-image: url("https://i.ibb.co/jWSsRYz/INSTA23.jpg");
+  background-position: center center;
+}
+
+.index-sm-image {
+  height: 10em;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.footer-icon {
+  font-size: 1.5rem;
+}
