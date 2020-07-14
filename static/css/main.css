@@ -84,3 +84,25 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* Index page small images */
+#index-sm-img1 {
+  background-image: url("https://i.ibb.co/6WLwTZp/INSTA24.jpg");
+  background-position: center center;
+}
+
+#index-sm-img2 {
+  background-image: url("https://i.ibb.co/5vmqtkj/INSTA17.jpg");
+  background-position: center center;
+}
+
+#index-sm-img3 {
+  background-image: url("https://i.ibb.co/jWSsRYz/INSTA23.jpg");
+  background-position: center center;
+}
+
+.index-sm-image {
+  height: 10em;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
