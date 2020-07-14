@@ -7,6 +7,7 @@
 
 body {
   line-height: 1.6;
+  font-size: 16px;
   background-color: #fdfdff;
   color: #000;
   font-family: 'Lato', sans-serif;
@@ -59,7 +60,7 @@ body {
 
 /* Index page carousel */
 .index-carousel-item {
-  height: 75vh;
+  height: 72vh;
   width: 100vw;
 }
 
