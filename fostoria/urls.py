@@ -18,10 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
     # urls from 'allauth' - https://django-allauth.readthedocs.io/en/latest/installation.html#post-installation
     path('accounts/', include('allauth.urls')),
-=======
     path('', include('home.urls'))
->>>>>>> home
 ]
