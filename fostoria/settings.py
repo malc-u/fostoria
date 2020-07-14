@@ -38,15 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     # Required by 'allauth' - https://django-allauth.readthedocs.io/en/latest/installation.html
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-=======
     'home',
->>>>>>> home
 ]
 
 MIDDLEWARE = [
@@ -103,7 +100,7 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_MIN_LENGTH = 5
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/abc'
+LOGIN_REDIRECT_URL = '/'
 
 
 WSGI_APPLICATION = 'fostoria.wsgi.application'
