@@ -10,14 +10,17 @@
 <div class="row text-center">
   {% for product in products %}
   <div class="col-lg-4 col-md-6 align-self-end">
-    <div class="card border-secondary mb-3">
-      <div class="card-img-box">
-        <img class="card-img" src="{{ product.product_image.url }}" alt="{{ product.title }}">
+    <a href="{{ product.get_absolute_url }}">
+      <div class="card border-secondary mb-3">
+        <div class="card-img-box">
+          <img class="card-img" src="{{ product.product_image.url }}" alt="{{ product.title }}">
+        </div>
+        <div class="card-body">
+          <p class="card-title">{{ product.title }}</p>
+        </div>
       </div>
-      <div class="card-body">
-        <p class="card-title">{{ product.title }}</p>
-      </div>
-    </div>
+    </a>
+   
   </div>
   {% endfor %}
 </div>
