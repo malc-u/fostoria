@@ -1,6 +1,8 @@
+"""Products app urls to be imported to main project urls"""
+
 from django.urls import path
-from . import views
+from products.views import Products
 
 urlpatterns = [
-    path('', views.all_products, name='all_products'),
+    path('', Products.as_view(), name='all_products'),
 ]
