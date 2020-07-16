@@ -13,18 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
-# imports for ImageField to work https://matthiasomisore.com/web-programming/display-image-in-a-django-template-using-imagefield/
 from django.conf import settings
 from django.conf.urls.static import static
+# import static & settings for ImageField to work
+# https://matthiasomisore.com/web-programming/display-image-in-a-django-template-using-imagefield/
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # urls from 'allauth' - https://django-allauth.readthedocs.io/en/latest/installation.html#post-installation
+    # urls from 'allauth'
+    # https://django-allauth.readthedocs.io/en/latest/installation.html#post-installation
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     path('photos/', include('products.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Included for ImageField to work
-
-
