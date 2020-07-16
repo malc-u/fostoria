@@ -15,10 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# imports for ImageField to work https://matthiasomisore.com/web-programming/display-image-in-a-django-template-using-imagefield/
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # urls from 'allauth' - https://django-allauth.readthedocs.io/en/latest/installation.html#post-installation
     path('accounts/', include('allauth.urls')),
-    path('', include('home.urls'))
-]
+    path('', include('home.urls')),
+    path('photos/', include('products.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Included for ImageField to work
+
+
