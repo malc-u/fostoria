@@ -1,0 +1,14 @@
+{% extends "base.html "%}
+{% load static %}
+
+{% block content %}
+<div class="row text-center">
+      {% for product in products %}
+      <div class="col-lg-4">
+          {% if product.product_image %}
+          <img class="card-img-top img-fluid" src="{{ product.product_image.url }}" alt="{{ product.title }}">
+          {% endif %}
+      </div>
+        {% endfor %}
+</div>
+{% endblock %}
