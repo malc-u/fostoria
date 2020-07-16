@@ -1,10 +1,10 @@
-from django.shortcuts import render
+"""Products app views that will be imported to project urls"""
+
+from django.views.generic import ListView
 from .models import Product
 
-# Create your views here.
-def all_products(request):
-    """ A view to show all products"""
-    products = Product.objects.all()
-    
-    context = {'products': products}
-    return render(request, 'photos.html', context)
+class Products(ListView):
+    template_name = "photos.html"
+    context_object_name = "products"
+    queryset = Product.objects.order_by('-title')
+    paginate_by = 6
