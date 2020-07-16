@@ -1,6 +1,7 @@
 """Products app models"""
 
 from django.db import models
+from django.urls import reverse
 
 class ProductGroup(models.Model):
     """"Model for groups that products will be assigned to"""
@@ -24,5 +25,10 @@ class Product(models.Model):
     product_group = models.ForeignKey('ProductGroup',
                                       blank=False, null=False, on_delete=models.PROTECT)
 
+    def get_absolute_url(self):
+        """Method to tell Django how to calculate the canonical URL for an object.
+            https://docs.djangoproject.com/en/3.0/ref/models/instances/ """
+        return reverse('product-detail', args=[str(self.id)])
+    
     def __str__(self):
         return self.title
