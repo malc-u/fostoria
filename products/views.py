@@ -1,7 +1,7 @@
 """Products app views that will be imported to project urls"""
 
 from django.views.generic import ListView, DetailView
-from .models import Product, ProductGroup
+from .models import Product
 
 class Products(ListView):
     """"Class that will be used as_view() and will display all products/photos"""
