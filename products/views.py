@@ -50,3 +50,11 @@ class ProductsHills(ListView):
         context['group'] = "Fields & Mountains"
         context['title'] = "Fields & Mountains Gallery"
         return context
+
+class ProductsForests(ListView):
+    """"Class that will be used as_view() and will display products/photos assigned to
+    product_group: lakes_seas"""
+    model = Product
+    template_name = "photos.html"
+    queryset = Product.objects.filter(product_group__name='forests').order_by('title')
+    paginate_by = 6
