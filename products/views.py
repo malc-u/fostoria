@@ -39,7 +39,7 @@ class ProductsLakes(ListView):
 
 class ProductsHills(ListView):
     """"Class that will be used as_view() and will display products/photos assigned to
-    product_group: lakes_seas"""
+    product_group: fields_hills"""
     model = Product
     template_name = "photos.html"
     queryset = Product.objects.filter(product_group__name='fields_hills').order_by('title')
@@ -53,7 +53,7 @@ class ProductsHills(ListView):
 
 class ProductsForests(ListView):
     """"Class that will be used as_view() and will display products/photos assigned to
-    product_group: lakes_seas"""
+    product_group: forests"""
     model = Product
     template_name = "photos.html"
     queryset = Product.objects.filter(product_group__name='forests').order_by('title')
