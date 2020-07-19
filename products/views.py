@@ -21,3 +21,12 @@ class ProductDetails(DetailView):
     model = Product
     template_name = "details.html"
     context_object_name = "product"
+
+
+class ProductsLakes(ListView):
+    """"Class that will be used as_view() and will display products/photos assigned to
+    product_group: lakes_seas"""
+    model = Product
+    template_name = "photos.html"
+    queryset = Product.objects.filter(product_group__name='lakes_seas').order_by('title')
+    paginate_by = 6
