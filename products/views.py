@@ -44,3 +44,9 @@ class ProductsHills(ListView):
     template_name = "photos.html"
     queryset = Product.objects.filter(product_group__name='fields_hills').order_by('title')
     paginate_by = 6
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductsHills, self).get_context_data(**kwargs)
+        context['group'] = "Fields & Mountains"
+        context['title'] = "Fields & Mountains Gallery"
+        return context
