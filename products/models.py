@@ -29,6 +29,6 @@ class Product(models.Model):
         """Method to tell Django how to calculate the canonical URL for an object.
             https://docs.djangoproject.com/en/3.0/ref/models/instances/ """
         return reverse('product-detail', args=[str(self.id)])
-    
+
     def __str__(self):
         return self.title
