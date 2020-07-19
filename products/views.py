@@ -30,3 +30,9 @@ class ProductsLakes(ListView):
     template_name = "photos.html"
     queryset = Product.objects.filter(product_group__name='lakes_seas').order_by('title')
     paginate_by = 6
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductsLakes, self).get_context_data(**kwargs)
+        context['group'] = "Lakes & Seas"
+        context['title'] = "Lakes & Seas Gallery"
+        return context
