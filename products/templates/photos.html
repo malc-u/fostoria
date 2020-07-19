@@ -4,7 +4,9 @@
 {% block content %}
 <div class="row pt-5">
   <div class="col-12 text-center">
-    <h1 class="display-4">Gallery</h1>
+    {% if group %}
+    <h1 class="display-4">{{ group }}</h1>
+    {% endif %}
   </div>
 </div>
 <div class="row text-center">
