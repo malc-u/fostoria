@@ -9,5 +9,4 @@ urlpatterns = [
     path('hills/', views.ProductsHills.as_view(), name='hills'),
     path('forests/', views.ProductsForests.as_view(), name='forests'),
     path('<int:pk>/', views.ProductDetails.as_view(), name="product-detail"),
-    
-]
+    ]
