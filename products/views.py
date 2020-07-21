@@ -1,6 +1,8 @@
 """Products app views that will be imported to project urls"""
 from django.shortcuts import render, redirect, reverse
 from django.views.generic import ListView, DetailView
+from django.db.models import Q
+from django.contrib import messages
 from .models import Product
 
 
@@ -73,6 +75,13 @@ def product_search(request):
     query = None
 
     if request.GET:
-
-        return render(request, "photos-search.html", context)
-    return redirect(reverse('all_products'))
+        if 'q' in request.GET:
+            query = request.GET.get('q')
+            query_group = Q(title__icontains=query) | Q(place__icontains=query)
+            products = products.filter(query_group)
+            context = {
+                'products': products,
+                'serach_term': query,
+                }
+            return render(request, "photos-search.html", context)
+     return redirect(reverse('all_products'))
