@@ -82,6 +82,9 @@ def product_search(request):
             if not products:
                 messages.error(request, 'There is no photos matching your search criteria')
                 return redirect(reverse('all_products'))
+            elif not query:
+                messages.error(request, 'Search criteria is missing, please try again.')
+                return redirect(reverse('all_products'))
 
             context = {
                 'products': products,
