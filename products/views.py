@@ -1,7 +1,8 @@
 """Products app views that will be imported to project urls"""
-
+from django.shortcuts import render, redirect, reverse
 from django.views.generic import ListView, DetailView
 from .models import Product
+
 
 class Products(ListView):
     """"Class that will be used as_view() and will display all products/photos"""
@@ -64,3 +65,14 @@ class ProductsForests(ListView):
         context['group'] = "Forests"
         context['title'] = "Forests Gallery"
         return context
+
+def product_search(request):
+    """ View allowing searching products using Product title or place"""
+
+    products = Product.objects.all()
+    query = None
+
+    if request.GET:
+
+        return render(request, "photos-search.html", context)
+    return redirect(reverse('all_products'))
