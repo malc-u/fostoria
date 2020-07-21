@@ -79,9 +79,13 @@ def product_search(request):
             query = request.GET.get('q')
             query_group = Q(title__icontains=query) | Q(place__icontains=query)
             products = products.filter(query_group)
+            if not products:
+                messages.error(request, 'There is no photos matching your search criteria')
+                return redirect(reverse('all_products'))
+
             context = {
                 'products': products,
                 'serach_term': query,
                 }
             return render(request, "photos-search.html", context)
-     return redirect(reverse('all_products'))
+    return redirect(reverse('all_products'))
