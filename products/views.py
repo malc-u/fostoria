@@ -70,25 +70,22 @@ class ProductsForests(ListView):
 
 def product_search(request):
     """ View allowing searching products using Product title or place"""
+    query = request.GET.get('q')
+    if query:
+        query_group = Q(title__icontains=query) | Q(place__icontains=query)
+        products = Product.objects.filter(query_group)
 
-    products = Product.objects.all()
-    query = None
+        if not products:
+            messages.error(request, 'There is no photos matching your search criteria')
+            return redirect(reverse('all_products'))
+            
 
-    if request.GET:
-        if 'q' in request.GET:
-            query = request.GET.get('q')
-            query_group = Q(title__icontains=query) | Q(place__icontains=query)
-            products = products.filter(query_group)
-            if not products:
-                messages.error(request, 'There is no photos matching your search criteria')
-                return redirect(reverse('all_products'))
-            elif not query:
-                messages.error(request, 'Search criteria is missing, please try again.')
-                return redirect(reverse('all_products'))
+        context = {
+        'products': products,
+        'query': query,
+        'title': "- Photos search",
+        }        
+        return render(request, "photos-search.html", context)
 
-            context = {
-                'products': products,
-                'query': query,
-                }
-            return render(request, "photos-search.html", context)
+    messages.error(request, 'Search criteria is missing, please try again.')
     return redirect(reverse('all_products'))
