@@ -11,7 +11,7 @@ class Products(ListView):
     model = Product
     template_name = "photos.html"
     queryset = Product.objects.order_by('-title')
-    paginate_by = 6
+    paginate_by = 9
 
     def get_context_data(self, **kwargs):
         context = super(Products, self).get_context_data(**kwargs)
@@ -32,7 +32,7 @@ class ProductsLakes(ListView):
     model = Product
     template_name = "photos.html"
     queryset = Product.objects.filter(product_group__name='lakes_seas').order_by('title')
-    paginate_by = 6
+    paginate_by = 9
 
     def get_context_data(self, **kwargs):
         context = super(ProductsLakes, self).get_context_data(**kwargs)
@@ -46,7 +46,7 @@ class ProductsHills(ListView):
     model = Product
     template_name = "photos.html"
     queryset = Product.objects.filter(product_group__name='fields_hills').order_by('title')
-    paginate_by = 6
+    paginate_by = 9
 
     def get_context_data(self, **kwargs):
         context = super(ProductsHills, self).get_context_data(**kwargs)
@@ -60,7 +60,7 @@ class ProductsForests(ListView):
     model = Product
     template_name = "photos.html"
     queryset = Product.objects.filter(product_group__name='forests').order_by('title')
-    paginate_by = 6
+    paginate_by = 9
 
     def get_context_data(self, **kwargs):
         context = super(ProductsForests, self).get_context_data(**kwargs)
@@ -88,7 +88,7 @@ def product_search(request):
 
             context = {
                 'products': products,
-                'serach_term': query,
+                'query': query,
                 }
             return render(request, "photos-search.html", context)
     return redirect(reverse('all_products'))
