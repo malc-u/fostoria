@@ -78,13 +78,12 @@ def product_search(request):
         if not products:
             messages.error(request, 'There is no photos matching your search criteria')
             return redirect(reverse('all_products'))
-            
 
         context = {
-        'products': products,
-        'query': query,
-        'title': "- Photos search",
-        }        
+            'products': products,
+            'query': query,
+            'title': "- Photos search",
+        }
         return render(request, "photos-search.html", context)
 
     messages.error(request, 'Search criteria is missing, please try again.')
