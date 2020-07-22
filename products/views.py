@@ -37,7 +37,7 @@ class ProductsLakes(ListView):
     def get_context_data(self, **kwargs):
         context = super(ProductsLakes, self).get_context_data(**kwargs)
         context['group'] = "Lakes & Seas"
-        context['title'] = "Lakes & Seas Gallery"
+        context['title'] = "- Lakes & Seas Gallery"
         return context
 
 class ProductsHills(ListView):
@@ -51,7 +51,7 @@ class ProductsHills(ListView):
     def get_context_data(self, **kwargs):
         context = super(ProductsHills, self).get_context_data(**kwargs)
         context['group'] = "Fields & Mountains"
-        context['title'] = "Fields & Mountains Gallery"
+        context['title'] = "- Fields & Mountains Gallery"
         return context
 
 class ProductsForests(ListView):
@@ -65,7 +65,7 @@ class ProductsForests(ListView):
     def get_context_data(self, **kwargs):
         context = super(ProductsForests, self).get_context_data(**kwargs)
         context['group'] = "Forests"
-        context['title'] = "Forests Gallery"
+        context['title'] = "- Forests Gallery"
         return context
 
 def product_search(request):
