@@ -1,0 +1,32 @@
+{% extends "base.html "%}
+{% load static %}
+
+{% block title_extension %} {% if title %}{{ title }} {% endif %} {% endblock %}
+
+{% block content %}
+<div class="row pt-5">
+  <div class="col-12 pt-3 text-center">
+    {% if query %}
+    <h1>Search results for: {{ query }}</h1>
+    {% endif %}
+  </div>
+</div>
+  <div class="row mt-4 text-center">
+  {% for product in products %}
+  <div class="col-lg-4 col-md-6 align-self-end">
+    <a href="{{ product.get_absolute_url }}">
+      <div class="card border-secondary mb-3">
+        <div class="card-img-box">
+          <img class="card-img" src="{{ product.product_image.url }}" alt="{{ product.title }}">
+        </div>
+        <div class="card-body">
+          <p class="card-title">{{ product.title }}</p>
+        </div>
+      </div>
+    </a>
+   
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
