@@ -7,23 +7,20 @@
 <div class="row pt-5">
   <div class="col-12 pt-3 text-center">
     {% if query %}
-    <h1>Search results for: {{ query }}</h1>
+    <h2>Search results for: {{ query }}</h2>
     {% endif %}
   </div>
 </div>
-  <div class="row mt-4 text-center">
+<div class="row mt-4 text-center">
   {% for product in products %}
-  <div class="col-lg-2 col-md-3 col-sm-6 align-self-end">
-    <a href="{{ product.get_absolute_url }}">
-      <div class="card border-secondary mb-3">
-        <div class="card-img-box">
-          <img class="card-img" src="{{ product.product_image.url }}" alt="{{ product.title }}">
-        </div>
-        <div class="card-body">
-          <p class="card-title">{{ product.title|truncatechars:15 }}</p>
-        </div>
+  <div class="col-lg-3 col-md-4 align-self-end">
+    <div id="product-card" class="align-items-center justify-content-around my-2">
+      <div id="card-image-box" class="align-items-center justify-content-center d-flex">
+          <a href="{{ product.get_absolute_url }}">
+              <img class="card-img" src="{{ product.product_image.url }}" alt="{{ product.title }}">
+          </a> 
       </div>
-    </a>
+  </div>
    
   </div>
   {% endfor %}
