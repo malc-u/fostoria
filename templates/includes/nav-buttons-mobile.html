@@ -20,7 +20,7 @@
     </div>
 </li>
 <li class="list-inline-item pt-2">
-    <a class="{% if grand_total %}font-weight-bold{% else %}dark-font{% endif %} nav-link d-block d-lg-none" href="">
+    <a class="{% if grand_total %}font-weight-bold{% else %}dark-font{% endif %} nav-link d-block d-lg-none" href="{% url 'cart_view' %}">
         <div class="text-center pt-1">
             <i class="fas fa-shopping-cart"></i>
                 <p>{% if grand_total %}

@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="col-12 col-lg-6 my-auto">
-        <a class="{% if grand_total %}font-weight-bold{% else %}dark-font{% endif %} nav-link" href="">
+        <a class="{% if grand_total %}font-weight-bold{% else %}dark-font{% endif %} nav-link" href="{% url 'cart_view' %}">
             <div class="text-center">
                 <i class="fas fa-shopping-cart"></i>
                     <p>{% if grand_total %}
