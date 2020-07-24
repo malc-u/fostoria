@@ -45,3 +45,7 @@ class PrintSize(models.Model):
     print_prices = models.ManyToManyField('PrintPrice', through='PricingSizes')
 
 
+class PricingSizes(models.Model):
+    """Through Class that allow to combine prices with sizes"""
+    print_size = models.ForeignKey('PrintSize', on_delete=models.CASCADE)
+    print_price = models.ForeignKey('PrintPrice', on_delete=models.CASCADE)
