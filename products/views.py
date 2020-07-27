@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, reverse
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
 from django.contrib import messages
-from .models import Product
+from .models import Product, PricingSizes
 
 
 class Products(ListView):
@@ -23,7 +23,7 @@ class ProductDetails(DetailView):
     for a specific product"""
     model = Product
     template_name = "details.html"
-    context_object_name = "product"
+
 
 
 class ProductsLakes(ListView):
@@ -59,7 +59,7 @@ class ProductsForests(ListView):
     product_group: forests"""
     model = Product
     template_name = "photos.html"
-    queryset = Product.objects.filter(product_group__name='forests').order_by('title')
+    queryset = Product.objects.filter(product_group__name='forests').order_by('-title')
     paginate_by = 9
 
     def get_context_data(self, **kwargs):
