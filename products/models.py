@@ -38,11 +38,15 @@ class PrintPrice(models.Model):
     print_price = models.DecimalField(max_digits=6, decimal_places=2)
     print_sizes = models.ManyToManyField('PrintSize', through='PricingSizes')
 
+    def __str__(self):
+        return '{self.print_price}'.format(self=self)
+
 
 class PrintSize(models.Model):
     """Class that will allow admin set the prices for prints"""
     print_size = models.CharField(max_length=120)
     print_prices = models.ManyToManyField('PrintPrice', through='PricingSizes')
+
 
 
 class PricingSizes(models.Model):
