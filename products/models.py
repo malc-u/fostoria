@@ -47,6 +47,8 @@ class PrintSize(models.Model):
     print_size = models.CharField(max_length=120)
     print_prices = models.ManyToManyField('PrintPrice', through='PricingSizes')
 
+    def __str__(self):
+        return self.print_size
 
 
 class PricingSizes(models.Model):
