@@ -24,6 +24,12 @@ class ProductDetails(DetailView):
     model = Product
     template_name = "details.html"
 
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetails, self).get_context_data(**kwargs)
+        priced_sizes = PricingSizes.objects.all()
+        context['priced_sizes'] = priced_sizes
+        context['title'] = "- Lakes & Seas Gallery"
+        return context
 
 
 class ProductsLakes(ListView):
