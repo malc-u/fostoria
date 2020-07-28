@@ -26,8 +26,19 @@
           <form type="form" method="POST" action="{% url 'add_to_cart' product.id %}">
             {% csrf_token %}
             <div class="form-row text-center">
-
-
+              {% with product.has_sizes as has_sizes %}
+              {% if has_sizes %}
+                  <div class="col-12">
+                      <p><strong>Size:</strong></p>
+                      <select class="form-control w-25 mx-auto" name="product_size" id='product-size-id'>
+                        <option value="A3" selected>A3</option>
+                        <option value="A2">A2</option>
+                        <option value="A1">A1</option>
+                        <option value="A0">A0</option>
+                        <option value="2A0">2A0</option>
+                      </select>
+                  </div>
+              {% endif %}
               <div class="col-12">
                   <p class="mt-2"><strong>Quantity:</strong></p>
                   <div class="form-group w-25 mx-auto">
@@ -38,7 +49,7 @@
                   <input type="submit" class="btn blue-color dark-font font-weight-bold" value="Add to Cart">
                   <input type="hidden" name="redirect_url" value="{{ request.path }}">
               </div>
-
+              {% endwith %}
           </div>
           </form>
 
