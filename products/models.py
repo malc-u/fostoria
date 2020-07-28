@@ -24,6 +24,7 @@ class Product(models.Model):
     product_image = models.ImageField(blank=False)
     product_group = models.ForeignKey('ProductGroup',
                                       blank=False, null=False, on_delete=models.PROTECT)
+    has_sizes = models.BooleanField(default=True, null=False, blank=False)
 
     def get_absolute_url(self):
         """Method to tell Django how to calculate the canonical URL for an object.
@@ -40,6 +41,7 @@ class PrintPrice(models.Model):
 
     def __str__(self):
         return '{self.print_price}'.format(self=self)
+
 
 
 class PrintSize(models.Model):
