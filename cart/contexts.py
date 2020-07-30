@@ -12,6 +12,7 @@ def cart_contents(request):
     total = 0
     product_count = 0
     cart = request.session.get('cart', {})
+    size = None
 
     for article_id, article_detail in cart.items():
         product = get_object_or_404(Product, pk=article_id)
@@ -19,7 +20,7 @@ def cart_contents(request):
 
             if size == 'A3':
                 price = 60
-            elif size  == 'A2':
+            elif size == 'A2':
                 price = 75
             elif size == 'A1':
                 price = 90
