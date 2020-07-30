@@ -1,3 +1,4 @@
+"""Urls for an app called CART """
 from django.urls import path
 from . import views
 
