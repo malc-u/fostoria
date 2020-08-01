@@ -31,14 +31,14 @@ def cart_contents(request):
 
             product_count += qty
             total += qty * price
-
-        cart_items.append({
-            'article_id': article_id,
-            'qty': article_detail,
-            'product': product,
-            'size': size,
-            'price': price,
-        })
+        
+            cart_items.append({
+                'article_id': article_id,
+                'qty': qty,
+                'product': product,
+                'size': size,
+                'price': price,
+            })
 
     context = {
         'cart_items': cart_items,
@@ -47,4 +47,3 @@ def cart_contents(request):
     }
 
     return context
-    
