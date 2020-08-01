@@ -24,6 +24,10 @@ def add_to_cart(request, article_id):
 
     if size:
         if article_id in list(cart.keys()):
+            if size in cart[article_id]['items_by_size'].keys():
+                cart[article_id]['items_by_size'][size] += qty
+            else:
+                cart[article_id]['items_by_size'][size] = qty
 
         else:
             cart[article_id] = {'items_by_size': {size: qty}}
