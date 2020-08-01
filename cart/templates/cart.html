@@ -17,6 +17,7 @@
                     <td class="w-75 p-3">
                         <p class="font-weight-bold">{{ item.product.title }}</p>
                         <p>Print size: {{ item.size }}</p>
+                        <p>Price: £ {{ item.price }} {% if item.qty > 1 %} each {% endif %}</p>
                         </td>
               </table>
         </div>
