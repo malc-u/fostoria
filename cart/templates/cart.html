@@ -7,7 +7,17 @@
         <h4 class="mt-4 dark-font">Basket contents:</h4>
     </div>
     {% if cart_items %}
-    <div class="row"></div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                {% for item in cart_items %}
+
+                  <tr>
+                    <td class="w-25 px-5"><img class="img-fluid" src="{{ item.product.product_image.url }}"></td>
+                   
+              </table>
+        </div>
+    </div>
     {% else %}
     <div class="row my-5 py-4">
         <div class="col-12 pt-4 text-center">
