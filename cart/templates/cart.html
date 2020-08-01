@@ -18,7 +18,11 @@
                         <p class="font-weight-bold">{{ item.product.title }}</p>
                         <p>Print size: {{ item.size }}</p>
                         <p>Price: £ {{ item.price }} {% if item.qty > 1 %} each {% endif %}</p>
-                        </td>
+                        <p>Quantity: {{ item.qty }}</p>
+                    </td>
+                  </tr>                
+                {% endfor %}
+                
               </table>
         </div>
     </div>
