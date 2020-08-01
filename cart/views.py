@@ -15,11 +15,18 @@ def add_to_cart(request, article_id):
 
     qty = int(request.POST.get('qty'))
     redirect_url = request.POST.get('redirect_url')
+    size = None
+    price = 0
 
     if 'product_size' in request.POST:
         size = request.POST['product_size']
     cart = request.session.get('cart', {})
 
+    if size:
+        if article_id in list(cart.keys()):
+
+        else:
+            cart[article_id] = {'items_by_size': {size: qty}}
 
 
     request.session['cart'] = cart
