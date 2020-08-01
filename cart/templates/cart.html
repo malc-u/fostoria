@@ -11,19 +11,24 @@
         <div class="col-12">
             <table class="table">
                 {% for item in cart_items %}
-
-                  <tr>
-                    <td class="w-25 px-5"><img class="img-fluid" src="{{ item.product.product_image.url }}"></td>
-                    <td class="w-75 p-3">
-                        <p class="font-weight-bold">{{ item.product.title }}</p>
-                        <p>Print size: {{ item.size }}</p>
-                        <p>Price: £ {{ item.price }} {% if item.qty > 1 %} each {% endif %}</p>
-                        <p>Quantity: {{ item.qty }}</p>
-                    </td>
-                  </tr>                
-                {% endfor %}
-                
-              </table>
+                <tbody>
+                    <tr>
+                        <td class="w-25 px-5"><img class="img-fluid" src="{{ item.product.product_image.url }}"></td>
+                        <td class="w-75 p-3">
+                            <p class="font-weight-bold">{{ item.product.title }}</p>
+                            <p>Print size: {{ item.size }}</p>
+                            <p>Price: £ {{ item.price }} {% if item.qty > 1 %} each {% endif %}</p>
+                            <p>Quantity: {{ item.qty }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="2" class="w-100 text-right">
+                            <p class="blue-color dark-font font-weight-bold py-2 pr-5">Total: £{{ total }} </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     {% else %}
@@ -31,10 +36,10 @@
         <div class="col-12 pt-4 text-center">
             <p class="blue-color p-2 mx-auto font-dark rounded">Your basket is empty.</p>
         </div>
-        <div class="col-12 py-5"><a href="{% url 'all_products' %}"><p class="btn border border-dark rounded back-btn">Keep browsing</p></a></div>
+        <div class="col-12 py-5"><a href="{% url 'all_products' %}">
+                <p class="btn border border-dark rounded back-btn">Keep browsing</p>
+            </a></div>
     </div>
     {% endif %}
 </div>
-
-
 {% endblock %}
