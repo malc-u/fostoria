@@ -19,11 +19,11 @@
                             <p>Print size: {{ item.size }}</p>
                             <p>Price: £ {{ item.price }} {% if item.qty > 1 %} each {% endif %}</p>
 
-                            <form class="form" method="POST" action="{% url 'update_cart' item.article_id %}">
+                            <form class="form" id="update-form" method="POST" action="{% url 'update_cart' item.article_id %}">
                                 {% csrf_token %}
                                 <div class="input-group w-25">
                                     <label for="id_qty_{{ item.article_id }}" class="pr-2">Quantity: </label>
-                                    <input class="form-control form-control-sm text-right" type="number" name="qty"
+                                    <input class="form-control form-control-sm update-form-field text-right" type="number" name="qty"
                                         value="{{ item.qty }}" min="0" max="5" data-article_id="{{ item.article_id }}"
                                         id="id_qty_{{ item.article_id }}">
                                     <div class="input-group-append">
@@ -42,7 +42,8 @@
                                     <input type="hidden" name="product_size" value="{{ item.size }}">
                                     {% endif %}
                                 </div>
-                                <button type="submit" class="btn border-dark mt-2 back-btn">Update</button>
+                                <button type="submit" class="btn border-dark mt-2 back-btn" id="update-btn">Update</button>
+                                <button class="btn border-danger mt-2 back-btn remove-from-cart">Remove</button>
                                 
                             </form>
                         </td>
