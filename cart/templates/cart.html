@@ -26,7 +26,18 @@
                                     <input class="form-control form-control-sm text-right" type="number" name="qty"
                                         value="{{ item.qty }}" min="0" max="5" data-article_id="{{ item.article_id }}"
                                         id="id_qty_{{ item.article_id }}">
-                                    
+                                    <div class="input-group-append">
+                                        <button class="decrease-qty" id="decrease-qty_{{ item.article_id }}"
+                                            data-article_id="{{ item.article_id }}">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button class="increase-qty" id="increase-qty_{{ item.article_id }}"
+                                            data-article_id="{{ item.article_id }}">
+                                            <i class="fas fa-chevron-up"></i>
+                                        </button>
+                                    </div>
                                     {% if item.product.has_sizes %}
                                     <input type="hidden" name="product_size" value="{{ item.size }}">
                                     {% endif %}
