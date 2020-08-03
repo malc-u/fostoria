@@ -27,6 +27,9 @@
                                         value="{{ item.qty }}" min="0" max="5" data-article_id="{{ item.article_id }}"
                                         id="id_qty_{{ item.article_id }}">
                                     
+                                    {% if item.product.has_sizes %}
+                                    <input type="hidden" name="product_size" value="{{ item.size }}">
+                                    {% endif %}
                                 </div>
                                 <button type="submit" class="btn border-dark mt-2 back-btn">Update</button>
                                 
