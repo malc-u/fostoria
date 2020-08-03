@@ -45,11 +45,17 @@ def update_cart(request, article_id):
     qty = int(request.POST.get('qty'))
     size = None
 
+
     if 'product_size' in request.POST:
         size = request.POST['product_size']
     cart = request.session.get('cart', {})
 
+    if size:
+        if qty > 0:
+            cart[article_id]['items_by_size'][size] = qty
 
+        else:
+            del cart[article_id]['items_by_size'][size]
 
     request.session['cart'] = cart
     return redirect(reverse('cart_view'))
