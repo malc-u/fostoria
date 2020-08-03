@@ -56,6 +56,8 @@ def update_cart(request, article_id):
 
         else:
             del cart[article_id]['items_by_size'][size]
+            if not cart[article_id]['items_by_size']:
+                cart.pop(article_id)
 
     request.session['cart'] = cart
     return redirect(reverse('cart_view'))
