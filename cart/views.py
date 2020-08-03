@@ -9,14 +9,13 @@ def cart_view(request):
 
 def add_to_cart(request, article_id):
     """ Add a quantity of the specified product to the shopping cart
-    with the size taken into account. This function was shared by Chris Zielinsky
-    during Code Institute's course Ado-Boutiqe module. It was amended by myself to suit
-    my project needs. """
+    with the size taken into account. Logic used in this function was shared by Chris Zielinsky
+    during Code Institute's course Ado-Boutiqe module. Function was re-written/amended
+    by myself to suit my project needs.  """
 
     qty = int(request.POST.get('qty'))
     redirect_url = request.POST.get('redirect_url')
     size = None
-    price = 0
 
     if 'product_size' in request.POST:
         size = request.POST['product_size']
