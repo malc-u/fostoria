@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'cart',
+    'sweetify',
 ]
 
 MIDDLEWARE = [
@@ -163,3 +164,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Defining sweetalert version for sweetify function.
+SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"
