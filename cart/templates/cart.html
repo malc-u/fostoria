@@ -21,7 +21,13 @@
 
                             <form class="form" method="POST" action="{% url 'update_cart' item.article_id %}">
                                 {% csrf_token %}
-                                
+                                <div class="input-group w-25">
+                                    <label for="id_qty_{{ item.article_id }}" class="pr-2">Quantity: </label>
+                                    <input class="form-control form-control-sm text-right" type="number" name="qty"
+                                        value="{{ item.qty }}" min="0" max="5" data-article_id="{{ item.article_id }}"
+                                        id="id_qty_{{ item.article_id }}">
+                                    
+                                </div>
                                 <button type="submit" class="btn border-dark mt-2 back-btn">Update</button>
                                 
                             </form>
