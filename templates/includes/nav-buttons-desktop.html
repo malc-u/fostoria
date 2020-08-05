@@ -2,8 +2,11 @@
 <div id="top-buttons" class="pt-lg-2 d-none d-lg-flex col-lg-3">
     <div class="col-12 col-lg-6 my-auto">
         <a class="nav-link" href="#" id="my-account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="text-center pb-2">
-                <i class="fas fa-user-alt fa-lg"></i>
+            <div class="text-center">
+                <i class="fas fa-user-alt fa-lg {% if total %} pt-2 {% endif %}"></i>
+                <p class="m-0">{% if total %}
+                    My account
+                    {% endif %}</p>
             </div>
         </a>
         <div class="dropdown-menu border-0" aria-labelledby="my-account">
@@ -22,8 +25,8 @@
     <div class="col-12 col-lg-6 my-auto">
         <a class="{% if grand_total %}font-weight-bold{% else %}dark-font{% endif %} nav-link" href="{% url 'cart_view' %}">
             <div class="text-center">
-                <i class="fas fa-shopping-cart"></i>
-                    <p>{% if total %}
+                <i class="fas fa-shopping-cart pb-1"></i>
+                    <p class="m-0">{% if total %}
                         £{{ total|floatformat:2 }}
                         {% endif %}</p>
             </div>
