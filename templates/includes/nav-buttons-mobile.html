@@ -2,8 +2,11 @@
 <li class="list-inline-item dropdown pt-2">
     <a class="nav-link d-block d-lg-none" href="#" id="my-account" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
-        <div class="text-center pb-2">
-            <i class="fas fa-user-alt fa-lg"></i>
+        <div class="text-center {% if not total %} pb-2 {% endif %}">
+            <i class="fas fa-user-alt fa-lg pt-2"></i>
+            <p>{% if total %}
+                My account
+                {% endif %}</p>
         </div>
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="my-account">
