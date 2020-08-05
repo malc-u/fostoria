@@ -132,4 +132,6 @@ a:hover {
   background-position: cover;
 }
 
-
+.opacity {
+  background-color: rgba(255, 255, 255, 0);
+}
