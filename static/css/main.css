@@ -127,3 +127,9 @@ a:hover {
   background-color: #706f5c;
 }
 
+#about-box {
+  background-image: url("https://i.ibb.co/r5BCCL2/SP1.jpg");
+  background-position: cover;
+}
+
+
