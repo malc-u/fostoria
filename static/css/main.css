@@ -19,7 +19,7 @@ body {
   color: #fff;
 }
 
-.primiary-bg-color {
+.primary-bg-color {
   background-color: #fdfdff;
 }
 
@@ -41,6 +41,10 @@ body {
 
 .dark-font {
   color: #000;
+}
+
+.blue-font {
+  color: #758ecd;
 }
 
 /* Navbar */
@@ -122,3 +126,4 @@ a:hover {
   color: #000;
   background-color: #706f5c;
 }
+
