@@ -66,6 +66,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'fostoria.urls'
 
+# Defining crispy-forms template package
+# https://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
