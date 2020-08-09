@@ -1,8 +1,10 @@
 """ Accounts app views """
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
+from django.contrib import auth
+from django.views.decorators.csrf import csrf_protect
 import sweetify
 from .forms import UserRegistrationForm
-from django.views.decorators.csrf import csrf_protect
+
 
 
 
@@ -35,4 +37,14 @@ def register_view(request):
         "form": form,
     }
     return render(request, 'register.html', context)
+
+def logout(request):
+    """
+    Function that logs user out and redirects
+    to the home page. 
+    """
+    auth.logout(request)
+    sweetify.info(request, icon='success',
+                  title='You have been successfully logged out')
+    return redirect(reverse('home'))
     
