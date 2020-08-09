@@ -13,8 +13,8 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-8 offset-2">
-            <form method="POST">
+        <div class="col-12">
+            <form method="POST" class="px-5 pb-5">
                 {% csrf_token %}
                 <fieldset class="form-group">
                     {{ form|crispy }}
@@ -23,6 +23,7 @@
                         <button class="btn blue-color m-0 float-right" type="submit">Sign up</button>
                 </div>
             </form>
+            <hr>
         </div>
     </div>
    
