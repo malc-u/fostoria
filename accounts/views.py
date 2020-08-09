@@ -1,6 +1,7 @@
 """ Accounts app views """
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
 import sweetify
@@ -48,7 +49,7 @@ def logout(request):
     return redirect(reverse('home'))
 
 
-
+@login_required
 def profile_view(request):
     """
     Renders profile page for user with a form to update
@@ -68,8 +69,6 @@ def profile_view(request):
             return redirect('profile')
     else:
         form = UserUpdateForm(instance=user)
-
- 
 
     context = {
         'form': form,
