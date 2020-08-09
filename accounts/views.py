@@ -2,9 +2,12 @@
 from django.shortcuts import render, redirect
 import sweetify
 from .forms import UserRegistrationForm
+from django.views.decorators.csrf import csrf_protect
+
 
 
 # Create your views here.
+@csrf_protect
 def register_view(request):
     """
     View for users to register a new account.
