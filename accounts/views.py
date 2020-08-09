@@ -11,6 +11,11 @@ def register_view(request):
     Renders registration form and once submit button clicked
     checks if it's valid. Yes - saves user, No - highlights errors.
     """
+    if request.user.is_authenticated:
+        sweetify.info(request,
+                     title="You are already logged in.",
+                     icon="info")
+        return redirect('home')
 
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
