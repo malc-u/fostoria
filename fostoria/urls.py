@@ -24,9 +24,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # urls from 'allauth'
-    # https://django-allauth.readthedocs.io/en/latest/installation.html#post-installation
-    path('accounts/', include('allauth.urls')),
+    path('accounts/', include('accounts.urls')),
     path('', include('home.urls')),
     path('photos/', include('products.urls')),
     path('cart/', include('cart.urls')),
