@@ -8,4 +8,6 @@ urlpatterns = [
     path('login/', auth.LoginView.as_view(template_name='login.html',
                                           redirect_authenticated_user=True),
          name="login"),
+    path('logout/', auth.LogoutView.as_view(template_name='logout.html'),
+         name="logout"),
 ]
