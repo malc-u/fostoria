@@ -3,6 +3,7 @@ env
 .vscode
 __pycache__
 scss
+media
 
 #Files
 env.py
