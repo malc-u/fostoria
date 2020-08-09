@@ -1,0 +1,28 @@
+{% extends "base.html "%}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row pt-5">
+        <h4 class="dark-font">Your account</h4>
+    </div>
+
+    <hr>
+    <div class="col-12 pb-5">
+        <form method="POST" class="pb-5 px-5">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group mr-5">
+                <button class="btn blue-color m-0 float-right" type="submit">Update</button>
+            </div>
+        </form>
+        <hr>
+    </div>
+
+</div>
+
+</div>
+{% endblock %}
