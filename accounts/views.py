@@ -1,5 +1,6 @@
 """ Accounts app views """
 from django.shortcuts import render, redirect
+import sweetify
 from .forms import UserRegistrationForm
 
 
