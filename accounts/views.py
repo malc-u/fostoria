@@ -1,5 +1,5 @@
 """ Accounts app views """
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
 
 
@@ -13,7 +13,12 @@ def register_view(request):
 
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
-
+        if form.is_valid():
+            form.save()
+            sweetify.info(request,
+                             title="You have been successfully registered.",
+                             icon="success")
+            return redirect('login')
     else:
         form = UserRegistrationForm()
 
