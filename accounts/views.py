@@ -59,7 +59,9 @@ def profile_view(request):
 
     if request.method == 'POST':
         form = UserUpdateForm(request.POST, instance=user)
-
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
     else:
         form = UserUpdateForm(instance=user)
 
