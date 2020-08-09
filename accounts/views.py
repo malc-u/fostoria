@@ -61,6 +61,10 @@ def profile_view(request):
         form = UserUpdateForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
+            sweetify.success(
+                request, icon='success',
+                  title="Your details have been updated."
+            )
             return redirect('profile')
     else:
         form = UserUpdateForm(instance=user)
