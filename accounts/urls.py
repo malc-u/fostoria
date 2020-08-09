@@ -9,4 +9,5 @@ urlpatterns = [
                                           redirect_authenticated_user=True),
          name="login"),
     path('logout/', logout, name="logout"),
+    path('profile/', profile_view, name="profile"),
 ]
