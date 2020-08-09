@@ -1,9 +1,10 @@
 """ Accounts app views """
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth
+from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
 import sweetify
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, UserUpdateForm
 
 
 # Create your views here.
@@ -50,8 +51,23 @@ def logout(request):
 
 def profile_view(request):
     """
-    Renders profile page.
+    Renders profile page for user with a form to update
+    their information, already filled out with their current
+    data.
     """
+    user = User.objects.get(username=request.user)
+
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, instance=user)
+
+    else:
+        form = UserUpdateForm(instance=user)
+
+ 
+
+    context = {
+        'form': form,
+    }
 
     return render(request, 'profile.html', context)
 
