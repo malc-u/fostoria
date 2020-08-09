@@ -38,16 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Required by 'allauth' - https://django-allauth.readthedocs.io/en/latest/installation.html
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+
     # Custom
     'home',
     'products',
     'cart',
     'checkout',
+    'accounts',
 
     #Other
     'sweetify',
@@ -90,33 +88,10 @@ TEMPLATES = [
     },
 ]
 
-# Required by 'allauth' - https://django-allauth.readthedocs.io/en/latest/installation.html
-AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin, regardless of `allauth`
-    'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
-
-# Required by 'allauth' - https://django-allauth.readthedocs.io/en/latest/installation.html
 SITE_ID = 1
 
-# Configuration of 'allauth' - https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
-ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
-ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
-ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_USERNAME_MIN_LENGTH = 5
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
-
-
 WSGI_APPLICATION = 'fostoria.wsgi.application'
 
 
