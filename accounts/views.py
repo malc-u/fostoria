@@ -6,8 +6,6 @@ import sweetify
 from .forms import UserRegistrationForm
 
 
-
-
 # Create your views here.
 @csrf_protect
 def register_view(request):
@@ -47,4 +45,14 @@ def logout(request):
     sweetify.info(request, icon='success',
                   title='You have been successfully logged out')
     return redirect(reverse('home'))
+
+
+
+def profile_view(request):
+    """
+    Renders profile page.
+    """
+
+    return render(request, 'profile.html', context)
+
     
