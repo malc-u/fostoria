@@ -4,7 +4,14 @@
 
 {% block content %}
 <div class="container">
-
+    <div class="row pt-5">
+        <h4 class="dark-font">Create new account</h4>
+    </div>
+    <div class="row">
+        <p class="text-muted small">Already have an account? 
+            <a href="{% url 'login' %}">Login here</a></p> 
+    </div>
+    <hr>
     <div class="row">
         <div class="col-8 offset-2">
             <form method="POST">
