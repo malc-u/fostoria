@@ -151,3 +151,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Defining sweetalert version for sweetify function.
 SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"
+
+# Stripe required keys
+STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.environ.get('STRIPE_SECRET')
