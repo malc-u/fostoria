@@ -27,7 +27,7 @@ def checkout_payment_view(request):
     if request.method == 'POST':
         payment_form = PaymentForm(request.POST)
         if payment_form.is_valid():
-
+            cart = request.session.get('cart', {})
             return redirect('profile')
     
     else:
