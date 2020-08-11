@@ -26,6 +26,9 @@ def checkout_payment_view(request):
 
     if request.method == 'POST':
         payment_form = PaymentForm(request.POST)
+        if payment_form.is_valid():
+
+            return redirect('profile')
     
     else:
         payment_form = PaymentForm()
