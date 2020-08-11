@@ -20,3 +20,9 @@ def checkout_delivery_view(request):
         'order_shipping_form': order_shipping_form
     }
     return render(request, "checkout-delivery.html", context)
+
+
+def checkout_payment_view(request):
+
+    return render(request, "checkout-payment.html", context)
+    
