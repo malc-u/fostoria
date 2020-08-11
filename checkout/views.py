@@ -1,6 +1,7 @@
 """View of checkout application"""
 from django.shortcuts import render, redirect
 from .forms import OrderShippingForm, PaymentForm
+from cart.contexts import cart_contents
 
 # Create your views here.
 
@@ -28,12 +29,14 @@ def checkout_payment_view(request):
         payment_form = PaymentForm(request.POST)
         if payment_form.is_valid():
             cart = request.session.get('cart', {})
+            order_total = cart_contents(request)['total']
+
             return redirect('profile')
     
     else:
         payment_form = PaymentForm()
 
     context = {
-        'payment_form': payment_form
+        'total': total
     }
     return render(request, "checkout-payment.html", context)
