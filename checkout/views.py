@@ -37,6 +37,6 @@ def checkout_payment_view(request):
         payment_form = PaymentForm()
 
     context = {
-        'total': total
+        'order_total': order_total
     }
     return render(request, "checkout-payment.html", context)
