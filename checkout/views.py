@@ -1,6 +1,6 @@
 """View of checkout application"""
 from django.shortcuts import render, redirect
-from .forms import OrderShippingForm
+from .forms import OrderShippingForm, PaymentForm
 
 # Create your views here.
 
@@ -24,5 +24,13 @@ def checkout_delivery_view(request):
 
 def checkout_payment_view(request):
 
-    return render(request, "checkout-payment.html", context)
+    if request.method == 'POST':
+        payment_form = PaymentForm(request.POST)
     
+    else:
+        payment_form = PaymentForm()
+
+    context = {
+        'payment_form': payment_form
+    }
+    return render(request, "checkout-payment.html", context)
