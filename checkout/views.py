@@ -12,11 +12,11 @@ def checkout_delivery_view(request):
             order_shipping = order_shipping_form.save(commit=False)
             order_shipping.customer = request.user
             order_shipping.save()
-            return redirect("checkout_payment")
+            return redirect("payment")
     else:
         order_shipping_form = OrderShippingForm()
 
     context = {
         'order_shipping_form': order_shipping_form
     }
-    return render(request, "checkout-shipping.html", context)
+    return render(request, "checkout-delivery.html", context)
