@@ -9,7 +9,9 @@ def checkout_delivery_view(request):
     if request.method == 'POST':
         order_shipping_form = OrderShippingForm(request.POST)
         if order_shipping_form.is_valid():
-
+            order_shipping = order_shipping_form.save(commit=False)
+            order_shipping.customer = request.user
+            order_shipping.save()
             return redirect("checkout_payment")
     else:
         order_shipping_form = OrderShippingForm()
