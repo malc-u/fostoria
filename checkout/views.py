@@ -1,6 +1,7 @@
 """View of checkout application"""
 from django.shortcuts import render, redirect, reverse
 import stripe
+import sweetify
 from cart.contexts import cart_contents
 from .forms import OrderShippingForm, PaymentForm
 
