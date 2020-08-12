@@ -56,6 +56,12 @@ def checkout_payment_view(request):
                     request,
                     title="Looks like something went wrong, please try again.",
                     icon="error")
+            
+            except stripe.error.RateLimitError:
+                sweetify.error(
+                    request,
+                    title="Looks like our servers are very busy right now, please try again.",
+                    icon="warning")
 
 
 
