@@ -44,6 +44,10 @@ def checkout_payment_view(request):
                     card = payment_form.cleaned_data['stripe_id'],
                 )
                 if charge:
+                    sweetify.success(
+                    request,
+                    title="Payment processed sucessfully. Thank you.",
+                    icon="success")
                     del request.session['cart']
                     return redirect(reverse('all_products'))
 
