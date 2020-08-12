@@ -1,7 +1,9 @@
 """View of checkout application"""
 from django.shortcuts import render, redirect
-from .forms import OrderShippingForm, PaymentForm
+import stripe
 from cart.contexts import cart_contents
+from .forms import OrderShippingForm, PaymentForm
+
 
 # Create your views here.
 
@@ -32,7 +34,7 @@ def checkout_payment_view(request):
             order_total = cart_contents(request)['total']
 
             return redirect('profile')
-    
+
     else:
         payment_form = PaymentForm()
 
