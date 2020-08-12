@@ -39,6 +39,8 @@ def checkout_payment_view(request):
                 charge = stripe.Charge.create(
                     amount = int(total * 100),
                     currency = "GBP",
+                    description = customer,
+                    card = payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
 
