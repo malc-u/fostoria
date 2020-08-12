@@ -52,6 +52,10 @@ def checkout_payment_view(request):
                     return redirect(reverse('all_products'))
 
             except stripe.error.CardError:
+                sweetify.error(
+                    request,
+                    title="Looks like something went wrong, please try again.",
+                    icon="error")
 
 
 
