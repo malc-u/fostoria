@@ -1,5 +1,5 @@
 """View of checkout application"""
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 import stripe
 from cart.contexts import cart_contents
 from .forms import OrderShippingForm, PaymentForm
@@ -42,6 +42,10 @@ def checkout_payment_view(request):
                     description = customer,
                     card = payment_form.cleaned_data['stripe_id'],
                 )
+                if charge:
+                    del request.session['cart']
+                    return redirect(reverse('all_products'))
+
             except stripe.error.CardError:
 
 
