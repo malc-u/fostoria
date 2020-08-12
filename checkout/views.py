@@ -33,6 +33,12 @@ def checkout_payment_view(request):
             cart = request.session.get('cart', {})
             order_total = cart_contents(request)['total']
 
+            try:
+                customer = stripe.Charge.create()
+            except stripe.error.CardError:
+                
+
+
             return redirect('profile')
 
     else:
