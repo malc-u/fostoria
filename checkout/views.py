@@ -54,13 +54,18 @@ def checkout_payment_view(request):
             except stripe.error.CardError:
                 sweetify.error(
                     request,
-                    title="Looks like something went wrong, please try again.",
+                    title="Something went wrong with the payment, please try again.",
                     icon="error")
             
             except stripe.error.RateLimitError:
                 sweetify.error(
                     request,
-                    title="Looks like our servers are very busy right now, please try again.",
+                    title="Our servers couldn't process the payment, please try again.",
+                    icon="warning")
+            except stripe.error.InvalidRequestError:
+                sweetify.error(
+                    request,
+                    title="Payment error, please try again.",
                     icon="warning")
 
 
