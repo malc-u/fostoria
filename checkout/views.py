@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect, reverse
 import stripe
 import sweetify
+from django.conf import settings
 from cart.contexts import cart_contents
 from .forms import OrderShippingForm, PaymentForm
 
