@@ -68,7 +68,7 @@ def checkout_payment_view(request):
                     title="Payment error, please try again.",
                     icon="warning")
             except stripe.error.AuthenticationError:
-                    sweetify.error(
+                sweetify.error(
                     request,
                     title="Authentication error, please try again.",
                     icon="warning")
