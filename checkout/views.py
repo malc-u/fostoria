@@ -9,6 +9,8 @@ from .forms import OrderShippingForm, PaymentForm
 
 # Create your views here.
 
+stripe.api_key = settings.STRIPE_SECRET
+
 def checkout_delivery_view(request):
 
     if request.method == 'POST':
