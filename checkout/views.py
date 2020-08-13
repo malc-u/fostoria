@@ -72,6 +72,11 @@ def checkout_payment_view(request):
                     request,
                     title="Authentication error, please try again.",
                     icon="warning")
+            except stripe.error.APIConnectionError:
+                sweetify.error(
+                    request,
+                    title="Server communication error, please try again.",
+                    icon="warning")
 
 
 
