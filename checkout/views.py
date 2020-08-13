@@ -78,15 +78,13 @@ def checkout_payment_view(request):
                     title="Server communication error, please try again.",
                     icon="warning")
 
-
-
-
             return redirect('profile')
 
     else:
         payment_form = PaymentForm()
 
     context = {
-        'order_total': order_total
+        'order_total': order_total,
+        'payment_form': payment_form,
     }
     return render(request, "checkout-payment.html", context)
