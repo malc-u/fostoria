@@ -1,8 +1,8 @@
 """View of checkout application"""
 from django.shortcuts import render, redirect, reverse
+from django.conf import settings
 import stripe
 import sweetify
-from django.conf import settings
 from cart.contexts import cart_contents
 from .forms import OrderShippingForm, PaymentForm
 
@@ -34,14 +34,13 @@ def checkout_payment_view(request):
     if request.method == 'POST':
         payment_form = PaymentForm(request.POST)
         if payment_form.is_valid():
-            cart = request.session.get('cart', {})
             order_total = cart_contents(request)['total']
 
             try:
                 customer = request.user.email
                 
                 charge = stripe.Charge.create(
-                    amount = int(total * 100),
+                    amount = int(order_total * 100),
                     currency = "GBP",
                     description = customer,
                     card = payment_form.cleaned_data['stripe_id'],
