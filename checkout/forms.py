@@ -19,8 +19,8 @@ class OrderShippingForm(forms.ModelForm):
             'phone_number'
         )
         labels = {
-            'first_address_line': "First Line Of Address",
-            'Second_address_line': "Second Line Of Address",
+            'first_address_line': "First line of address",
+            'second_address_line': "Second line of address",    
         }
 
 class PaymentForm(forms.Form):
