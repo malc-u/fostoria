@@ -8,6 +8,17 @@
         <h4 class="dark-font">Deliver to:</h4>
     </div>
 
+    <hr>
+    <div class="col-12 pb-5">
+        <form method="POST" class="pb-5 px-5">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ order_shipping_form|crispy }}
+            </fieldset>
+
+        </form>
+        <hr>
+    </div>
 
 </div>
 
