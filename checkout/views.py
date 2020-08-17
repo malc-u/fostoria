@@ -31,6 +31,7 @@ def checkout_delivery_view(request):
     return render(request, "checkout-delivery.html", context)
 
 
+@login_required
 def checkout_payment_view(request):
 
     if request.method == 'POST':
