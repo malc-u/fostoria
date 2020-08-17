@@ -12,6 +12,7 @@ from .forms import OrderShippingForm, PaymentForm
 
 stripe.api_key = settings.STRIPE_SECRET
 
+@login_required
 def checkout_delivery_view(request):
 
     if request.method == 'POST':
