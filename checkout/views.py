@@ -1,6 +1,7 @@
 """View of checkout application"""
 from django.shortcuts import render, redirect, reverse
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 import stripe
 import sweetify
 from cart.contexts import cart_contents
