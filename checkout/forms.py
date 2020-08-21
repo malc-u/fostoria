@@ -20,12 +20,12 @@ class OrderShippingForm(forms.ModelForm):
         )
         labels = {
             'first_address_line': "First line of address",
-            'second_address_line': "Second line of address",    
+            'second_address_line': "Second line of address",
         }
 
 class PaymentForm(forms.Form):
     """
-    Form that is rendered for user to process the card payment. It renders 
+    Form that is rendered for user to process the card payment. It renders
     all required fields for card payment processing.
 
     This form was presented during Code Institute course but it is modified by me
