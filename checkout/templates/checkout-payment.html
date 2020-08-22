@@ -9,8 +9,15 @@
     </div>
 
     <hr>
+    <div class="row">
+        <div class="col-12">
+            <!-- Error message is displayed if Stripe error occurs. -->
+            <p class="text-center font-weight-bold text-danger" id="stripe-error-message"></p>
+        </div>
+    </div>
     <div class="col-12 pb-5">
-        <form method="POST" class="pb-5 px-5">
+        <!-- Payment form -->
+        <form id="payment-form" method="POST" class="pb-5 px-5">
             {% csrf_token %}
             <fieldset class="form-group">
                 {{ payment_form|crispy }}
