@@ -2,7 +2,7 @@
 import datetime
 from django.db import models
 from django.contrib.auth.models import User
-from products.models import Product, PricingSizes
+from products.models import Product
 
 # Create your models here.
 class OrderShippingDetails(models.Model):
@@ -27,9 +27,8 @@ class OrderLineDetail(models.Model):
     order_shipping = models.ForeignKey(OrderShippingDetails, null=False, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, null=False, on_delete=models.PROTECT)
     quantity = models.IntegerField(blank=False)
-    date_ordered = models.DateField(default=datetime.date.today, null=True)
-    product_size = models.ForeignKey(PricingSizes, blank=False,
-                                     null=False, on_delete=models.PROTECT)
+    date_ordered = models.DateField(default=datetime.date.today, blank=True)
+    total = models.IntegerField()
 
     def __str__(self):
-        return f'{self.quantity} - {self.product.title} - {self.date_ordered}'
+        return f'{self.quantity} - {self.product.title} - {self.date_ordered} - £{self.total}'
