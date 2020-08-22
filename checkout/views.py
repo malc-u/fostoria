@@ -41,27 +41,17 @@ def checkout_payment_view(request):
 
             try:
                 customer = request.user.email
-                
                 charge = stripe.Charge.create(
-                    amount = int(order_total * 100),
-                    currency = "GBP",
-                    description = customer,
-                    card = payment_form.cleaned_data['stripe_id'],
+                    amount=int(order_total * 100),
+                    currency="GBP",
+                    description=customer,
+                    card=payment_form.cleaned_data['stripe_id'],
                 )
-                if charge:
-                    sweetify.success(
-                    request,
-                    title="Payment processed sucessfully. Thank you.",
-                    icon="success")
-                    del request.session['cart']
-                    return redirect(reverse('all_products'))
-
             except stripe.error.CardError:
                 sweetify.error(
                     request,
                     title="Something went wrong with the payment, please try again.",
                     icon="error")
-            
             except stripe.error.RateLimitError:
                 sweetify.error(
                     request,
@@ -82,14 +72,18 @@ def checkout_payment_view(request):
                     request,
                     title="Server communication error, please try again.",
                     icon="warning")
-
-            return redirect('profile')
+            else:
+                sweetify.success(
+                    request,
+                    title="Payment processed sucessfully. Thank you.",
+                    icon="success")
+                del request.session['cart']
+                return redirect(reverse('all_products'))
 
     else:
         payment_form = PaymentForm()
 
     context = {
-        'order_total': order_total,
         'payment_form': payment_form,
     }
     return render(request, "checkout-payment.html", context)
