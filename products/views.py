@@ -82,7 +82,10 @@ def product_search(request):
         products = Product.objects.filter(query_group)
 
         if not products:
-            messages.error(request, 'There is no photos matching your search criteria')
+            sweetify.error(
+                request,
+                title="There is no photos matching your search criteria.",
+                icon="warning")
             return redirect(reverse('all_products'))
 
         context = {
