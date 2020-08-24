@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
-from django.contrib import messages
+import swwetify
 from .models import Product, PricingSizes
 
 
