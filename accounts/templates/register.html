@@ -10,8 +10,8 @@
     </div>
     <!-- Link to login in case user already registered. -->
     <div class="row">
-        <p class="text-muted small">Already have an account? 
-            <a href="{% url 'login' %}">Login here</a></p> 
+        <p class="text-muted small">Already have an account?
+            <a href="{% url 'login' %}">Login here</a></p>
     </div>
     <hr>
     <!-- Register form. -->
@@ -23,12 +23,11 @@
                     {{ form|crispy }}
                 </fieldset>
                 <div class="form-group mr-5">
-                        <button class="btn blue-color m-0 float-right" type="submit">Sign up</button>
+                    <button class="btn blue-color m-0 float-right" type="submit">Sign up</button>
                 </div>
             </form>
             <hr>
         </div>
     </div>
-   
 </div>
 {% endblock %}
