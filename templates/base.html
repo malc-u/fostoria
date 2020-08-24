@@ -32,34 +32,12 @@
     {% endblock %}
 
     <div class="container-fluid mt-5" id="page-content">
-        {% if messages %}
-
-            <div class="row mt-5 justify-content-center">
-    
-                <ul class=" col-12 messages mt-5 list-unstyled">
-                {% for message in messages %}
-                    <li {% if message.tags %} class="{{ message.tags }} alert alert-primary text-center"{% endif %}>
-                            {{ message }}
-                    </li>
-                {% endfor %}
-                </ul>
-            </div>
-
-        {% endif %}
     {% block content %}
     {% endblock %}
     </div>
-
-    <div class="container-fluid mt-4 pt-2 pb-5 secondary-bg-color" id="footer-info">
-        {% include 'includes/footer.html' %}
-    </div>
     
     <footer class="container-fluid fixed-bottom">
-        <div id="author-banner" class="row text-center">
-            <div class="col tertiary-bg-color light-font">
-                <p class="my-auto">Landscape photography by T. Zowada</p>                
-            </div>            
-        </div>
+            {% include 'includes/footer.html' %}
     </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
