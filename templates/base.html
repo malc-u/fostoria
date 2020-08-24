@@ -1,63 +1,55 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Landscape photography - Poland, Upper Silesia"/>
-<meta name="author" content="Mal C-U">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-<link rel="stylesheet" href="{% static 'css/main.css' %}">
-<title>Fostoria {% block title_extension %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Landscape photography - Poland, Upper Silesia" />
+    <meta name="author" content="Mal C-U">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Fostoria {% block title_extension %}{% endblock %}</title>
 </head>
+
 <body>
     <header class="container-fluid fixed-top">
 
         <div class="row" id="nav-row">
             <nav class="navbar navbar-expand-lg col-lg-9">
-                <a class="navbar-brand nav-link d-none d-lg-flex text-center brand-name" href="{% url 'home' %}"><h4 class="my-auto">Fostoria</h4></a>
-                <button class="navbar-toggler navbar-light pt-0 mt-0 pb-2" type="button" data-toggle="collapse" data-target="#navbar-custom" aria-controls="navbar-customt" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand nav-link d-none d-lg-flex text-center brand-name" href="{% url 'home' %}">
+                    <h4 class="my-auto">Fostoria</h4>
+                </a>
+                <button class="navbar-toggler navbar-light pt-0 mt-0 pb-2" type="button" data-toggle="collapse"
+                    data-target="#navbar-custom" aria-controls="navbar-customt" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                  </button>
-                  {% include 'includes/navbar.html' %}
-                  {% include 'includes/nav-buttons-mobile.html' %}
+                </button>
+                {% include 'includes/navbar.html' %}
+                {% include 'includes/nav-buttons-mobile.html' %}
             </nav>
             {% include 'includes/nav-buttons-desktop.html' %}
         </div>
     </header>
-    
+
     {% block header %}
     {% endblock %}
 
     <div class="container-fluid mt-5" id="page-content">
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
     </div>
-    
+
     <footer class="container-fluid fixed-bottom">
-            {% include 'includes/footer.html' %}
+        {% include 'includes/footer.html' %}
     </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
-<script src="{% static 'js/custom.js' %}"></script>
-<script src="{% static 'js/stripe.js' %}"></script>
-{% if "payment" in request.path %}
-  <!-- Stripe  scripts used for handling customer payments. -->
-  <script src="https://js.stripe.com/v2"></script>
-  <script>
-    //<![CDATA[
-      Stripe.publishableKey = "{{ publishable }}";
-    //]]
-  </script>
-  <script src="{% static 'js/stripe.js' %}"></script>
-{% endif %}
+    {% include 'includes/scripts.html' %}
 
-{% load sweetify %}
-{% sweetify %}
+    {% load sweetify %}
+    {% sweetify %}
 </body>
+
 </html>
