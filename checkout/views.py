@@ -37,7 +37,12 @@ def checkout_delivery_view(request):
 
 @login_required
 def checkout_payment_view(request):
-
+    """
+    View for logged in users that are proceeding with checkout
+    to enter card payment information.
+    Renders payment form and once submit payment button clicked
+    checks its validity, displays errors.
+    """
     if request.method == 'POST':
         payment_form = PaymentForm(request.POST)
         if payment_form.is_valid():
