@@ -5,11 +5,12 @@
 {% block content %}
 <div class="container">
     <div class="row pt-5">
-        <h4 class="dark-font">Your account</h4>
+        <h4 class="dark-font">Your account:</h4>
     </div>
 
     <hr>
-    <div class="col-12 pb-5">
+    <!-- Filled in user update form that allows for user to update their details -->
+    <div class="col-sm-12 col-md-6 pb-5">
         <form method="POST" class="pb-5 px-5">
             {% csrf_token %}
             <fieldset class="form-group">
@@ -21,8 +22,5 @@
         </form>
         <hr>
     </div>
-
-</div>
-
 </div>
 {% endblock %}
