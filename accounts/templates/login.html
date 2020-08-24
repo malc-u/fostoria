@@ -1,4 +1,5 @@
 {% extends "base.html "%}
+<!-- Customisation of page & form appearance. -->
 {% load static %}
 {% load crispy_forms_tags %}
 
@@ -7,11 +8,13 @@
     <div class="row pt-5">
         <h4 class="dark-font">Login</h4>
     </div>
+    <!-- Link to registration in case user not registered yet. -->
     <div class="row">
         <p class="text-muted small">Need an account?
             <a href="{% url 'register' %}">Register here</a></p>
     </div>
     <hr>
+    <!-- Login form. -->
     <div class="col-12 pb-5">
         <form method="POST" class="pb-5 px-5">
             {% csrf_token %}
@@ -24,8 +27,6 @@
         </form>
         <hr>
     </div>
-
-</div>
 
 </div>
 {% endblock %}
