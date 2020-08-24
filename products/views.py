@@ -95,5 +95,8 @@ def product_search(request):
         }
         return render(request, "photos-search.html", context)
 
-    messages.error(request, 'Search criteria is missing, please try again.')
+    sweetify.error(
+        request,
+        title="Search criteria is missing, please try again.",
+        icon="warning")
     return redirect(reverse('all_products'))
