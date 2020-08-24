@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
-import swwetify
+import sweetify
 from .models import Product, PricingSizes
 
 
