@@ -14,7 +14,11 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required
 def checkout_delivery_view(request):
-
+    """
+    View for users to enter delivery information.
+    Renders order shipping form and once confirm button clicked
+    checks its validity.
+    """
     if request.method == 'POST':
         order_shipping_form = OrderShippingForm(request.POST)
         if order_shipping_form.is_valid():
