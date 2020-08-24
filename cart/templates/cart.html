@@ -1,4 +1,5 @@
 {% extends "base.html "%}
+<!-- Customisation of page appearance. -->
 {% load static %}
 
 {% block content %}
@@ -7,6 +8,7 @@
         <h4 class="mt-4 dark-font">Basket contents:</h4>
     </div>
     {% if cart_items %}
+    <!-- Displaying cart contents. -->
     <div class="row">
         <div class="col-12">
             <table class="table">
@@ -19,13 +21,14 @@
                             <p>Print size: {{ item.size }}</p>
                             <p>Price: £ {{ item.price }} {% if item.qty > 1 %} each {% endif %}</p>
 
-                            <form class="form" id="update-form" method="POST" action="{% url 'update_cart' item.article_id %}">
+                            <form class="form" id="update-form" method="POST"
+                                action="{% url 'update_cart' item.article_id %}">
                                 {% csrf_token %}
                                 <div class="input-group w-25" id="qty-group">
                                     <label for="id_qty_{{ item.article_id }}" class="pr-2">Quantity: </label>
-                                    <input class="form-control form-control-sm update-form-field text-right" type="number" name="qty"
-                                        value="{{ item.qty }}" min="0" max="10" data-article_id="{{ item.article_id }}"
-                                        id="id_qty_{{ item.article_id }}">
+                                    <input class="form-control form-control-sm update-form-field text-right"
+                                        type="number" name="qty" value="{{ item.qty }}" min="0" max="10"
+                                        data-article_id="{{ item.article_id }}" id="id_qty_{{ item.article_id }}">
                                     <div class="input-group-append">
                                         <button class="decrease-qty" id="decrease-qty_{{ item.article_id }}"
                                             data-article_id="{{ item.article_id }}">
@@ -42,9 +45,10 @@
                                     <input type="hidden" name="product_size" value="{{ item.size }}">
                                     {% endif %}
                                 </div>
-                                <button type="submit" class="btn border-dark mt-2 back-btn" id="update-btn">Update</button>
+                                <button type="submit" class="btn border-dark mt-2 back-btn"
+                                    id="update-btn">Update</button>
                                 <button class="btn border-danger mt-2 back-btn remove-from-cart">Remove</button>
-                                
+
                             </form>
                         </td>
                     </tr>
@@ -52,7 +56,7 @@
                     <tr>
                         <td colspan="2" class="w-100 text-right">
                             <p class="blue-color dark-font font-weight-bold py-2 pr-5">Total: £{{ total }} </p>
-                        </td>                        
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2" class="w-100 text-right">
@@ -64,6 +68,7 @@
         </div>
     </div>
     {% else %}
+    <!-- Displaying info that cart/basket is empty. -->
     <div class="row my-5 py-4">
         <div class="col-12 pt-4 text-center">
             <p class="blue-color p-2 mx-auto font-dark rounded">Your basket is empty.</p>
