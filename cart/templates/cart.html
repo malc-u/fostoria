@@ -14,50 +14,14 @@
             <table class="table">
                 {% for item in cart_items %}
                 <tbody>
-                    <tr>
-                        <td class="w-25 px-5"><img class="img-fluid" src="{{ item.product.product_image.url }}"></td>
-                        <td class="w-75 p-3">
-                            <p class="font-weight-bold">{{ item.product.title }}</p>
-                            <p>Print size: {{ item.size }}</p>
-                            <p>Price: £ {{ item.price }} {% if item.qty > 1 %} each {% endif %}</p>
-
-                            <form class="form" id="update-form" method="POST"
-                                action="{% url 'update_cart' item.article_id %}">
-                                {% csrf_token %}
-                                <div class="input-group w-25" id="qty-group">
-                                    <label for="id_qty_{{ item.article_id }}" class="pr-2">Quantity: </label>
-                                    <input class="form-control form-control-sm update-form-field text-right"
-                                        type="number" name="qty" value="{{ item.qty }}" min="0" max="10"
-                                        data-article_id="{{ item.article_id }}" id="id_qty_{{ item.article_id }}">
-                                    <div class="input-group-append">
-                                        <button class="decrease-qty" id="decrease-qty_{{ item.article_id }}"
-                                            data-article_id="{{ item.article_id }}">
-                                            <i class="fas fa-chevron-down"></i>
-                                        </button>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <button class="increase-qty" id="increase-qty_{{ item.article_id }}"
-                                            data-article_id="{{ item.article_id }}">
-                                            <i class="fas fa-chevron-up"></i>
-                                        </button>
-                                    </div>
-                                    {% if item.product.has_sizes %}
-                                    <input type="hidden" name="product_size" value="{{ item.size }}">
-                                    {% endif %}
-                                </div>
-                                <button type="submit" class="btn border-dark mt-2 back-btn"
-                                    id="update-btn">Update</button>
-                                <button class="btn border-danger mt-2 back-btn remove-from-cart">Remove</button>
-
-                            </form>
-                        </td>
-                    </tr>
-                    {% endfor %}
+                    {% include "components/basket-contents.html" %}
+                {% endfor %}
                     <tr>
                         <td colspan="2" class="w-100 text-right">
                             <p class="blue-color dark-font font-weight-bold py-2 pr-5">Total: £{{ total }} </p>
                         </td>
                     </tr>
+                    <!-- Button allowing to start proceeding with checkout. -->
                     <tr>
                         <td colspan="2" class="w-100 text-right">
                             <a class="btn p-2 border-info" href="{% url 'delivery' %}">Checkout</a>
