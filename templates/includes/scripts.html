@@ -1,0 +1,19 @@
+{% load static %}
+  <!-- Scripts required by bootstrap for handling the page. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Sweetalert script used for handling alert messages. -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
+<!-- Custom script by web developer for handling the page. -->
+<script src="{% static 'js/custom.js' %}"></script>
+<!-- Stripe  scripts used for handling customer payments. -->
+{% if "payment" in request.path %}
+  <script src="https://js.stripe.com/v2"></script>
+  <script>
+    //<![CDATA[
+      Stripe.publishableKey = "{{ publishable }}";
+    //]]
+  </script>
+  <script src="{% static 'js/stripe.js' %}"></script>
+{% endif %}
