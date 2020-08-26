@@ -51,7 +51,7 @@ def checkout_payment_view(request):
 
             try:
                 customer = request.user.email
-                charge = stripe.Charge.create(
+                stripe.Charge.create(
                     amount=int(order_total * 100),
                     currency="GBP",
                     description=customer,
