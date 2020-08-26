@@ -6,7 +6,8 @@ from .views import register_view, logout, profile_view
 urlpatterns = [
     path('register/', register_view, name="register"),
     path('login/', auth.LoginView.as_view(template_name='login.html',
-                                          redirect_authenticated_user=True),
+                                          redirect_authenticated_user=True,
+                                          extra_context={"title": 'Login Page'}),
          name="login"),
     path('logout/', logout, name="logout"),
     path('profile/', profile_view, name="profile"),
