@@ -7,4 +7,7 @@ def index(request):
 
 def about(request):
     """A vuew that returns about page"""
-    return render(request, 'about.html')
+    context = {
+        'title': 'About Page'
+    }
+    return render(request, 'about.html', context)
