@@ -30,7 +30,8 @@ def checkout_delivery_view(request):
         order_shipping_form = OrderShippingForm()
 
     context = {
-        'order_shipping_form': order_shipping_form
+        'order_shipping_form': order_shipping_form,
+        'title': 'Checkout - Shipping Details',
     }
     return render(request, "checkout-delivery.html", context)
 
