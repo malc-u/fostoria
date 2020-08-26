@@ -4,8 +4,10 @@ from django.shortcuts import render, redirect, reverse
 
 def cart_view(request):
     """A view that will render cart contents"""
-
-    return render(request, "cart.html")
+    context = {
+        "title": 'Basket Contents',
+    }
+    return render(request, "cart.html", context)
 
 def add_to_cart(request, article_id):
     """ Add a quantity of the specified product to the shopping cart
