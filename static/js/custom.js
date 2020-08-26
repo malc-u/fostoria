@@ -12,9 +12,9 @@ $('.remove-from-cart').click(function(e) {
             .attr('name', 'qty')
             .attr('value', qty)
             .appendTo('#my-form');
-        $('#update-form').submit();
-        swal.fire({text: 'Any fool can use a computer', timer: 3000})
-    
+        $('#update-form').submit(); 
+        Swal.fire({title: 'Removed !',
+        showConfirmButton: false});    
 })
 
 /*
