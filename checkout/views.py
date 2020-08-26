@@ -95,6 +95,7 @@ def checkout_payment_view(request):
 
     context = {
         'payment_form': payment_form,
+        'title': 'Checkout - Payment processing',
         'publishable': settings.STRIPE_PUBLISHABLE,
     }
     return render(request, "checkout-payment.html", context)
