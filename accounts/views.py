@@ -73,6 +73,7 @@ def profile_view(request):
 
     context = {
         'form': form,
+        "title": 'Profile Page',
     }
 
     return render(request, 'profile.html', context)
