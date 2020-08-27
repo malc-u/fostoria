@@ -10,7 +10,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 def about(request):
-    """A vuew that returns about page"""
+    """A view that returns about page"""
     context = {
         'title': 'About Page'
     }
