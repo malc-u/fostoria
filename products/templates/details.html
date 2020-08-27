@@ -1,62 +1,67 @@
-{% extends "base.html "%}
+{% extends "base.html" %}
+<!-- Customisation of page appearance. -->
 {% load static %}
 
 {% block content %}
+<!-- Detailed view of a photo/product -->
 <div class="row text-center pt-5">
 
+  <!-- Column displaying product picture -->
   <div class="col-md-6 col-sm-12 py-3">
-      <div class="display-img-box">
-        <img class="card-img" src="{{ product.product_image.url }}" alt="{{ product.title }}">
-      </div>
+    <div class="display-img-box">
+      <img class="card-img" src="{{ product.product_image.url }}" alt="{{ product.title }}">
+    </div>
   </div>
+  <!-- Column displaying product details -->
   <div class="col-md-6 col-sm-12 my-auto">
     <div class="col-12 text-center">
-        <h2>{{ product.title }}</h2>
-      </div>
+      <h2>{{ product.title }}</h2>
+    </div>
     <div class="card-body">
-        <p class="card-title">Picture was taken by Tomasz Zowada in <span class="font-weight-bold">{{ product.place }}</span>  in Poland.</p>
+      <p class="card-title">Picture was taken by Tomasz Zowada in <span
+          class="font-weight-bold">{{ product.place }}</span> in Poland.</p>
+      <p>
+        <!-- Using through table of PricingSizes model to display available sizes of the prints with the prices -->
+        <ul class="list-unstyled">All pictures are available for prints in sizes:
+          {% for priced_size in priced_sizes %}
+          <li>{{ priced_size.print_size }} - only £{{ priced_size.print_price }}
+          </li>
+          {% endfor %}
+        </ul>
         <p>
-            <ul class="list-unstyled">All pictures are available for prints in sizes:
-              {% for priced_size in priced_sizes %}
-              <li>{{ priced_size.print_size }} - only  £{{ priced_size.print_price }}
-              </li>
-              {% endfor %}
-            </ul>
-        <p>
+          <!-- Form that allows user to add displayed product/photo to the cart in chosen size
+          as presented by Chris Zielinski's ecommerce Django project - Code Institute -->
           <form type="form" method="POST" action="{% url 'add_to_cart' product.id %}">
             {% csrf_token %}
             <div class="form-row text-center">
               {% with product.has_sizes as has_sizes %}
               {% if has_sizes %}
-                  <div class="col-12">
-                      <p><strong>Size:</strong></p>
-                      <select class="form-control w-25 mx-auto" name="product_size" id='product-size-id'>
-                        <option value="A3" selected>A3</option>
-                        <option value="A2">A2</option>
-                        <option value="A1">A1</option>
-                        <option value="A0">A0</option>
-                        <option value="2A0">2A0</option>
-                      </select>
-                  </div>
+              <div class="col-12">
+                <p><strong>Size:</strong></p>
+                <select class="form-control w-25 mx-auto" name="product_size" id='product-size-id'>
+                  <option value="A3" selected>A3</option>
+                  <option value="A2">A2</option>
+                  <option value="A1">A1</option>
+                  <option value="A0">A0</option>
+                  <option value="2A0">2A0</option>
+                </select>
+              </div>
               {% endif %}
               <div class="col-12">
-                  <p class="mt-2"><strong>Quantity:</strong></p>
-                  <div class="form-group w-25 mx-auto">
-                      <div class="input-group">
-                          <input class="form-control qunantity-input" type="number" name="qty" value="1" min="1" max="5" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                      </div>
+                <p class="mt-2"><strong>Quantity:</strong></p>
+                <div class="form-group w-25 mx-auto">
+                  <div class="input-group">
+                    <input class="form-control qunantity-input" type="number" name="qty" value="1" min="1" max="5"
+                      data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                   </div>
-                  <input type="submit" class="btn blue-color dark-font font-weight-bold" value="Add to Cart">
-                  <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </div>
+                <input type="submit" class="btn blue-color dark-font font-weight-bold" value="Add to Cart">
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
               </div>
               {% endwith %}
-          </div>
+            </div>
           </form>
-
-      </div>
+    </div>
   </div>
-
-</div>
- 
 </div>
 {% endblock %}
