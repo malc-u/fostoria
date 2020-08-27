@@ -28,7 +28,7 @@ class ProductDetails(DetailView):
         context = super(ProductDetails, self).get_context_data(**kwargs)
         priced_sizes = PricingSizes.objects.all()
         context['priced_sizes'] = priced_sizes
-        context['title'] = "- Lakes & Seas Gallery"
+        context['title'] = "Product Details Page"
         return context
 
 
@@ -91,7 +91,7 @@ def product_search(request):
         context = {
             'products': products,
             'query': query,
-            'title': "- Photos search",
+            'title': "Photos search",
         }
         return render(request, "photos-search.html", context)
 
