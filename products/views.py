@@ -16,6 +16,7 @@ class Products(ListView):
     def get_context_data(self, **kwargs):
         context = super(Products, self).get_context_data(**kwargs)
         context['group'] = "Gallery"
+        context['title'] = "Gallery/Portfolio"
         return context
 
 class ProductDetails(DetailView):
