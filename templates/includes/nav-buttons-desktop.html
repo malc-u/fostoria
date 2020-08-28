@@ -1,5 +1,6 @@
 <!--This is written after inspiration taken from the content of the Code Institute course module Project - Boutique Ado.-->
 <div id="top-buttons" class="pt-lg-2 d-none d-lg-flex col-lg-3">
+    <!-- Button for My account section-->
     <div class="col-12 col-lg-6 my-auto">
         <a class="nav-link" href="#" id="my-account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
@@ -9,6 +10,7 @@
                     {% endif %}</p>
             </div>
         </a>
+        <!-- Dropdown menu to My account button-->
         <div class="dropdown-menu border-0" aria-labelledby="my-account">
             {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
@@ -22,8 +24,9 @@
             {% endif %}
         </div>
     </div>
+    <!-- Button for cart -->
     <div class="col-12 col-lg-6 my-auto">
-        <a class="{% if grand_total %}font-weight-bold{% else %}dark-font{% endif %} nav-link" href="{% url 'cart_view' %}">
+        <a class="{% if total %}font-weight-bold{% else %}dark-font{% endif %} nav-link" href="{% url 'cart_view' %}">
             <div class="text-center">
                 <i class="fas fa-shopping-cart pb-1"></i>
                     <p class="m-0">{% if total %}
