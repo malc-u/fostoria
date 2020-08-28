@@ -1,6 +1,7 @@
 <!--This is written after inspiration taken from the content of the Code Institute 
     course module Project - Boutique Ado.-->
 <li class="list-inline-item dropdown pt-2">
+    <!-- Button for My account section-->
     <a class="nav-link d-block d-lg-none" href="#" id="my-account" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
         <div class="text-center {% if not total %} pb-2 {% endif %}">
@@ -10,6 +11,7 @@
                 {% endif %}</p>
         </div>
     </a>
+    <!-- Dropdown menu to My account button-->
     <div class="dropdown-menu border-0" aria-labelledby="my-account">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
@@ -23,8 +25,9 @@
         {% endif %}
     </div>
 </li>
+<!-- Button for cart -->
 <li class="list-inline-item pt-2">
-    <a class="{% if grand_total %}font-weight-bold{% else %}dark-font{% endif %} nav-link d-block d-lg-none"
+    <a class="{% if total %}font-weight-bold{% else %}dark-font{% endif %} nav-link d-block d-lg-none"
         href="{% url 'cart_view' %}">
         <div class="text-center pt-1">
             <i class="fas fa-shopping-cart"></i>
