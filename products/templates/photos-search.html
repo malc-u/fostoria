@@ -1,9 +1,12 @@
-{% extends "base.html "%}
+{% extends "base.html" %}
+<!-- Customisation of page appearance. -->
 {% load static %}
 
+<!-- Page title. -->
 {% block title_extension %} {% if title %}{{ title }} {% endif %} {% endblock %}
 
 {% block content %}
+<!-- Header content depending on the search term -->
 <div class="row pt-5">
   <div class="col-12 pt-3 text-center">
     {% if query %}
@@ -11,19 +14,18 @@
     {% endif %}
   </div>
 </div>
+<!-- Search result list -->
 <div class="row mt-4 text-center">
   {% for product in products %}
   <div class="col-lg-3 col-md-4 align-self-end">
     <div id="product-card" class="align-items-center justify-content-around my-2">
       <div id="card-image-box" class="align-items-center justify-content-center d-flex">
-          <a href="{{ product.get_absolute_url }}">
-              <img class="card-img" src="{{ product.product_image.url }}" alt="{{ product.title }}">
-          </a> 
+        <a href="{{ product.get_absolute_url }}">
+          <img class="card-img" src="{{ product.product_image.url }}" alt="{{ product.title }}">
+        </a>
       </div>
-  </div>
-   
+    </div>
   </div>
   {% endfor %}
 </div>
-
 {% endblock %}
