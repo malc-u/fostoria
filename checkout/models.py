@@ -21,6 +21,12 @@ class OrderShippingDetails(models.Model):
     country = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
 
+    def _generate_order_number(self):
+        """Generating order number - function presented by Chris Zielinski during Code Insitute course"""
+  
+        return uuid.uuid4().hex.upper()
+
+
     def __str__(self):
         return self.order_number
         
