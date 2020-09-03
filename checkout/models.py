@@ -1,4 +1,5 @@
 """Models of checkout app"""
+import uuid
 import datetime
 from django.db import models
 from django.contrib.auth.models import User
@@ -9,6 +10,7 @@ class OrderShippingDetails(models.Model):
     """
     Model storing all shipping details related to the order - customer, address, phone etc.
     """
+    order_number = models.CharField(max_length=32, null=False, editable=False, unique=True)
     customer = models.ForeignKey(User, on_delete=models.PROTECT)
     full_name = models.CharField(max_length=100, blank=False)
     first_address_line = models.CharField(max_length=75, blank=False)
@@ -20,7 +22,8 @@ class OrderShippingDetails(models.Model):
     phone_number = models.CharField(max_length=20, blank=False)
 
     def __str__(self):
-        return f"{self.id}-{self.customer}"
+        return self.order_number
+        
 
 class OrderLineDetail(models.Model):
     """ Model containing all order details """
