@@ -22,9 +22,21 @@ class OrderShippingDetails(models.Model):
     phone_number = models.CharField(max_length=20, blank=False)
 
     def _generate_order_number(self):
-        """Generating order number - function presented by Chris Zielinski during Code Insitute course"""
+        """
+        Generating order number - function presented by Chris Zielinski during Code Insitute course
+        """
   
         return uuid.uuid4().hex.upper()
+
+    
+    def save(self, *args, **kwargs):
+        """
+        Overriding save method to set the order number if it hasn't been set already.
+        Function presented during Code Institute Course by Chris Zieinski
+        """
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+        super().save(*args, **kwargs)
 
 
     def __str__(self):
