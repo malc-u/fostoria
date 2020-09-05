@@ -87,6 +87,7 @@ def checkout_payment_view(request):
                     request,
                     title="Payment processed sucessfully. Thank you.",
                     icon="success")
+                save_order_record(request)
                 del request.session['cart']
                 return redirect(reverse('all_products'))
 
