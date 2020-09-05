@@ -91,7 +91,7 @@ def checkout_payment_view(request):
                     icon="success")
                 save_order_record(request)
                 del request.session['cart']
-                return redirect(reverse('all_products'))
+                return redirect(reverse('profile'))
 
     else:
         payment_form = PaymentForm()
