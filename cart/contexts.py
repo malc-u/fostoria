@@ -31,7 +31,7 @@ def cart_contents(request):
 
             product_count += qty
             total += qty * price
-        
+
             cart_items.append({
                 'article_id': article_id,
                 'qty': qty,
