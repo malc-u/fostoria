@@ -111,3 +111,4 @@ def save_order_record(request):
             article_id = cart_item['article_id']
             product = get_object_or_404(Product, pk=article_id)
             qty = cart_item['qty']
+            size = cart_item['size']
