@@ -118,4 +118,5 @@ def save_order_record(request):
                 order_shipping=OrderShippingDetails.objects.filter(
                     customer=request.user).last(),
                 product=product,
+                quantity=qty,
             )
