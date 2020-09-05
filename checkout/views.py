@@ -109,19 +109,19 @@ def save_order_record(request):
 
     cart_items = cart_contents(request)['cart_items']
 
-        for cart_item in cart_items:
-            article_id = cart_item['article_id']
-            product = get_object_or_404(Product, pk=article_id)
-            qty = cart_item['qty']
-            size = cart_item['size']
-            total = cart_item['qty'] * cart_item['price']
+    for cart_item in cart_items:
+        article_id = cart_item['article_id']
+        product = get_object_or_404(Product, pk=article_id)
+        qty = cart_item['qty']
+        size = cart_item['size']
+        total = cart_item['qty'] * cart_item['price']
 
-            order_line_detail = OrderLineDetail(
-                order_shipping=OrderShippingDetails.objects.filter(
-                    customer=request.user).last(),
-                product=product,
-                quantity=qty,
-                total=total,
-                size=size,
-            )
-            order_line_detail.save()
+        order_line_detail = OrderLineDetail(
+            order_shipping=OrderShippingDetails.objects.filter(
+                customer=request.user).last(),
+            product=product,
+            quantity=qty,
+            total=total,
+            size=size,
+        )
+        order_line_detail.save()
