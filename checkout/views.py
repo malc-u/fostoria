@@ -120,4 +120,5 @@ def save_order_record(request):
                 product=product,
                 quantity=qty,
                 total=total,
+                size=size,
             )
