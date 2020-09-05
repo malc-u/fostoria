@@ -113,3 +113,5 @@ def save_order_record(request):
             qty = cart_item['qty']
             size = cart_item['size']
             total = cart_item['qty'] * cart_item['price']
+
+            order_detail = OrderLineDetail()
