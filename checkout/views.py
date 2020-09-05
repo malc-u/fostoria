@@ -116,5 +116,6 @@ def save_order_record(request):
 
             order_line_detail = OrderLineDetail(
                 order_shipping=OrderShippingDetails.objects.filter(
-                customer=request.user).last(),
+                    customer=request.user).last(),
+                product=product,
             )
