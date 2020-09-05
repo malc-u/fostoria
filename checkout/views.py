@@ -122,3 +122,4 @@ def save_order_record(request):
                 total=total,
                 size=size,
             )
+            order_line_detail.save()
