@@ -119,4 +119,5 @@ def save_order_record(request):
                     customer=request.user).last(),
                 product=product,
                 quantity=qty,
+                total=total,
             )
