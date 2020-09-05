@@ -77,6 +77,7 @@ def profile_view(request):
     context = {
         'form': form,
         'title': 'Profile Page',
+        'order_line_record': order_line_record,
     }
 
     return render(request, 'profile.html', context)
