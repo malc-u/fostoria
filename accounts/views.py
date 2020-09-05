@@ -59,6 +59,8 @@ def profile_view(request):
     data.
     """
     user = User.objects.get(username=request.user)
+    order_line_record = OrderLineDetail.objects.filter(
+        order_shipping__customer_id=user.id).order_by("-date_ordered")
 
     if request.method == 'POST':
         form = UserUpdateForm(request.POST, instance=user)
