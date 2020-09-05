@@ -23,7 +23,7 @@ class OrderShippingDetails(models.Model):
 
     def __str__(self):
 
-        return f'{self.id}-{self.order_number}'
+        return f'{self.id}-{self.full_name}'
         
 
 class OrderLineDetail(models.Model):
@@ -33,6 +33,7 @@ class OrderLineDetail(models.Model):
     quantity = models.IntegerField(blank=False)
     date_ordered = models.DateField(default=datetime.date.today, blank=True)
     total = models.IntegerField(blank=False)
+    size = models.CharField(max_length=3)
 
     def __str__(self):
-        return f'{self.quantity} - {self.product.title} - {self.date_ordered} - £{self.total}'
+        return f'{self.quantity} - {self.product.title} -{self.size}- {self.date_ordered} - £{self.total}'
