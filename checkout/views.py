@@ -109,4 +109,4 @@ def save_order_record(request):
 
         for cart_item in cart_items:
             article_id = cart_item['article_id']
-           
+            product = get_object_or_404(Product, pk=article_id)
