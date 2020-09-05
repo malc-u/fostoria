@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 import stripe
 import sweetify
 from cart.contexts import cart_contents
+from products.models import Product
 from .forms import OrderShippingForm, PaymentForm
 
 
