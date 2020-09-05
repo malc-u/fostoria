@@ -99,3 +99,9 @@ def checkout_payment_view(request):
         'publishable': settings.STRIPE_PUBLISHABLE,
     }
     return render(request, "checkout-payment.html", context)
+
+def save_order_record(request):
+    """Creates the order_record that will be 
+    displayed in user profile"""
+
+    
