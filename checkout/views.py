@@ -114,4 +114,7 @@ def save_order_record(request):
             size = cart_item['size']
             total = cart_item['qty'] * cart_item['price']
 
-            order_detail = OrderLineDetail()
+            order_detail = OrderLineDetail(
+                order_shipping=OrderShippingDetails.objects.filter(
+                customer=request.user).last(),
+            )
