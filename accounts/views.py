@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
 import sweetify
+from checkout.models import OrderLineDetail
 from .forms import UserRegistrationForm, UserUpdateForm
 
 
@@ -18,8 +19,8 @@ def register_view(request):
     """
     if request.user.is_authenticated:
         sweetify.info(request,
-                     title="You are already logged in.",
-                     icon="info")
+                      title="You are already logged in.",
+                      icon="info")
         return redirect('home')
 
     if request.method == 'POST':
@@ -27,8 +28,8 @@ def register_view(request):
         if form.is_valid():
             form.save()
             sweetify.info(request,
-                             title="You have been successfully registered.",
-                             icon="success")
+                          title="You have been successfully registered.",
+                          icon="success")
             return redirect('login')
     else:
         form = UserRegistrationForm()
@@ -42,7 +43,7 @@ def register_view(request):
 def logout(request):
     """
     Function that logs user out and redirects
-    to the home page. 
+    to the home page.
     """
     auth.logout(request)
     sweetify.info(request, icon='success',
@@ -65,7 +66,7 @@ def profile_view(request):
             form.save()
             sweetify.success(
                 request, icon='success',
-                  title="Your details have been updated."
+                title="Your details have been updated."
             )
             return redirect('profile')
     else:
@@ -73,9 +74,8 @@ def profile_view(request):
 
     context = {
         'form': form,
-        "title": 'Profile Page',
+        'title': 'Profile Page',
     }
 
     return render(request, 'profile.html', context)
-
     
