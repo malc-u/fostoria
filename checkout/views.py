@@ -107,4 +107,6 @@ def save_order_record(request):
 
     cart_items = cart_contents(request)['cart_items']
 
-    
+        for cart_item in cart_items:
+        
+           
