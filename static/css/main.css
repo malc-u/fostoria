@@ -136,3 +136,7 @@ a:hover {
 .opacity {
   background-color: rgba(255, 255, 255, 0);
 }
+
+#checkout-btn-text {
+  letter-spacing: 2px;
+}
