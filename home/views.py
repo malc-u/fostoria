@@ -8,10 +8,4 @@ def index(request):
         'title': 'Index Page'
     }
     return render(request, 'index.html', context)
-
-def about(request):
-    """A view that returns about page"""
-    context = {
-        'title': 'About Page'
-    }
-    return render(request, 'about.html', context)
+    
