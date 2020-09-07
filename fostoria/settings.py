@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'checkout',
     'accounts',
     'about',
+    'contact',
 
     #Other
     'sweetify',
