@@ -14,17 +14,24 @@
 
     <hr>
     <!-- Filled in user update form that allows for user to update their details -->
-    <div class="col-sm-12 col-md-6 pb-5">
-        <form method="POST" class="pb-5 px-5">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group mr-5">
-                <button class="btn blue-color m-0 float-right" type="submit">Update</button>
-            </div>
-        </form>
-        <hr>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 pb-5">
+            <form method="POST" class="pb-5 px-5">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group mr-5">
+                    <button class="btn blue-color m-0 float-right" type="submit">Update</button>
+                </div>
+            </form>
+            <hr>
+        </div>
+        <div class="col-sm-12 col-md-6 pb-5">
+            {% if order_line_record %}
+
+            {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}
