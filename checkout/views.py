@@ -103,9 +103,9 @@ def checkout_payment_view(request):
     }
     return render(request, "checkout-payment.html", context)
 
-# Helper function for profile_view and chekcout process 
+# Helper function for profile_view and chekcout process
 def save_order_record(request):
-    """Creates the order_record that will be
+    """Creates the order_line_record that will be
     displayed in user profile"""
 
     cart_items = cart_contents(request)['cart_items']
@@ -126,3 +126,4 @@ def save_order_record(request):
             size=size,
         )
         order_line_detail.save()
+        
