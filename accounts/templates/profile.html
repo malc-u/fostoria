@@ -40,6 +40,17 @@
                         <th scope="col py-1">Date Ordered</th>
                     </tr>
                 </thead>
+                <tbody>
+                    {% for item in order_line_record %}
+                    <tr class="text-center">
+                        <th scope="row">{{ item.product }}</th>
+                        <th scope="row">{{ item.size }}</th>
+                        <th scope="row">{{ item.quantity }}</th>
+                        <th scope="row">£ {{ item.total }}</th>
+                        <th scope="row">{{ item.date_ordered }}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
             </table>
             {% endif %}
         </div>
