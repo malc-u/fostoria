@@ -31,7 +31,15 @@
             {% if order_line_record %}
             <!-- User orders displayed in the table -->
             <table class="w-100 table-striped table-bordered mb-5">
-
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col py-1">Print Name</th>
+                        <th scope="col py-1">Print Size</th>
+                        <th scope="col py-1">Quantity Ordered</th>
+                        <th scope="col py-1">Total Price</th>
+                        <th scope="col py-1">Date Ordered</th>
+                    </tr>
+                </thead>
             </table>
             {% endif %}
         </div>
