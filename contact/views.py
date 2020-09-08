@@ -13,6 +13,7 @@ def contact(request):
         contact_form = ContactForm()
     else:
         contact_form = ContactForm(request.POST)
+
         if contact_form.is_valid():
             subject = request.POST.get('subject', '')
             from_email = request.POST.get('from_email', '')
@@ -20,6 +21,7 @@ def contact(request):
 
             try:
                 send_mail(subject, message, from_email, [os.environ.get("EMAIL_HOST")])
+
             except BadHeaderError:
                 sweetify.error(
                     request,
@@ -31,12 +33,11 @@ def contact(request):
                     title="Message sent.",
                     icon="success")
                 return redirect(reverse('contact'))
-
+    
     context = {
         'contact_form': contact_form,
         'title': 'Contact'
     }
-
     return render(
         request,
         "contact.html",
