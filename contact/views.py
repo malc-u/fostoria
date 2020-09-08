@@ -24,6 +24,11 @@ def contact(request):
                     request,
                     title="Server communication error, please try again.",
                     icon="warning")
+            else:
+                sweetify.success(
+                    request,
+                    title="Message sent.",
+                    icon="success")
 
     context = {
         'contact_form': contact_form,
