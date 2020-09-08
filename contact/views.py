@@ -1,6 +1,6 @@
 """Views of the contact app"""
 from django.core.mail import send_mail, BadHeaderError
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 import sweetify
 from .forms import ContactForm
 
@@ -29,6 +29,7 @@ def contact(request):
                     request,
                     title="Message sent.",
                     icon="success")
+                return redirect(reverse('contact'))
 
     context = {
         'contact_form': contact_form,
