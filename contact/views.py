@@ -11,7 +11,7 @@ def contact(request):
     else:
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
-            subject = 
+            subject = request.POST.get('subject', '')
             from_email = 
             message = 
 
