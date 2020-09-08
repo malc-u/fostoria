@@ -13,7 +13,7 @@ def contact(request):
         if contact_form.is_valid():
             subject = request.POST.get('subject', '')
             from_email = request.POST.get('from_email', '')
-            message = 
+            message = request.POST.get('message', '')
 
     context = {
         'contact_form': contact_form,
