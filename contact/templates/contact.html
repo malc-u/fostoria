@@ -2,3 +2,6 @@
 <!-- Customisation of page & form appearance. -->
 {% load static %}
 {% load crispy_forms_tags %}
+
+<!-- Page title. -->
+{% block title_extension %} {% if title %}{{ title }} {% endif %} {% endblock %}
