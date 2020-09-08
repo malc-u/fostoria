@@ -15,6 +15,9 @@ def contact(request):
             from_email = request.POST.get('from_email', '')
             message = request.POST.get('message', '')
 
+            try:
+                send_mail(subject, message, from_email, [os.environ.get("EMAIL_HOST")])
+
     context = {
         'contact_form': contact_form,
     }
