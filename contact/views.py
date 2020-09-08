@@ -18,6 +18,7 @@ def contact(request):
 
             try:
                 send_mail(subject, message, from_email, [os.environ.get("EMAIL_HOST")])
+            except BadHeaderError:
 
     context = {
         'contact_form': contact_form,
