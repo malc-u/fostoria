@@ -1,4 +1,5 @@
 """Views of the contact app"""
+import os
 from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import render, redirect, reverse
 import sweetify
