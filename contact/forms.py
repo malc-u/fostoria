@@ -7,7 +7,10 @@ class ContactForm(forms.Form):
     let customer to send message
     """
     from_email = forms.EmailField(required=True)
-    subject = forms.CharField(required=True)
+    subject = forms.CharField(required=True,
+                              label="Message subject:",
+                              widget=forms.TextInput(attrs={
+                                  'placeholder': "Enter Message Subject"}))
     message = forms.CharField(widget=forms.Textarea(attrs={
         'placeholder': "Enter Your Message Here"}),
                               label="Message:",
