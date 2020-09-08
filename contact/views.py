@@ -33,6 +33,7 @@ def contact(request):
 
     context = {
         'contact_form': contact_form,
+        'title': 'Contact'
     }
 
     return render(
