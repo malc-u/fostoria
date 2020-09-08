@@ -153,6 +153,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Sweetalert version for sweetify function.
 SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"
 
+# Crispy Forms desired style.
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 # Stripe required keys
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.environ.get('STRIPE_SECRET')
