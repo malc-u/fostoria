@@ -80,7 +80,6 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                ## required by `allauth` - django-allauth.readthedocs.io/en/latest/installation.html
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -151,9 +150,17 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Defining sweetalert version for sweetify function.
+# Sweetalert version for sweetify function.
 SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"
 
 # Stripe required keys
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.environ.get('STRIPE_SECRET')
+
+# Credentials for contact form page to function, send emails.
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST")
+EMAIL_HOST_PASSWORD = os.environ.get("HOST_PASS")
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
