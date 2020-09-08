@@ -1,5 +1,6 @@
 """Views of the contact app"""
 from django.shortcuts import render
+from .forms import ContactForm
 
 def contact(request):
     """
