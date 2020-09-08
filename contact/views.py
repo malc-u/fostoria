@@ -9,6 +9,10 @@ def contact(request):
     if request.method == 'GET':
         contact_form = ContactForm()
 
+    context = {
+        'contact_form': contact_form,
+    }
+
     return render(
         request,
         "contact.html",
