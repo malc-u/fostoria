@@ -16,7 +16,7 @@ def contact(request):
         if contact_form.is_valid():
             subject = request.POST.get('subject', '')
             from_email = request.POST.get('from_email', '')
-            message = request.POST.get('message', '')
+            message = request.POST.get('message', '') + "\n\n Message received from: " + from_email
 
             try:
                 send_mail(subject, message, from_email, [os.environ.get("EMAIL_HOST")])
