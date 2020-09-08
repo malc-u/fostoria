@@ -19,6 +19,10 @@ def contact(request):
             try:
                 send_mail(subject, message, from_email, [os.environ.get("EMAIL_HOST")])
             except BadHeaderError:
+                sweetify.error(
+                    request,
+                    title="Server communication error, please try again.",
+                    icon="warning")
 
     context = {
         'contact_form': contact_form,
