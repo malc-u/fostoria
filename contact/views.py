@@ -1,5 +1,5 @@
 """Views of the contact app"""
-from django.core.mail import send_mail
+from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import render
 from .forms import ContactForm
 
