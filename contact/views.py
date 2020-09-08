@@ -10,6 +10,10 @@ def contact(request):
         contact_form = ContactForm()
     else:
         contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            subject = 
+            from_email = 
+            message = 
 
     context = {
         'contact_form': contact_form,
