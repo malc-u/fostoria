@@ -6,7 +6,11 @@ class ContactForm(forms.Form):
     Contact form that is rendered on contact.html and will
     let customer to send message
     """
-    from_email = forms.EmailField(required=True)
+    from_email = forms.EmailField(required=True,
+                                  label="E-mail address:",
+                                  widget=forms.TextInput(attrs={
+                                      'placeholder': "Your Email Address",
+                                      'autocomplete': "on"}))
     subject = forms.CharField(required=True,
                               label="Message subject:",
                               widget=forms.TextInput(attrs={
