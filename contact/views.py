@@ -8,6 +8,8 @@ def contact(request):
     """
     if request.method == 'GET':
         contact_form = ContactForm()
+    else:
+        contact_form = ContactForm(request.POST)
 
     context = {
         'contact_form': contact_form,
