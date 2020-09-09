@@ -6,6 +6,7 @@
 {% block title_extension %} {% if title %}{{ title }} {% endif %} {% endblock %}
 
 {% block content %}
+<div class="container-fluid mt-5 mb-5 pb-5" id="page-content">
 <!-- Header content depending on the search term -->
 <div class="row pt-4">
   <div class="col-12 text-center">
@@ -27,5 +28,6 @@
     </div>
   </div>
   {% endfor %}
+</div>
 </div>
 {% endblock %}
