@@ -1,1 +1,1 @@
-web: gunicorn fostoria.wsgi.application
+web: gunicorn fostoria.wsgi:application
