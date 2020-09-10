@@ -36,4 +36,4 @@ class OrderLineDetail(models.Model):
     size = models.CharField(max_length=3)
 
     def __str__(self):
-        return f'{self.quantity} - {self.product.title} -{self.size}- {self.date_ordered} - £{self.total}'
+        return f'{self.quantity} - {self.date_ordered} - £{self.total}'
