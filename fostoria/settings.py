@@ -32,7 +32,8 @@ if os.getenv("HEROKU"):
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['fostoria.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ["localhost", "*.herokuapp.com",
+                 "fostoria.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition
@@ -107,8 +108,9 @@ WSGI_APPLICATION = 'fostoria.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if "DATABASE_URL" in os.environ:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+if "DATABASE_URL" in os.environ and os.getenv("HEROKU"):
+    DATABASES = {'default': dj_database_url.parse(
+        os.environ.get('DATABASE_URL'))}
 else:
     DATABASES = {
         'default': {
