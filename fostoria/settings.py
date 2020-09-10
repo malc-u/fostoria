@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     #Other
     'sweetify',
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
