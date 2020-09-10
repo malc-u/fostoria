@@ -1,4 +1,4 @@
- """Setting S3 to store static files""" 
+"""Setting S3 to store static files"""
 from django.conf import settings
 from storages.backends.s3boto3 import S3Boto3Storage
 
