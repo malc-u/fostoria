@@ -39,4 +39,5 @@ stripe==2.50.0
 sweetify==2.0.0
 toml==0.10.1
 urllib3==1.25.9
+whitenoise==5.2.0
 wrapt==1.12.1
