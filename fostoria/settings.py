@@ -176,7 +176,7 @@ AWS_S3_FILE_OVERWRITE = False
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-if os.getenv("HEROKU"):
+if "HEROKU" in os.environ:
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     STATIC_URL = "/staticfiles/"
@@ -196,12 +196,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-# Sweetalert version for sweetify function.
-SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"
-
-# Crispy Forms desired style.
-CRISPY_TEMPLATE_PACK = "bootstrap4"
-
 # Stripe required keys
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.environ.get('STRIPE_SECRET')
@@ -213,3 +207,6 @@ EMAIL_HOST_USER = os.environ.get("EMAIL_HOST")
 EMAIL_HOST_PASSWORD = os.environ.get("HOST_PASS")
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
+
+# Sweetalert version for sweetify function.
+SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"
