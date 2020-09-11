@@ -111,8 +111,8 @@ WSGI_APPLICATION = 'fostoria.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.parse(
-    os.environ.get('DATABASE_URL'))}
+# https://devcenter.heroku.com/articles/heroku-postgresql#heroku-postgres-ssl
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 #if "DATABASE_URL" in os.environ and os.getenv("HEROKU"):
 #   DATABASES = {'default': dj_database_url.parse(
@@ -217,3 +217,4 @@ EMAIL_HOST_USER = os.environ.get("EMAIL_HOST")
 EMAIL_HOST_PASSWORD = os.environ.get("HOST_PASS")
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
+
