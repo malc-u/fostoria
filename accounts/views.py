@@ -40,7 +40,7 @@ def register_view(request):
     }
     return render(request, 'register.html', context)
 
-def logout(request):
+def logout_view(request):
     """
     Function that logs user out and redirects
     to the home page.
