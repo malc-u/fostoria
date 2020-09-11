@@ -24,15 +24,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#if os.getenv("HEROKU"):
-#    DEBUG = False
-#else:
-#   DEBUG = True
-
-Debug = True
+if "HEROKU" in os.environ:
+    DEBUG = True
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "*.herokuapp.com",
                  "fostoria.herokuapp.com", "127.0.0.1", "127.0.0.1:8000"]
@@ -111,22 +109,20 @@ WSGI_APPLICATION = 'fostoria.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.parse(
-    os.environ.get('DATABASE_URL'))}
 
-# https://devcenter.heroku.com/articles/heroku-postgresql#heroku-postgres-ssl
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
-#if "DATABASE_URL" in os.environ and os.getenv("HEROKU"):
-#   DATABASES = {'default': dj_database_url.parse(
-#   os.environ.get('DATABASE_URL'))}
-#else:
-#    DATABASES = {
-#       'default': {
-#           'ENGINE': 'django.db.backends.sqlite3',
-#            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#        }
-#    }
+if "DATABASE_URL" in os.environ and "HEROKU" in os.environ:
+    DATABASES = {'default': dj_database_url.parse(
+        os.environ.get('DATABASE_URL'))}
+    # https://devcenter.heroku.com/articles/heroku-postgresql#heroku-postgres-ssl
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
@@ -175,8 +171,8 @@ AWS_S3_OBJECT_PARAMETERS = {
 # Configuration of the bucket
 AWS_STORAGE_BUCKET_NAME = "fostoria"
 AWS_S3_REGION_NAME = "eu-west-2"
-AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
 AWS_DEFAULT_ACL = None
 AWS_S3_FILE_OVERWRITE = False
@@ -220,4 +216,3 @@ EMAIL_HOST_USER = os.environ.get("EMAIL_HOST")
 EMAIL_HOST_PASSWORD = os.environ.get("HOST_PASS")
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-
