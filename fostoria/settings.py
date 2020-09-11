@@ -110,12 +110,11 @@ WSGI_APPLICATION = 'fostoria.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-
 if "DATABASE_URL" in os.environ and "HEROKU" in os.environ:
     DATABASES = {'default': dj_database_url.parse(
         os.environ.get('DATABASE_URL'))}
-    # https://devcenter.heroku.com/articles/heroku-postgresql#heroku-postgres-ssl
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+"""   # https://devcenter.heroku.com/articles/heroku-postgresql#heroku-postgres-ssl
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)"""
 else:
     DATABASES = {
         'default': {
