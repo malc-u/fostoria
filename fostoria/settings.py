@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
 
     # Custom
     'home',
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     #Other
     'sweetify',
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
