@@ -70,6 +70,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'fostoria.urls'
@@ -108,10 +109,12 @@ WSGI_APPLICATION = 'fostoria.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+DATABASES = {'default': dj_database_url.parse(
+    os.environ.get('DATABASE_URL'))}
 
 if "DATABASE_URL" in os.environ and os.getenv("HEROKU"):
-    DATABASES = {'default': dj_database_url.parse(
-        os.environ.get('DATABASE_URL'))}
+   DATABASES = {'default': dj_database_url.parse(
+    os.environ.get('DATABASE_URL'))}
 else:
     DATABASES = {
         'default': {
