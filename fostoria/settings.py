@@ -33,7 +33,7 @@ else:
     DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "*.herokuapp.com",
-                 "fostoria.herokuapp.com", "127.0.0.1"]
+                 "fostoria.herokuapp.com", "127.0.0.1", "127.0.0.1:8000"]
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
+
 
     # Custom
     'home',
@@ -99,8 +99,9 @@ TEMPLATES = [
 ]
 
 
-LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/accounts/profile/'
+# URLs to redirect user requiring login & upon login success.
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'profile'
 
 WSGI_APPLICATION = 'fostoria.wsgi.application'
 
