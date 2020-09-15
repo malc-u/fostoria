@@ -48,6 +48,11 @@ There are only several subtle colors to contemplate main content and distingiush
 
 ### Wireframes
 
+Initial wireframes can be seen by clicking the following:
+- [desktop](https://github.com/malc-u/fostoria/tree/master/wireframes/desktop)
+- [tablet](https://github.com/malc-u/fostoria/tree/master/wireframes/tablet)
+- [mobile](https://github.com/malc-u/fostoria/tree/master/wireframes/mobile)
+
 ## Features
 
 ### Existing Features
