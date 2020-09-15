@@ -8,7 +8,7 @@
         <!-- Displaying qty update form -->
         <form class="form" id="update-form" method="POST" action="{% url 'update_cart' item.article_id %}">
             {% csrf_token %}
-            <div class="input-group w-25" id="qty-group">
+            <div class="input-group w-50" id="qty-group">
                 <label for="id_qty_{{ item.article_id }}" class="pr-2">Quantity: </label>
                 <input class="form-control form-control-sm update-form-field text-right" type="number" name="qty"
                     value="{{ item.qty }}" min="0" max="10" data-article_id="{{ item.article_id }}"
