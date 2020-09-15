@@ -1,16 +1,22 @@
 # FOSTORIA
 
-Landscape photography of Poland with webshop. Photographs were taken by Tomasz Zowada who has passion for photography and love for landscape of Upper Silesia region as well as Poland.
+Landscape photography of Poland with webshop (selling photo prints). Photographs by Tomasz Zowada - based in Upper Silesia (Poland).
 
 ## UX
 
+### Taget Audience
+
+- people that like work of the artist
+- people that got here via artist's social media
+- people that like landscape photography
+- people that like Upper Silesian landscape
+- people that are looking to purchase landscape photo print
+
 ### User Stories
 
-As a website user I need to be presented with possibility of:
-- easy registration that will allow me to open personal account
-- easy login that will allow me to acces my profile and personal information
-- easy logout that will allow me to stop unauthoristed access to my profile and account information
-- easy and secure password recovery that will allow me to recover my  access when I forget the password
+### Design choices
+
+### Wireframes
 
 ## Features
 
