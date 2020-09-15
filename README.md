@@ -43,6 +43,9 @@ Landscape photography of Poland with webshop (selling photo prints). Photographs
 
 ### Design choices
 
+The color scheme that was chosen is a light theme that would not be overwhelming and will nicely present photos.
+There are only several subtle colors to contemplate main content and distingiush items on the page. However first and foremost the intention was to emphasize the work of the artist and not web design. Page was designed in such way to be light, plain and simple thus showcasing landcapes captured on photographs.
+
 ### Wireframes
 
 ## Features
