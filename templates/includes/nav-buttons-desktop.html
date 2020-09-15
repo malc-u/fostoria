@@ -5,9 +5,7 @@
         <a class="nav-link" href="#" id="my-account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <i class="fas fa-user-alt fa-lg {% if total %} pt-2 {% endif %}"></i>
-                <p class="m-0">{% if total %}
-                    My account
-                    {% endif %}</p>
+
             </div>
         </a>
         <!-- Dropdown menu to My account button-->
@@ -23,7 +21,7 @@
         </div>
     </div>
     <!-- Button for cart -->
-    <div class="col-12 col-lg-6 my-auto pr-2">
+    <div class="col-12 col-lg-6 my-auto">
         <a class="{% if total %}font-weight-bold{% else %}dark-font{% endif %} nav-link" href="{% url 'cart_view' %}">
             <div class="text-center">
                 <i class="fas fa-shopping-cart pb-1"></i>

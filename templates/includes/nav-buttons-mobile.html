@@ -6,9 +6,7 @@
         aria-expanded="false">
         <div class="text-center {% if not total %} pb-2 {% endif %}">
             <i class="fas fa-user-alt fa-lg pt-2"></i>
-            <p>{% if total %}
-                My account
-                {% endif %}</p>
+
         </div>
     </a>
     <!-- Dropdown menu to My account button-->
@@ -24,7 +22,7 @@
     </div>
 </li>
 <!-- Button for cart -->
-<li class="list-inline-item pt-2 pr-1">
+<li class="list-inline-item pt-2">
     <a class="{% if total %}font-weight-bold{% else %}dark-font{% endif %} nav-link d-block d-lg-none"
         href="{% url 'cart_view' %}">
         <div class="text-center pt-1">
