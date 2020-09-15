@@ -35,10 +35,12 @@ class PaymentForm(forms.Form):
     YEAR_CHOICES = [(i, i) for i in range(2020, 2035)]
 
     credit_card_number = forms.CharField(
+        max_length=16,
         label='Credit card number',
         required=False
     )
     cvv = forms.CharField(
+        max_length=3,
         label='Security code (CVV)',
         required=False
     )
