@@ -149,3 +149,13 @@ a:hover {
 #checkout-btn-text {
   letter-spacing: 2px;
 }
+
+.footer-text, .fab {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 992px) {
+  .footer-text, .fab {
+    font-size: 0.55rem;
+  }
+}
