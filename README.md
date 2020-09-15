@@ -61,8 +61,8 @@ Initial wireframes can be seen by clicking the following:
 - Name of the page - in the far left corner of desktop/bigger tablet device - links to home page
 - Top navbar that is reduced to navbar button placed in top left corner on smaller screens
 - User profile icon - Top right corner of bigger screens and in the middle for smaller screens - that is linked to registration/ login/ logout and profile view depending of the login status of page user
-- Cart icon - linked to the cart view - far top right corner. It also displays total cart amount once products addeed to the cart
-- Footer containing information about author of the phoforaphs and that the page is for educational purposes only - fixed tot he bottom of the page.
+- Cart icon - linked to the cart view - far top right corner. It also displays total cart amount once products added to the cart
+- Footer containing information about author of the photographs and that the page is for educational purposes only - fixed to the bottom of the page.
 - Footer with social media links and copyrights - bottom of the page
 
 ### Features Left to Implement
