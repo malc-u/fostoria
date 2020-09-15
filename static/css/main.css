@@ -158,4 +158,13 @@ a:hover {
   .footer-text, .fab {
     font-size: 0.55rem;
   }
+  #top-footer-left,
+  #bottom-footer-left,
+  #bottom-footer-right {
+    text-align: center !important;
+  }
+  #top-footer-right {
+    text-align: center !important;
+    padding-bottom: 1.2rem;
+  }
 }
