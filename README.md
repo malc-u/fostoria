@@ -32,10 +32,14 @@ Landscape photography of Poland with webshop (selling photo prints). Photographs
  - I want to be able to enter address I want my purchase dispatched to
  - I want to be able to pay for my purchase
 4. As a browsing/visiting user:
+ - I want simple, not too complicated page to use
+ - I want to use my page on my phone or tablet as well as my desktop
  - I want to be able to see all products in 1 gallery
  - I want to have possibility of searching gallery
+ - I want to click on the picture in the gallery and be presented with info about it
  - I want to see photos grouped into categories
  - I want to find frequently asked questions 
+ - I want easy way of contacting page owner - via contact form
 
 ### Design choices
 
