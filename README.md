@@ -14,6 +14,29 @@ Landscape photography of Poland with webshop (selling photo prints). Photographs
 
 ### User Stories
 
+1. As a new user:
+ - I want to be able create an account
+ - I want to visit gallery of photos available to purchase photos
+ - I want to find out what print sizes are available to purchase
+2. As a returning/registered user:
+ - I want to be able to login into my account
+ - I want to be able to see my profile
+ - I want to be able to see my previous purchases
+ - I want to have possibility of changing my profile details
+3. As a purchasing user:
+ - I want to add chosen product to my cart/basket
+ - I want to view products currently added to my cart/basket
+ - I want to have possibility of changing quantity of products in the cart/basket
+ - I want to remove items from my cart/bakest when i changed my mind
+ - I want to see total value of my cart/basket
+ - I want to be able to enter address I want my purchase dispatched to
+ - I want to be able to pay for my purchase
+4. As a browsing/visiting user:
+ - I want to be able to see all products in 1 gallery
+ - I want to have possibility of searching gallery
+ - I want to see photos grouped into categories
+ - I want to find frequently asked questions 
+
 ### Design choices
 
 ### Wireframes
