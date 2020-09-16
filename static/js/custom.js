@@ -38,23 +38,3 @@ $('.increase-qty').click(function(e) {
         
  });
 
- /*
- * Decreasing qty of an item added to the cart.
- * Qty never goes to negative as setting qty to min 1  and clicking
- * decrease again returns qty to 10 thus allowing it only to go through 
- * 10-1 then returning to 10 and so on.
- * */ 
-
-$('.decrease-qty').click(function(e) {
-    e.preventDefault();
-    var qtyField = $(this).closest('#qty-group').find('.update-form-field')[0];
-    var currentQty = parseInt($(qtyField).val());
-    
-    if (currentQty > 1){
-        currentQty --;
-    } else if ( currentQty = 1 ){
-        currentQty = 10;
-    }
-    $(qtyField).val(currentQty);
-        
- });
