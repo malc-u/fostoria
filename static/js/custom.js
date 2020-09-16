@@ -16,25 +16,3 @@ $('.remove-from-cart').click(function(e) {
         Swal.fire({title: 'Removed !',
         showConfirmButton: false});    
 })
-
-/*
-* Increasing qty of an item added to the cart. 
-* Qty never goes above max set for the field as setting qty 
-* to mX 10 and clicking increase again returns qty to 1 thus 
-* allowing it only to go through 1-10 then returning to 1 and so on.
-* */ 
-
-$('.increase-qty').click(function(e) {
-    e.preventDefault();
-    var qtyField = $(this).closest('#qty-group').find('.update-form-field')[0];
-    var currentQty = parseInt($(qtyField).val());
-    
-    if (currentQty < 10){
-        currentQty ++;
-    } else if ( currentQty = 10 ){
-        currentQty = 1;
-    }
-    $(qtyField).val(currentQty);
-        
- });
-
