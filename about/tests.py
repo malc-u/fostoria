@@ -6,7 +6,7 @@ class TestAboutView(TestCase, Client):
     """
     Testing "about" view.
     """
-    
+
     def setUp(self):
         """
         Create client to conduct unit tests.
