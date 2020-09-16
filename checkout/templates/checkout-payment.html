@@ -7,32 +7,39 @@
 {% block title_extension %} {% if title %}{{ title }} {% endif %} {% endblock %}
 
 {% block content %}
-<div class="container-fluid mt-5 mb-5" id="page-content">
-
-    <div class="row pt-5">
-        <h4 class="dark-font">Card details:</h4>
+<div class="container mx-auto my-5" id="page-content">
+    <div class="row pt-3">
+        <div class="col-12 pt-5">
+            <h1 class="text-info font-weight-bold">Card details:</h1>
+        </div>
     </div>
-
-    <hr>
+    <hr class="border-info">
     <div class="row">
         <div class="col-12">
-            <!-- Error message is displayed if Stripe error occurs. -->
+            <!-- Error message is displayed if Stripe error occurs/ other that the ones
+                listed in the checkout_payment_view. -->
             <p class="text-center font-weight-bold text-danger" id="stripe-error-message"></p>
         </div>
     </div>
-    <div class="col-12 pb-5">
-        <!-- Payment form -->
-        <form id="payment-form" method="POST" class="pb-5 px-5">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                {{ payment_form|crispy }}
-            </fieldset>
-            <div class="form-group mr-5">
-                <button class="btn blue-color m-0 float-right" type="submit">Submit payment</button>
-            </div>
-        </form>
-        <hr>
+    <div class="row">
+        <div class="col-12">
+            <!-- Payment form -->
+            <form id="payment-form" method="POST" class="px-4 pb-2">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    {{ payment_form|crispy }}
+                </fieldset>
+                <!-- Quick info about the charge amount. -->
+                {% if total %}
+                <div class="text-center">
+                    <p class="small">This card will be charged £{{ total }}.00</p>
+                </div>
+                {% endif %}
+                    <div class="form-group text-center">
+                        <button class="btn btn-info btn-lg" type="submit">Submit the payment</button>
+                    </div>
+            </form>
+        </div>
     </div>
-
 </div>
 {% endblock %}
