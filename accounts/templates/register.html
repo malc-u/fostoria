@@ -7,27 +7,31 @@
 {% block title_extension %} {% if title %}{{ title }} {% endif %} {% endblock %}
 
 {% block content %}
-<div class="container my-5 mx-auto" id="page-content">
+<div class="container mt-5 mx-auto" id="page-content">
 
     <div class="row pt-5">
-        <h4 class="dark-font">Create new account</h4>
+        <div class="col-12">
+            <h1 class="text-info font-weight-bold">Create new account</h1>
+        </div>
     </div>
     <!-- Link to login in case user already registered. -->
     <div class="row">
-        <p class="text-muted small">Already have an account?
-            <a href="{% url 'login' %}">Login here</a></p>
+        <div class="col-12">
+            <p class="text-muted small">Already have an account?
+                <a href="{% url 'register' %}">Login here</a></p>
+        </div>
     </div>
-    <hr>
+    <hr class="border-info">
     <!-- Register form. -->
     <div class="row">
-        <div class="col-12">
-            <form method="POST" class="px-5 pb-5">
+        <div class="col-12 pt-3">
+            <form method="POST" class="px-4 pb-4">
                 {% csrf_token %}
                 <fieldset class="form-group">
                     {{ form|crispy }}
                 </fieldset>
-                <div class="form-group mr-5 mb-5">
-                    <button class="btn blue-color m-0 float-right" type="submit">Sign up</button>
+                <div class="form-group text-center">
+                    <button class="btn btn-info btn-lg" type="submit">Sign up</button>
                 </div>
             </form>
             <hr>
