@@ -1,6 +1,9 @@
 """Contact app tests"""
-from django.test import TestCase, Client
+from django.test import TestCase, Client, SimpleTestCase
+from django.urls import reverse, resolve
 from .forms import ContactForm
+from .views import contact
+
 
 # View test
 class TestContactView(TestCase, Client):
@@ -48,3 +51,17 @@ class TestContactForm(TestCase):
             'subject': 'Message subject'
             })
         self.assertTrue(form.is_valid())
+
+# URL test
+class TestContactUrl(SimpleTestCase):
+    """
+    Testing Contact Url
+    """
+
+    def test_contact_url_is_resolved(self):
+        """
+        Test checking if reversed url 'contact' resolved to
+        'contact' view function
+        """
+        url = reverse('contact')
+        self.assertEqual(resolve(url).func, contact)
