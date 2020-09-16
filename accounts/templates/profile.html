@@ -8,32 +8,34 @@
 
 {% block content %}
 <div class="container my-5 mx-auto" id="page-content">
-
     <div class="row pt-5">
-        <h4 class="dark-font">Your account:</h4>
+        <div class="col-12">
+            <h1 class="text-info font-weight-bold">Your account:</h1>
+        </div>
     </div>
-
-    <hr>
+    <hr class="border-info">
     <!-- Filled in user update form that allows for user to update their details -->
     <div class="row">
+            <div class="col-sm-12 col-md-6 pb-5">
+                <form method="POST" class="p-4">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group mr-5 text-center">
+                        <button class="btn btn-secondary" type="submit">Update</button>
+                    </div>
+                </form>
+                <hr>
+            </div>
+        
         <div class="col-sm-12 col-md-6 pb-5">
-            <form method="POST" class="pb-5 px-5">
-                {% csrf_token %}
-                <fieldset class="form-group">
-                    {{ form|crispy }}
-                </fieldset>
-                <div class="form-group mr-5">
-                    <button class="btn blue-color m-0 float-right" type="submit">Update</button>
-                </div>
-            </form>
-            <hr>
-        </div>
-        <div class="col-sm-12 col-md-6 pb-5">
+            <h4>Orders:</h4>
             {% if order_line_record %}
             <!-- User orders displayed in the table -->
             <table class="w-100 table-striped table-bordered mb-5">
                 <thead>
-                    <tr class="text-center">
+                    <tr class="text-center text-info">
                         <th scope="col py-1">Print Name</th>
                         <th scope="col py-1">Print Size</th>
                         <th scope="col py-1">Quantity Ordered</th>
@@ -53,7 +55,16 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <div class="col-12 py-5 text-center"><a href="{% url 'all_products' %}">
+                <p class="btn btn-info btn-lg">Order some more</p>
+            </a></div>
+            {% else %}
+                <h4 class="text-center">You haven't ordered yet.</h4>
+                <div class="col-12 py-5 text-center"><a href="{% url 'all_products' %}">
+                    <p class="btn btn-info btn-lg">Check out our offer</p>
+                </a></div>
             {% endif %}
+            
         </div>
     </div>
 
