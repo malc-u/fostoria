@@ -7,25 +7,26 @@
 {% block title_extension %} {% if title %}{{ title }} {% endif %} {% endblock %}
 
 {% block content %}
-<div class="container-fluid mt-5 mb-5" id="page-content">
-
-    <div class="row pt-5">
-        <h4 class="dark-font">Deliver to:</h4>
+<div class="container mx-auto my-5" id="page-content">
+    <div class="row pt-3">
+        <div class="col-12 pt-5">
+            <h1 class="text-info font-weight-bold">Deliver to:</h1>
+        </div>
     </div>
-
-    <hr>
-    <div class="col-12 pb-5">
-        <!-- Delivery details form. -->
-        <form method="POST" class="pb-5 px-5">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                {{ order_shipping_form|crispy }}
-            </fieldset>
-            <div class="form-group mr-5">
-                <button class="btn blue-color m-0 float-right" type="submit">Confirm</button>
-            </div>
-        </form>
-        <hr>
+    <hr class="border-info">
+    <div class="row">
+        <div class="col-12">
+            <!-- Delivery details form. -->
+            <form method="POST" class="px-4 pb-2">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    {{ order_shipping_form|crispy }}
+                </fieldset>
+                <div class="form-group text-center">
+                    <button class="btn btn-info btn-lg" type="submit">Confirm</button>
+                </div>
+            </form>
+        </div>
     </div>
 
 </div>
