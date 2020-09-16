@@ -7,7 +7,6 @@
 
 {% block content %}
 <div class="container mx-auto my-5" id="page-content">
-
     <div class="row pt-5">
         <div class="col-12">
             <h1 class="text-info font-weight-bold">Login</h1>
@@ -23,14 +22,14 @@
     <hr class="border-info">
 
     <!-- Login form. -->
-    <div class="col-12 pb-5">
+    <div class="col-12 py-4">
         <form method="POST" class="pb-5 px-5">
             {% csrf_token %}
             <fieldset class="form-group">
                 {{ form|crispy }}
             </fieldset>
-            <div class="form-group mr-5">
-                <button class="btn btn-info float-right" type="submit">Submit</button>
+            <div class="form-group mr-5 text-center">
+                <button class="btn btn-info" type="submit">Submit</button>
             </div>
         </form>
         <hr>
