@@ -22,17 +22,19 @@
     <hr class="border-info">
 
     <!-- Login form. -->
-    <div class="col-12 py-4">
-        <form method="POST" class="pb-5 px-5">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group mr-5 text-center">
-                <button class="btn btn-info" type="submit">Submit</button>
-            </div>
-        </form>
-        <hr>
+    <div class="row">
+        <div class="col-12 py-4">
+            <form method="POST" class="pb-5 px-5">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group mr-5 text-center">
+                    <button class="btn btn-info" type="submit">Submit</button>
+                </div>
+            </form>
+            <hr>
+        </div>
     </div>
 
 </div>
