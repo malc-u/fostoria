@@ -1,5 +1,6 @@
 """Contact app tests"""
 from django.test import TestCase, Client
+from .forms import ContactForm
 
 # View test
 class TestContactView(TestCase, Client):
@@ -29,3 +30,21 @@ class TestContactView(TestCase, Client):
         response = self.client.get("/contact/")
         self.assertTemplateUsed(response, 'contact.html')
         self.assertTemplateNotUsed(response, 'products.html')
+
+# Contact form test
+class TestContactForm(TestCase):
+    """
+    Testing Contact Form
+    """
+
+    def test_can_contact_with_all_fields(self):
+        """
+        Test checking if Contact Form is valid when
+        all fields submitted.
+        """
+        form = ContactForm({
+            'from_email': 'testemail@gmail.com',
+            'message': 'Short message',
+            'subject': 'Message subject'
+            })
+        self.assertTrue(form.is_valid())
