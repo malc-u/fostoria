@@ -95,11 +95,13 @@ def checkout_payment_view(request):
 
     else:
         payment_form = PaymentForm()
+        total = cart_contents(request)['total']
 
     context = {
         'payment_form': payment_form,
         'title': 'Checkout - Payment processing',
         'publishable': settings.STRIPE_PUBLISHABLE,
+        'total': total,
     }
     return render(request, "checkout-payment.html", context)
 
