@@ -6,9 +6,9 @@
 {% block title_extension %} {% if title %}{{ title }} {% endif %} {% endblock %}
 
 {% block content %}
-<div class="container-fluid mt-5" id="page-content">
+<div class="container-fluid mt-5" id="search-page-content">
 <!-- Header content depending on the search term -->
-<div class="row pt-4">
+<div class="row pt-5">
   <div class="col-12 text-center">
     {% if query %}
     <h2>Search results for:<span class="text-info font-weight-bold"> {{ query }}</span></h2>
