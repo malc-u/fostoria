@@ -13,31 +13,29 @@
             <h2 class="mt-4 text-info">Basket contents:</h2>
         </div>
     </div>
+    <hr class="border-info">
     {% if cart_items %}
     <!-- Displaying cart contents. -->
     <div class="row">
         <div class="col-12">
-            <table class="table">
-                {% for item in cart_items %}
-                <tbody>
-                    {% include "components/basket-contents.html" %}
-                {% endfor %}
-                    <tr>
-                        <td colspan="2" class="w-100 text-right">
-                            <p class="blue-color dark-font font-weight-bold py-2 pr-5">Total: £{{ total }} </p>
-                        </td>
-                    </tr>
-                    <!-- Button allowing to start proceeding with checkout. -->
-                    <tr>
-                        <td colspan="2" class="w-100 text-right pb-5">
-                            <a class="btn p-2 border-info btn-dark btn-lg p-2" href="{% url 'delivery' %}">
-                                <span id="checkout-btn-text" class="light-font">Checkout</span></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Displaying info about each product added to cart. -->
+            {% for item in cart_items %}
+                {% include 'components/basket-contents.html' %}
+            {% endfor %}
+            <div class="row">
+                <div class="col-12 py-2">
+                    <p class="dark-font text-center font-weight-bold">Standard delivery cost £0.00 </p>
+                    <p class="dark-font text-center font-weight-bold">Total to be charged: £{{ total }}.00 </p>
+                </div>
+                <!-- Button allowing to start proceeding with checkout. -->
+                <div class="col-12 text-center">
+                    <a class="btn p-2 btn-info btn-lg p-2" href="{% url 'delivery' %}">
+                        <span id="checkout-btn-text" class="light-font">Checkout</span></a>
+                </div>
+            </div>
         </div>
     </div>
+
     {% else %}
     <!-- Displaying info that cart/basket is empty. -->
     <div class="row my-5 py-4">
