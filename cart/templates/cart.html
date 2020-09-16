@@ -40,10 +40,10 @@
     <!-- Displaying info that cart/basket is empty. -->
     <div class="row my-5 py-4">
         <div class="col-12 pt-4 text-center">
-            <p class="blue-color p-2 mx-auto font-dark rounded">Your basket is empty.</p>
+            <h2>Your basket is empty</h2>
         </div>
-        <div class="col-12 py-5"><a href="{% url 'all_products' %}">
-                <p class="btn border border-dark rounded back-btn">Keep browsing</p>
+        <div class="col-12 py-5 text-center"><a href="{% url 'all_products' %}">
+                <p class="btn btn-info btn-lg">Keep browsing</p>
             </a></div>
     </div>
     {% endif %}
