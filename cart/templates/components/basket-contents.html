@@ -1,37 +1,34 @@
-<tr>
-    <!-- Displaying info about each product added to cart. -->
-    <td class="w-25 px-5"><img class="img-fluid" src="{{ item.product.product_image.url }}"></td>
-    <td class="w-75 p-3">
+<!-- Each item added to cart -->
+<div class="row">
+    <div class="col-sm-12 col-md-4 py-1">
+        <img class="img-fluid" src="{{ item.product.product_image.url }}">
+    </div>
+    <div class="col-sm-12 col-md-8 text-md-left py-1" id="cart-item-details">
         <p class="font-weight-bold">{{ item.product.title }}</p>
         <p>Print size: {{ item.size }}</p>
-        <p>Price: £ {{ item.price }} {% if item.qty > 1 %} each {% endif %}</p>
+        <p>Price: £ {{ item.price }}.00 {% if item.qty > 1 %} each {% endif %}</p>
         <!-- Displaying qty update form -->
         <form class="form" id="update-form" method="POST" action="{% url 'update_cart' item.article_id %}">
             {% csrf_token %}
-            <div class="input-group w-50" id="qty-group">
-                <label for="id_qty_{{ item.article_id }}" class="pr-2">Quantity: </label>
-                <input class="form-control form-control-sm update-form-field text-right" type="number" name="qty"
-                    value="{{ item.qty }}" min="0" max="10" data-article_id="{{ item.article_id }}"
-                    id="id_qty_{{ item.article_id }}">
-                <div class="input-group-append">
-                    <button class="decrease-qty" id="decrease-qty_{{ item.article_id }}"
-                        data-article_id="{{ item.article_id }}">
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
+            <div class="input-group" id="qty-group">
+                <div class="qty-div">
+                    <label for="id_qty_{{ item.article_id }}" class="pr-2">Quantity: </label>
                 </div>
-                <div class="input-group-append">
-                    <button class="increase-qty" id="increase-qty_{{ item.article_id }}"
-                        data-article_id="{{ item.article_id }}">
-                        <i class="fas fa-chevron-up"></i>
-                    </button>
+                <div class="qty-div">
+                    <input class="form-control form-control-sm update-form-field text-right" type="number"
+                    name="qty" value="{{ item.qty }}" min="0" max="10"
+                    data-article_id="{{ item.article_id }}" id="id_qty_{{ item.article_id }}">
                 </div>
+
                 {% if item.product.has_sizes %}
                 <input type="hidden" name="product_size" value="{{ item.size }}">
                 {% endif %}
             </div>
             <!-- Buttons allowing user to update the qty or to remove item form the basket. -->
             <button type="submit" class="btn btn-secondary mt-2" id="update-btn">Update</button>
-            <button class="btn btn-danger mt-2 remove-from-cart">Remove</button>
+            <button class="btn btn-secondary mt-2 remove-from-cart">Remove</button>
         </form>
-    </td>
-</tr>
+
+    </div>
+</div>
+<hr class="border-info">
