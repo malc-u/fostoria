@@ -23,12 +23,12 @@
                 {% include 'components/basket-contents.html' %}
             {% endfor %}
             <div class="row">
-                <div class="col-12 py-2">
-                    <p class="dark-font text-center font-weight-bold">Standard delivery cost £0.00 </p>
-                    <p class="dark-font text-center font-weight-bold">Total to be charged: £{{ total }}.00 </p>
+                <div class="col-sm-12 col-md-6 pb-2">
+                    <p class="dark-font text-center text-md-right my-0">Standard delivery cost £0.00 </p>
+                    <p class="dark-font text-center text-md-right font-weight-bold">Total to be charged: £{{ total }}.00 </p>
                 </div>
                 <!-- Button allowing to start proceeding with checkout. -->
-                <div class="col-12 text-center">
+                <div class="col-sm-12 col-md-6 text-center text-md-left pt-2">
                     <a class="btn p-2 btn-info btn-lg p-2" href="{% url 'delivery' %}">
                         <span id="checkout-btn-text" class="light-font">Checkout</span></a>
                 </div>
