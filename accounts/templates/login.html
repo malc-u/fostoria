@@ -9,14 +9,19 @@
 <div class="container mx-auto my-5" id="page-content">
 
     <div class="row pt-5">
-        <h4 class="dark-font">Login</h4>
+        <div class="col-12">
+            <h1 class="text-info font-weight-bold">Login</h1>
+        </div>
     </div>
     <!-- Link to registration in case user not registered yet. -->
     <div class="row">
-        <p class="text-muted small">Need an account?
-            <a href="{% url 'register' %}">Register here</a></p>
+        <div class="col-12">
+            <p class="text-muted small">Need an account?
+                <a href="{% url 'register' %}">Register here</a></p>
+        </div>
     </div>
-    <hr>
+    <hr class="border-info">
+
     <!-- Login form. -->
     <div class="col-12 pb-5">
         <form method="POST" class="pb-5 px-5">
@@ -25,7 +30,7 @@
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group mr-5">
-                <button class="btn blue-color m-0 float-right" type="submit">Submit</button>
+                <button class="btn btn-info float-right" type="submit">Submit</button>
             </div>
         </form>
         <hr>
