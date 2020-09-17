@@ -1,9 +1,12 @@
 """Accounts app tests"""
 from django.test import TestCase, Client, SimpleTestCase
 from django.urls import reverse, resolve
+from .forms import UserRegistrationForm
 from .views import register_view
 
 # Create your tests here.
+""" Testing user registration """
+
 class TestRegisterView(TestCase, Client):
     """
     Testing register_view
@@ -54,3 +57,15 @@ class TestRegisterUrl(SimpleTestCase):
         """
         url = reverse('register')
         self.assertEqual(resolve(url).func, register_view)
+
+# UserRegistrationForm test
+class TestUserRegistrationForm(TestCase):
+    """
+    Testing User Registration Form
+    """
+    def test_cannot_create_new_user_with_just_username(self):
+        """
+        Confirming that more than 1 field (username in this case) is needed to create new user
+        """
+        form = UserRegistrationForm({'username': 'newuser'})
+        self.assertFalse(form.is_valid())
