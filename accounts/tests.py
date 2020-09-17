@@ -1,7 +1,8 @@
 """Accounts app tests"""
-from django.test import TestCase, Client, SimpleTestCase
+from django.test import Client, RequestFactory, TestCase, SimpleTestCase
+from django.contrib.auth.models import User
 from django.urls import reverse, resolve
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, UserUpdateForm
 from .views import register_view, logout_view, profile_view
 
 
@@ -25,7 +26,7 @@ class TestRegisterView(TestCase, Client):
         """
         response = self.client.get("/accounts/register/")
         self.assertEqual(response.status_code, 200)
-    
+
     def test_get_register_template(self):
         """
         Test checking if correct template is used ('register.html' and all
@@ -88,7 +89,7 @@ class TestProfileViewUserNotLoggedIn(TestCase, Client):
         Create client to conduct unit tests.
         """
         self.client = Client()
-    
+
     def test_get_profile_page(self):
         """
         Test checking if profile_view is sucessfully loaded (status 200)
@@ -96,3 +97,23 @@ class TestProfileViewUserNotLoggedIn(TestCase, Client):
         """
         response = self.client.get("/accounts/profile/")
         self.assertEqual(response.status_code, 302)
+
+class TestProfileViewUserLoggedIn(TestCase):
+    """Testing profile_view for logged in user"""
+    def setUp(self):
+        """
+        Accessing the request factory and creating user for testing.
+        """
+        self.factory = RequestFactory()
+        self.user = User.objects.create_user(
+            username='testuser', email='test@email.com', password="testpassword1"
+        )
+
+    def test_user_update_form_exists_in_profile_view_context(self):
+        client = Client()
+        client.login(username='testuser', password="testpassword1")
+
+        response = client.get('/accounts/profile/')
+        form = response.context['form']
+        form_type = type(form)
+        self.assertEqual(form_type, UserUpdateForm)
