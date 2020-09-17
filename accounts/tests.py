@@ -117,3 +117,15 @@ class TestProfileViewUserLoggedIn(TestCase):
         form = response.context['form']
         form_type = type(form)
         self.assertEqual(form_type, UserUpdateForm)
+
+class TestUserUpdateForm(TestCase):
+    """
+    Testing User Update Form
+    """
+    def test_cannot_update_detail_if_one_field_filled_in_only(self):
+        """
+       Confirming that form doesn't process request if both fields
+       are not filled in.
+        """
+        form = UserUpdateForm({'username': 'newuser'})
+        self.assertFalse(form.is_valid())
