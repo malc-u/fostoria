@@ -70,13 +70,17 @@ class TestUserRegistrationForm(TestCase):
         self.assertFalse(form.is_valid())
 
 # Logout Url test
-def test_logout_url_is_resolved(self):
+class TestLogoutUrl(SimpleTestCase):
     """
-    Test checking if reversed url 'logout' resolved to
+    Testing Logout Url
+    """
+    def test_logout_url_is_resolved(self):
+        """
+        Test checking if reversed url 'logout' resolved to
         logout_view' function
-    """
-    url = reverse('logout')
-    self.assertEqual(resolve(url).func, logout_view)
+        """
+        url = reverse('logout')
+        self.assertEqual(resolve(url).func, logout_view)
 
 # Testing user profile
 class TestProfileViewUserNotLoggedIn(TestCase, Client):
@@ -129,3 +133,17 @@ class TestUserUpdateForm(TestCase):
         """
         form = UserUpdateForm({'username': 'newuser'})
         self.assertFalse(form.is_valid())
+
+class TestProfileUrl(SimpleTestCase):
+    """
+    Testing Profile Url
+    """
+    def test_profile_url_is_resolved(self):
+        """
+        Test checking if reversed url 'profile' resolved to
+        profile_view' function
+        """
+        url = reverse('profile')
+        self.assertEqual(resolve(url).func, profile_view)
+
+
