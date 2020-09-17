@@ -1,6 +1,8 @@
 """Products app tests"""
-from django.test import TestCase
+from django.test import TestCase, SimpleTestCase
+from django.urls import reverse, resolve
 from .models import ProductGroup, Product
+from .views import product_search
 
 # Create your tests here.
 class TestProductGroup(TestCase):
@@ -26,3 +28,16 @@ class TestProduct(TestCase):
         """Testing that correct product title is returned."""
         test_product = Product(title="Test product")
         self.assertEqual(test_product.title, "Test product")
+
+class TestProductSearchUrl(SimpleTestCase):
+    """
+    Testing product_search Url
+    """
+
+    def test_product_search_url_is_resolved(self):
+        """
+        Test checking if reversed url 'product_search' resolved to
+        'product_search' function
+        """
+        url = reverse('product_search')
+        self.assertEqual(resolve(url).func, product_search)
