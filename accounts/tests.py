@@ -153,11 +153,30 @@ class TestLoginViewUrl(SimpleTestCase):
     """
     Testing LoginView Url
     """
-    def test_login_url_is_resolved(self):
+    def test_loginview_url_is_resolved(self):
         """
         Test checking if reversed url 'login' resolved to
         LoginView' class
         """
         url = reverse('login')
         self.assertEqual(resolve(url).func.view_class, LoginView)
+
+class TestLoginView(TestCase, Client):
+    """
+    Testing LoginView
+    """
+
+    def setUp(self):
+        """
+        Create client to conduct unit tests.
+        """
+        self.client = Client()
+
+    def test_get_loginview_page(self):
+        """
+        Test checking if LoginView is sucessfully loaded (status 200)
+        when URL ("/accounts/login/") called.
+        """
+        response = self.client.get("/accounts/login/")
+        self.assertEqual(response.status_code, 200)
 
