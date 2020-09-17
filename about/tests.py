@@ -1,5 +1,7 @@
 """About app tests"""
-from django.test import TestCase, Client
+from django.test import TestCase, Client, SimpleTestCase
+from django.urls import reverse, resolve
+from .views import about
 
 # Create your tests here.
 class TestAboutView(TestCase, Client):
@@ -39,3 +41,18 @@ class TestAboutView(TestCase, Client):
         self.assertTemplateUsed(response, 'includes/footer.html')
         self.assertTemplateUsed(response, 'includes/scripts.html')
         self.assertTemplateNotUsed(response, 'contact.html')
+
+
+# URL test
+class TestAboutUrl(SimpleTestCase):
+    """
+    Testing About Url
+    """
+
+    def test_about_url_is_resolved(self):
+        """
+        Test checking if reversed url 'about' resolved to
+        'about' view function
+        """
+        url = reverse('about')
+        self.assertEqual(resolve(url).func, about)
