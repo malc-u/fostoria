@@ -23,9 +23,19 @@ class TestAboutView(TestCase, Client):
 
     def test_get_about_template(self):
         """
-        Test checking if correct template is used ('about.html')
-        when URL ("/about/") called.
+        Test checking if correct template is used ('about.html' and all
+        others that were included on this template) when URL ("/about/") called.
         """
         response = self.client.get("/about/")
         self.assertTemplateUsed(response, 'about.html')
+        self.assertTemplateUsed(response, 'base.html')
+        self.assertTemplateUsed(response, 'includes/head.html')
+        self.assertTemplateUsed(response, 'includes/header.html')
+        self.assertTemplateUsed(response, 'includes/navbar-menu.html')
+        self.assertTemplateUsed(response, 'includes/nav-buttons-mobile.html')
+        self.assertTemplateUsed(response, 'includes/nav-buttons-desktop.html')
+        self.assertTemplateUsed(response, 'components/about-faq.html')
+        self.assertTemplateUsed(response, 'includes/top-footer-sec.html')
+        self.assertTemplateUsed(response, 'includes/footer.html')
+        self.assertTemplateUsed(response, 'includes/scripts.html')
         self.assertTemplateNotUsed(response, 'contact.html')
