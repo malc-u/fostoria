@@ -1,5 +1,7 @@
 """Accounts app tests"""
-from django.test import TestCase, Client
+from django.test import TestCase, Client, SimpleTestCase
+from django.urls import reverse, resolve
+from .views import register_view
 
 # Create your tests here.
 class TestRegisterView(TestCase, Client):
@@ -38,3 +40,17 @@ class TestRegisterView(TestCase, Client):
         self.assertTemplateUsed(response, 'includes/footer.html')
         self.assertTemplateUsed(response, 'includes/scripts.html')
         self.assertTemplateNotUsed(response, 'contact.html')
+
+# URL test
+class TestRegisterUrl(SimpleTestCase):
+    """
+    Testing Register Url
+    """
+
+    def test_register_url_is_resolved(self):
+        """
+        Test checking if reversed url 'register' resolved to
+        'register_view' function
+        """
+        url = reverse('register')
+        self.assertEqual(resolve(url).func, register_view)
