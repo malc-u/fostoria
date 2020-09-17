@@ -2,10 +2,10 @@
 from django.test import TestCase, Client, SimpleTestCase
 from django.urls import reverse, resolve
 from .forms import UserRegistrationForm
-from .views import register_view
+from .views import register_view, logout_view, profile_view
 
-# Create your tests here.
-""" Testing user registration """
+
+# Testing user registration
 
 class TestRegisterView(TestCase, Client):
     """
@@ -44,7 +44,6 @@ class TestRegisterView(TestCase, Client):
         self.assertTemplateUsed(response, 'includes/scripts.html')
         self.assertTemplateNotUsed(response, 'contact.html')
 
-# URL test
 class TestRegisterUrl(SimpleTestCase):
     """
     Testing Register Url
@@ -58,7 +57,6 @@ class TestRegisterUrl(SimpleTestCase):
         url = reverse('register')
         self.assertEqual(resolve(url).func, register_view)
 
-# UserRegistrationForm test
 class TestUserRegistrationForm(TestCase):
     """
     Testing User Registration Form
@@ -69,3 +67,13 @@ class TestUserRegistrationForm(TestCase):
         """
         form = UserRegistrationForm({'username': 'newuser'})
         self.assertFalse(form.is_valid())
+
+# Logout Url test
+def test_logout_url_is_resolved(self):
+    """
+    Test checking if reversed url 'logout' resolved to
+        logout_view' function
+    """
+    url = reverse('logout')
+    self.assertEqual(resolve(url).func, logout_view)
+
