@@ -1,5 +1,7 @@
 """Home app tests"""
-from django.test import TestCase, Client
+from django.test import TestCase, Client, SimpleTestCase
+from django.urls import reverse, resolve
+from .views import index
 
 # Create your tests here.
 class TestIndexView(TestCase, Client):
@@ -40,3 +42,16 @@ class TestIndexView(TestCase, Client):
         self.assertTemplateUsed(response, 'includes/scripts.html')
         self.assertTemplateNotUsed(response, 'contact.html')
 
+# URL test
+class TestHomeUrl(SimpleTestCase):
+    """
+    Testing Home Url
+    """
+
+    def test_home_url_is_resolved(self):
+        """
+        Test checking if reversed url 'home' resolved to
+        'index' view function
+        """
+        url = reverse('home')
+        self.assertEqual(resolve(url).func, index)
