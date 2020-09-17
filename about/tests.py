@@ -17,7 +17,7 @@ class TestAboutView(TestCase, Client):
 
     def test_get_about_page(self):
         """
-        Test checking if view about is sucessfully loaded (status 200)
+        Test checking if view about is successfully loaded (status 200)
         when URL ("/about/") called.
         """
         response = self.client.get("/about/")
