@@ -1,6 +1,7 @@
 """Accounts app tests"""
 from django.test import Client, RequestFactory, TestCase, SimpleTestCase
 from django.contrib.auth.models import User
+from django.contrib.auth.views import LoginView
 from django.urls import reverse, resolve
 from .forms import UserRegistrationForm, UserUpdateForm
 from .views import register_view, logout_view, profile_view
@@ -146,4 +147,17 @@ class TestProfileUrl(SimpleTestCase):
         url = reverse('profile')
         self.assertEqual(resolve(url).func, profile_view)
 
+# Testing LoginView
+
+class TestLoginViewUrl(SimpleTestCase):
+    """
+    Testing LoginView Url
+    """
+    def test_login_url_is_resolved(self):
+        """
+        Test checking if reversed url 'login' resolved to
+        LoginView' class
+        """
+        url = reverse('login')
+        self.assertEqual(resolve(url).func.view_class, LoginView)
 
