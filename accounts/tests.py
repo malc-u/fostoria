@@ -77,3 +77,22 @@ def test_logout_url_is_resolved(self):
     url = reverse('logout')
     self.assertEqual(resolve(url).func, logout_view)
 
+# Testing user profile
+class TestProfileViewUserNotLoggedIn(TestCase, Client):
+    """
+    Testing profile_view
+    """
+
+    def setUp(self):
+        """
+        Create client to conduct unit tests.
+        """
+        self.client = Client()
+    
+    def test_get_profile_page(self):
+        """
+        Test checking if profile_view is sucessfully loaded (status 200)
+        when URL ("/accounts/profile/") called.
+        """
+        response = self.client.get("/accounts/profile/")
+        self.assertEqual(response.status_code, 302)
