@@ -107,7 +107,8 @@ class TestProfileViewUserLoggedIn(TestCase):
     """Testing profile_view for logged in user"""
     def setUp(self):
         """
-        Accessing the request factory and creating user for testing.
+        Accessing the request factory and creating instance of
+        user for testing.
         """
         self.factory = RequestFactory()
         self.user = User.objects.create_user(
