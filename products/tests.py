@@ -1,8 +1,12 @@
 """Products app tests"""
-from django.test import TestCase, SimpleTestCase
+from django.test import TestCase, SimpleTestCase, Client
 from django.urls import reverse, resolve
 from .models import ProductGroup, Product
-from .views import product_search
+from .views import (product_search, 
+                    Products,
+                    ProductsForests, 
+                    ProductsHills, 
+                    ProductsLakes)
 
 # Create your tests here.
 class TestProductGroup(TestCase):
@@ -41,3 +45,40 @@ class TestProductSearchUrl(SimpleTestCase):
         """
         url = reverse('product_search')
         self.assertEqual(resolve(url).func, product_search)
+
+class TestAllClassBasedViewsUrls(SimpleTestCase):
+    """
+    Testing some class based views Urls
+    """
+    def test_lakes_seas_url_is_resolved(self):
+        """
+        Test checking if reversed url 'lakes_seas' resolved to
+        ProductsLakes view' class
+        """
+        url = reverse('lakes_seas')
+        self.assertEqual(resolve(url).func.view_class, ProductsLakes)
+
+    def test_forests_url_is_resolved(self):
+        """
+        Test checking if reversed url 'forests' resolved to
+        ProductsHills view' class
+        """
+        url = reverse('hills')
+        self.assertEqual(resolve(url).func.view_class, ProductsHills)
+
+    def test_hills_url_is_resolved(self):
+        """
+        Test checking if reversed url 'hills' resolved to
+        ProductsForests view' class
+        """
+        url = reverse('hills')
+        self.assertEqual(resolve(url).func.view_class, ProductsHills)
+
+    def test_all_products_url_is_resolved(self):
+        """
+        Test checking if reversed url 'all_products' resolved to
+        Products view' class
+        """
+        url = reverse('all_products')
+        self.assertEqual(resolve(url).func.view_class, Products)
+
