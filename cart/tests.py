@@ -1,3 +1,4 @@
+"""Cart app tests"""
 from django.test import TestCase, Client, RequestFactory
 from django.contrib.auth.models import User
 from products.models import Product, ProductGroup
@@ -28,7 +29,6 @@ class TestCartView(TestCase):
         response = self.client.get("/cart/")
         self.assertEqual(response.status_code, 200)
 
-    
     def test_response_status_200(self):
         """
         Testing cart view when user logged in -
@@ -51,7 +51,7 @@ class TestCartView(TestCase):
         """
         client = Client()
         client.login(username='testuser', password="testpassword1")
-        group= ProductGroup(id=1, name="test", display_name="display")
+        group = ProductGroup(id=1, name="test", display_name="display")
         group.save()
         item = Product(title="Product",
                        product_image="testing_img.jpg",
