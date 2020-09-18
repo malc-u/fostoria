@@ -95,10 +95,10 @@ class TestProfileViewUserNotLoggedIn(TestCase, Client):
         """
         self.client = Client()
 
-    def test_get_profile_page(self):
+    def test_cannot_get_profile_page(self):
         """
-        Test checking if profile_view is sucessfully loaded (status 200)
-        when URL ("/accounts/profile/") called.
+        Test checking if profile_view is not sucessfully loaded (status 302)
+        when URL ("/accounts/profile/") called by not logged in user.
         """
         response = self.client.get("/accounts/profile/")
         self.assertEqual(response.status_code, 302)
