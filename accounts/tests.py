@@ -115,6 +115,10 @@ class TestProfileViewUserLoggedIn(TestCase):
         )
 
     def test_user_update_form_exists_in_profile_view_context(self):
+        """
+        Testing whether context of profile_view contains
+        UserUpdateForm
+        """
         client = Client()
         client.login(username='testuser', password="testpassword1")
 
@@ -181,6 +185,10 @@ class TestLoginView(TestCase, Client):
         self.assertEqual(response.status_code, 200)
 
     def test_get_loginview_template(self):
+        """
+        Testing that LoginView link of "/accounts/login/"
+        renders correct templates
+        """
         response = self.client.get("/accounts/login/")
         self.assertTemplateUsed(response, 'login.html')
         self.assertTemplateUsed(response, 'base.html')
