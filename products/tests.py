@@ -2,10 +2,10 @@
 from django.test import TestCase, SimpleTestCase, Client
 from django.urls import reverse, resolve
 from .models import ProductGroup, Product
-from .views import (product_search, 
+from .views import (product_search,
                     Products,
-                    ProductsForests, 
-                    ProductsHills, 
+                    ProductsForests,
+                    ProductsHills,
                     ProductsLakes)
 
 # Create your tests here.
@@ -63,13 +63,13 @@ class TestAllClassBasedViewsUrls(SimpleTestCase):
         Test checking if reversed url 'forests' resolved to
         ProductsHills view' class
         """
-        url = reverse('hills')
-        self.assertEqual(resolve(url).func.view_class, ProductsHills)
+        url = reverse('forests')
+        self.assertEqual(resolve(url).func.view_class, ProductsForests)
 
     def test_hills_url_is_resolved(self):
         """
         Test checking if reversed url 'hills' resolved to
-        ProductsForests view' class
+        ProductsHills view' class
         """
         url = reverse('hills')
         self.assertEqual(resolve(url).func.view_class, ProductsHills)
@@ -84,7 +84,7 @@ class TestAllClassBasedViewsUrls(SimpleTestCase):
 
 class TestProductsView(TestCase, Client):
     """
-    Testing Products view (all_products) 
+    Testing Products view (all_products)
     """
 
     def setUp(self):
@@ -118,6 +118,3 @@ class TestProductsView(TestCase, Client):
         self.assertTemplateUsed(response, 'includes/footer.html')
         self.assertTemplateUsed(response, 'includes/scripts.html')
         self.assertTemplateNotUsed(response, 'contact.html')
-
-
-
