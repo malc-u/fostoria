@@ -1,7 +1,9 @@
 """Cart app tests"""
-from django.test import TestCase, Client, RequestFactory
+from django.test import TestCase, Client, RequestFactory, SimpleTestCase
+from django.urls import reverse, resolve
 from django.contrib.auth.models import User
 from products.models import Product, ProductGroup
+from .views import cart_view
 
 # Create your tests here.
 class TestCartView(TestCase):
@@ -75,3 +77,16 @@ class TestCartView(TestCase):
         self.assertTemplateUsed(response, 'includes/footer.html')
         self.assertTemplateUsed(response, 'includes/scripts.html')
         self.assertTemplateNotUsed(response, 'components/basket-contents.html')
+
+class TestCartViewtUrl(SimpleTestCase):
+    """
+    Testing cart_view Url
+    """
+
+    def test_cart_view_url_is_resolved(self):
+        """
+        Test checking if reversed url 'contact' resolved to
+        'contact' view function
+        """
+        url = reverse('cart_view')
+        self.assertEqual(resolve(url).func, cart_view)
