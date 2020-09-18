@@ -24,7 +24,7 @@ class OrderShippingDetails(models.Model):
     def __str__(self):
 
         return f'{self.id}-{self.full_name}'
-        
+
 
 class OrderLineDetail(models.Model):
     """ Model containing all order details """
