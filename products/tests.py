@@ -82,3 +82,25 @@ class TestAllClassBasedViewsUrls(SimpleTestCase):
         url = reverse('all_products')
         self.assertEqual(resolve(url).func.view_class, Products)
 
+class TestProductsView(TestCase, Client):
+    """
+    Testing Products view (all_products) 
+    """
+
+    def setUp(self):
+        """
+        Create client to conduct unit tests.
+        """
+        self.client = Client()
+
+    def test_get_all_products_page(self):
+        """
+        Test checking if register_view is sucessfully loaded (status 200)
+        when URL ("/photos/") called.
+        """
+        response = self.client.get("/photos/")
+        self.assertEqual(response.status_code, 200)
+
+
+
+
