@@ -1,6 +1,8 @@
 """ Checkout app tests"""
-from django.test import TestCase
+from django.test import TestCase, SimpleTestCase
+from django.urls import reverse, resolve
 from .forms import PaymentForm
+from .views import checkout_delivery_view
 
 # Create your tests here.
 class TestPaymentForm(TestCase):
@@ -13,3 +15,15 @@ class TestPaymentForm(TestCase):
         """
         form = PaymentForm({'cvv': '1234'})
         self.assertFalse(form.is_valid())
+
+class TestDeliveryUrl(SimpleTestCase):
+    """
+    Testing Delivery Url
+    """
+    def test_delivery_url_is_resolved(self):
+        """
+        Test checking if reversed url 'delivery' resolved to
+        'checkout_delivery_view' function
+        """
+        url = reverse('delivery')
+        self.assertEqual(resolve(url).func, checkout_delivery_view)
