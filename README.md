@@ -107,6 +107,13 @@ Initial wireframes can be seen by clicking the following:
     - You haven't ordered yet and "Check out our offer"(linked to gallery) button for users that haven't placed ordered yet
     - Table presenting all previous orders - containing each photo print name, size, quantity and total price as well as date when order was placed. Under the table is "Order some more" button(linked to the gallery)
 
+#### Basket/cart page
+- page header
+- info about empty basket if no items in the cart and button "Keep browsing" linked to the gallery
+- basket contents that include photo added to the cart, its title, print size ordered, price for each print, quantity of the print that can be amended, "Update" and "Remove" buttons alllowing user to subsequently update the qty of items in the backet of remove the item from the basket
+- below all items added to the basket there is an info about standard delivery cost and total basket value
+- below the basket content there is also "Checkout" button allowing logged in user to proceed with checkout or in case of not logged in it redirects to login page 
+
 
 ### Features Left to Implement
 
