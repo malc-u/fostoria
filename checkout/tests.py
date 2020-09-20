@@ -2,7 +2,7 @@
 from django.test import TestCase, SimpleTestCase
 from django.urls import reverse, resolve
 from .forms import PaymentForm
-from .views import checkout_delivery_view
+from .views import checkout_delivery_view, checkout_payment_view
 
 # Create your tests here.
 class TestPaymentForm(TestCase):
@@ -27,3 +27,15 @@ class TestDeliveryUrl(SimpleTestCase):
         """
         url = reverse('delivery')
         self.assertEqual(resolve(url).func, checkout_delivery_view)
+
+class TestPaymentUrl(SimpleTestCase):
+    """
+    Testing Payment Url
+    """
+    def test_payment_url_is_resolved(self):
+        """
+        Test checking if reversed url 'payment' resolved to
+        'checkout_payment_view' function
+        """
+        url = reverse('payment')
+        self.assertEqual(resolve(url).func, checkout_payment_view)
