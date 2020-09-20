@@ -81,9 +81,9 @@ Initial wireframes can be seen by clicking the following:
 - Page header 
 - 8 photographs displayed in 2 rows x 4 photos on big scrrens, 4 rows x 2 photos on medium screens and 8 rows x 1 photo on mobiles
 - Paginator allowing to go through gallery - with active page coloured:
- - on first page there are 3 buttons "1", "Next" and "Last" 
- - following pages- except last - consisting of 5 buttons - "First", "Previous", Current page "number", "Next" and "Last"
- - last page is similar to first one - showing 3 buttons - "First", "Previous" and Current/last page "number"
+    - on first page there are 3 buttons "1", "Next" and "Last" 
+    - following pages- except last - consisting of 5 buttons - "First", "Previous", Current page "number", "Next" and "Last"
+    - last page is similar to first one - showing 3 buttons - "First", "Previous" and Current/last page "number"
 
 ### Features Left to Implement
 
