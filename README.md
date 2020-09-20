@@ -68,6 +68,11 @@ Initial wireframes can be seen by clicking the following:
 - Footer containing information about author of the photographs and that the page is for educational purposes only - fixed to the bottom of the page
 - Footer with social media links and copyrights - bottom of the page
 
+#### Index/home page
+- Carousel consisting of 3 photographs of the artist as hero image.
+- Button "Read more" to about page
+- Button "Order prints" - directing to the all photos gallery
+
 ### Features Left to Implement
 
 ## Technologies Used
