@@ -85,6 +85,11 @@ Initial wireframes can be seen by clicking the following:
     - following pages- except last - consisting of 5 buttons - "First", "Previous", Current page "number", "Next" and "Last"
     - last page is similar to first one - showing 3 buttons - "First", "Previous" and Current/last page "number"
 
+#### Contact page
+- page header
+- contact form with "Send" button
+- info on above the form about when to use the form and below the form about when the contact requestes will be actioned
+
 ### Features Left to Implement
 
 ## Technologies Used
