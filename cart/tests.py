@@ -48,8 +48,8 @@ class TestCartView(TestCase):
         Testing for basket-contents.html to be displayed additional info that is
         added to cart_contents context in contexts.py must be passed as well as Product instance
         cart_contents context => {'cart_items': [{'article_id': Product.id, 'qty' = content.qty,
-        'product': Product.title, 'size': content.size, 'price': content.price}], 'total': content.total,
-        'product_count': content.product_count}
+        'product': Product.title, 'size': content.size, 'price': content.price}],
+        'total': content.total, 'product_count': content.product_count}
         where content.qty = qty of Product of the X size added to the cart
         content.size = size X of Product
         content.price = price for size X od the Product
@@ -86,7 +86,7 @@ class TestCartView(TestCase):
         self.assertTemplateUsed(response, 'includes/footer.html')
         self.assertTemplateUsed(response, 'includes/scripts.html')
         self.assertTemplateUsed(response, 'components/basket-contents.html')
-    
+
 
 class TestCartViewtUrl(SimpleTestCase):
     """
