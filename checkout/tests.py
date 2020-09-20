@@ -1,8 +1,9 @@
 """ Checkout app tests"""
-from django.test import TestCase, SimpleTestCase
+from django.test import TestCase, SimpleTestCase, Client
 from django.urls import reverse, resolve
 from .forms import PaymentForm
 from .views import checkout_delivery_view, checkout_payment_view
+
 
 # Create your tests here.
 class TestPaymentForm(TestCase):
@@ -39,3 +40,23 @@ class TestPaymentUrl(SimpleTestCase):
         """
         url = reverse('payment')
         self.assertEqual(resolve(url).func, checkout_payment_view)
+
+class TestCheckoutDeliveryView(TestCase, Client):
+    """
+    Testing "contact" view.
+    """
+
+    def setUp(self):
+        """
+        Create client to conduct unit tests.
+        """
+        self.client = Client()
+
+
+    def test_cannot_get_checkout_delivery_page_not_logged_in(self):
+        """
+        Test checking if view checkout_delivery_view is denied
+        (status 302) when URL ("/checkout/delivery/") called - user not logged in...
+        """
+        response = self.client.get("/checkout/delivery/")
+        self.assertEqual(response.status_code, 302)
