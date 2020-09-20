@@ -47,7 +47,7 @@ Landscape photography of Poland with webshop (selling photo prints). Photographs
 ### Design choices
 
 The color scheme that was chosen is a light theme that would not be overwhelming and will nicely present photos.
-There are only several subtle colors to contemplate main content and distingiush items on the page. However first and foremost the intention was to emphasize the work of the artist and not web design. Page was designed in such way to be light, plain and simple thus showcasing landcapes captured on the photographs.
+There are only couple subtle colors to contemplate main content and distingiush items on the page. However first and foremost the intention was to emphasize the work of the artist and not web design. Page was designed in such way to be light, plain and simple thus showcasing landcapes captured on the photographs.
 
 ### Wireframes
 
@@ -63,9 +63,9 @@ Initial wireframes can be seen by clicking the following:
 #### Elements on every page
 - Name of the page - in the far left corner of desktop/bigger tablet device - links to home page
 - Top navbar that is reduced to navbar button placed in top left corner on smaller screens
-- User profile icon - Top right corner of bigger screens and in the middle for smaller screens - that is linked to registration/ login/ logout and profile view depending of the login status of page user
+- User profile icon (for registered useres) or register/login (unregistered users) - Top right corner of bigger screens and in the middle for smaller screens - that is linked to registration/ login/ logout and profile view depending of the login status of page user
 - Cart icon - linked to the cart view - far top right corner. It also displays total cart amount once products added to the cart
-- Footer containing information about author of the photographs and that the page is for educational purposes only - fixed to the bottom of the page.
+- Footer containing information about author of the photographs and that the page is for educational purposes only - fixed to the bottom of the page
 - Footer with social media links and copyrights - bottom of the page
 
 ### Features Left to Implement
