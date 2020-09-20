@@ -73,6 +73,10 @@ Initial wireframes can be seen by clicking the following:
 - Button "Read more" to about page
 - Button "Order prints" - directing to the all photos gallery
 
+#### About page
+- information about the author
+- accordion with Frequently Asked Questions
+
 ### Features Left to Implement
 
 ## Technologies Used
