@@ -90,6 +90,11 @@ Initial wireframes can be seen by clicking the following:
 - contact form with "Send" button
 - info on above the form about when to use the form and below the form about when the contact requestes will be actioned
 
+#### Login page
+- page header
+- link to registration if not yet registered
+- login form with "Submit" button
+
 ### Features Left to Implement
 
 ## Technologies Used
