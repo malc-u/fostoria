@@ -100,6 +100,13 @@ Initial wireframes can be seen by clicking the following:
 - link to login page if already registered
 - registration form with "Sign up" button
 
+#### Profile page
+- page header
+- left side of the page contains pre-filled update form with user username and email and "Update" button
+- right side - info about orders:
+    - You haven't ordered yet and "Check out our offer"(linked to gallery) button for users that haven't placed ordered yet
+    - Table presenting all previous orders - containing each photo print name, size, quantity and total price as well as date when order was placed. Under the table is "Order some more" button(linked to the gallery)
+
 
 ### Features Left to Implement
 
