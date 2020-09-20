@@ -95,6 +95,12 @@ Initial wireframes can be seen by clicking the following:
 - link to registration if not yet registered
 - login form with "Submit" button
 
+#### Register page
+- page header
+- link to login page if already registered
+- registration form with "Sign up" button
+
+
 ### Features Left to Implement
 
 ## Technologies Used
