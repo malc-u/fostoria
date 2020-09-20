@@ -9,11 +9,11 @@ Landscape photography of Poland with webshop (selling photo prints). Photographs
 
 ### Target Audience
 
-- people that like work of the artist
-- people that got here via artist's social media
-- people that like landscape photography
-- people that like Upper Silesian landscape
-- people that are looking to purchase landscape photo print
+- People that like work of the artist
+- People that got here via artist's social media
+- People that like landscape photography
+- People that like Upper Silesian landscape
+- People that are looking to purchase landscape photo print
 
 ### User Stories
 
@@ -52,9 +52,9 @@ There are only couple subtle colors to contemplate main content and distingiush 
 ### Wireframes
 
 Initial wireframes can be seen by clicking the following:
-- [desktop](https://github.com/malc-u/fostoria/tree/master/wireframes/desktop)
-- [tablet](https://github.com/malc-u/fostoria/tree/master/wireframes/tablet)
-- [mobile](https://github.com/malc-u/fostoria/tree/master/wireframes/mobile)
+- [Desktop](https://github.com/malc-u/fostoria/tree/master/wireframes/desktop)
+- [Tablet](https://github.com/malc-u/fostoria/tree/master/wireframes/tablet)
+- [Mobile](https://github.com/malc-u/fostoria/tree/master/wireframes/mobile)
 
 ## Features
 
@@ -74,8 +74,16 @@ Initial wireframes can be seen by clicking the following:
 - Button "Order prints" - directing to the all photos gallery
 
 #### About page
-- information about the author
-- accordion with Frequently Asked Questions
+- Information about the author
+- Accordion with Frequently Asked Questions
+
+#### Gallery
+- Page header 
+- 8 photographs displayed in 2 rows x 4 photos on big scrrens, 4 rows x 2 photos on medium screens and 8 rows x 1 photo on mobiles
+- Paginator allowing to go through gallery - with active page coloured:
+ - on first page there are 3 buttons "1", "Next" and "Last" 
+ - following pages- except last - consisting of 5 buttons - "First", "Previous", Current page "number", "Next" and "Last"
+ - last page is similar to first one - showing 3 buttons - "First", "Previous" and Current/last page "number"
 
 ### Features Left to Implement
 
