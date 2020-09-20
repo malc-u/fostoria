@@ -43,42 +43,6 @@ class TestCartView(TestCase):
         response = client.get('/cart/')
         self.assertEqual(response.status_code, 200)
 
-    def test_basket_contents_template_not_rendered_without_cart_contents_specified_with_call(self):
-        """
-        Testing that adding product according to the model only
-        will not result in items being added to the cart as cart_contents
-        are needed from cart.contexts.py. User can be logged in product might
-        be added and added to sesssion however when there is no cart_contents
-        then basket-contents.html will not be rendered
-        """
-        client = Client()
-        client.login(username='testuser', password="testpassword1")
-        group = ProductGroup(id=1, name="test", display_name="display")
-        group.save()
-        item = Product(title="Product",
-                       product_image="testing_img.jpg",
-                       place="Test place",
-                       has_sizes="True",
-                       product_group=ProductGroup(id=1))
-        item.save()
-        self.client.login(username="testuser", password="testpassword1")
-        session = self.client.session
-        session["cart_items"] = {1:1}
-        session.save()
-        response = self.client.get("/cart/")
-        self.assertTemplateUsed(response, 'cart.html')
-        self.assertTemplateUsed(response, 'base.html')
-        self.assertTemplateUsed(response, 'includes/head.html')
-        self.assertTemplateUsed(response, 'includes/header.html')
-        self.assertTemplateUsed(response, 'includes/navbar-menu.html')
-        self.assertTemplateUsed(response, 'includes/nav-buttons-mobile.html')
-        self.assertTemplateUsed(response, 'includes/nav-buttons-desktop.html')
-        self.assertTemplateUsed(response, 'includes/top-footer-sec.html')
-        self.assertTemplateUsed(response, 'includes/footer.html')
-        self.assertTemplateUsed(response, 'includes/scripts.html')
-        self.assertTemplateNotUsed(response, 'components/basket-contents.html')
-
-
     def test_basket_contents_template_rendered_with_cart_contents_specified_with_call(self):
         """
         Testing for basket-contents.html to be displayed additional info that is
