@@ -85,6 +85,17 @@ Initial wireframes can be seen by clicking the following:
     - following pages- except last - consisting of 5 buttons - "First", "Previous", Current page "number", "Next" and "Last"
     - last page is similar to first one - showing 3 buttons - "First", "Previous" and Current/last page "number"
 
+#### Photo view/ detailed page
+- Photo chosen for detailed view can be seen on the left side of the page (on large screens), and on the top of the page (medium and small screen)
+- On the left (on large screens) and directly under photo (on medium and small screens) there are:
+    - Photo title as a header
+    - Information about where the photo was taken
+    - Information about print sizes and print prices available
+    - Form field allowing user to choose the size of the picture to add to cart
+    - Form fied allowing user to choose the quantity of already chosen size to be added to the aart
+    - "Add to cart" button
+    - 2 additional buttons - "Keep borwsing" and "Go to cart" allowing user to eaither go back to the gallery or to move tot he cart view
+
 #### Contact page
 - page header
 - contact form with "Send" button
