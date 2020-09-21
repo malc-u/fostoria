@@ -114,6 +114,17 @@ Initial wireframes can be seen by clicking the following:
 - below all items added to the basket there is an info about standard delivery cost and total basket value
 - below the basket content there is also "Checkout" button allowing logged in user to proceed with checkout or in case of not logged in it redirects to login page 
 
+#### Checkout / delivery page
+- page header
+- delivery details form (name, address, contact phone number)
+- Button "Confirm" allowing user to confirm delivery details
+
+#### Checkout / payment page
+- page header
+- credit card processing form
+- information about the charge about to be submitted
+- "Submit payment" button
+
 
 ### Features Left to Implement
 
