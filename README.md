@@ -47,7 +47,7 @@ Landscape photography of Poland with webshop (selling photo prints). Photographs
 ### Design choices
 
 The color scheme that was chosen is a light theme that would not be overwhelming and will nicely present photos.
-There are only couple subtle colors to contemplate main content and distingiush items on the page. However first and foremost the intention was to emphasize the work of the artist and not web design. Page was designed in such way to be light, plain and simple thus showcasing landcapes captured on the photographs.
+There are only couple subtle colors to contemplate main content and distinguish items on the page. However first and foremost the intention was to emphasize the work of the artist and not web design. Page was designed in such way to be light, plain and simple thus showcasing landscapes captured on the photographs.
 
 ### Wireframes
 
@@ -63,7 +63,7 @@ Initial wireframes can be seen by clicking the following:
 #### Elements on every page
 - Name of the page - in the far left corner of desktop/bigger tablet device - links to home page
 - Top navbar that is reduced to navbar button placed in top left corner on smaller screens - this navbar included search bar that allows users to search through the photos (placeholder displays examples of searches)
-- User profile icon (for registered useres) or register/login (unregistered users) - Top right corner of bigger screens and in the middle for smaller screens - that is linked to registration/ login/ logout and profile view depending of the login status of page user
+- User profile icon (for registered users) or register/login (unregistered users) - Top right corner of bigger screens and in the middle for smaller screens - that is linked to registration/ login/ logout and profile view depending of the login status of page user
 - Cart icon - linked to the cart view - far top right corner. It also displays total cart amount once products added to the cart
 - Footer containing information about author of the photographs and that the page is for educational purposes only - fixed to the bottom of the page
 - Footer with social media links and copyrights - bottom of the page
@@ -79,7 +79,7 @@ Initial wireframes can be seen by clicking the following:
 
 #### Gallery
 - Page header 
-- 8 photographs displayed in 2 rows x 4 photos on big scrrens, 4 rows x 2 photos on medium screens and 8 rows x 1 photo on mobiles
+- 8 photographs displayed in 2 rows x 4 photos on big screens, 4 rows x 2 photos on medium screens and 8 rows x 1 photo on mobiles
 - Paginator allowing to go through gallery - with active page coloured:
     - on first page there are 3 buttons "1", "Next" and "Last" 
     - following pages- except last - consisting of 5 buttons - "First", "Previous", Current page "number", "Next" and "Last"
@@ -94,50 +94,50 @@ Initial wireframes can be seen by clicking the following:
     - Form field allowing user to choose the size of the picture to add to cart
     - Form fied allowing user to choose the quantity of already chosen size to be added to the aart
     - "Add to cart" button
-    - 2 additional buttons - "Keep borwsing" and "Go to cart" allowing user to eaither go back to the gallery or to move tot he cart view
+    - 2 additional buttons - "Keep browsing" and "Go to cart" allowing user to eaither go back to the gallery or to move tot he cart view
 
 #### Contact page
-- page header
-- contact form with "Send" button
-- info on above the form about when to use the form and below the form about when the contact requestes will be actioned
+- Page header
+- Contact form with "Send" button
+- Info on above the form about when to use the form and below the form about when the contact requests will be actioned
 
 #### Login page
-- page header
-- link to registration if not yet registered
-- login form with "Submit" button
+- Page header
+- Link to registration if not yet registered
+- Login form with "Submit" button
 
 #### Register page
-- page header
-- link to login page if already registered
-- registration form with "Sign up" button
+- Page header
+- Link to login page if already registered
+- Registration form with "Sign up" button
 
 #### Profile page
-- page header
-- left side of the page contains pre-filled update form with user username and email and "Update" button
-- right side - info about orders:
+- Page header
+- Left side of the page contains pre-filled update form with user username and email and "Update" button
+- Right side - info about orders:
     - You haven't ordered yet and "Check out our offer"(linked to gallery) button for users that haven't placed ordered yet
     - Table presenting all previous orders - containing each photo print name, size, quantity and total price as well as date when order was placed. Under the table is "Order some more" button(linked to the gallery)
 
 #### Basket/cart page
-- page header
-- info about empty basket if no items in the cart and button "Keep browsing" linked to the gallery
-- basket contents that include photo added to the cart, its title, print size ordered, price for each print, quantity of the print that can be amended, "Update" and "Remove" buttons alllowing user to subsequently update the qty of items in the backet of remove the item from the basket
-- below all items added to the basket there is an info about standard delivery cost and total basket value
-- below the basket content there is also "Checkout" button allowing logged in user to proceed with checkout or in case of not logged in it redirects to login page 
+- Page header
+- Info about empty basket if no items in the cart and button "Keep browsing" linked to the gallery
+- Basket contents that include photo added to the cart, its title, print size ordered, price for each print, quantity of the print that can be amended, "Update" and "Remove" buttons allowing user to subsequently update the qty of items in the basket of remove the item from the basket
+- Below all items added to the basket there is an info about standard delivery cost and total basket value
+- Below the basket content there is also "Checkout" button allowing logged in user to proceed with checkout or in case of not logged in it redirects to login page 
 
 #### Checkout / delivery page
-- page header
-- delivery details form (name, address, contact phone number)
+- Page header
+- Delivery details form (name, address, contact phone number)
 - Button "Confirm" allowing user to confirm delivery details
 
 #### Checkout / payment page
-- page header
-- credit card processing form
-- information about the charge about to be submitted
+- Page header
+- Credit card processing form
+- Information about the charge about to be submitted
 - "Submit payment" button
 
-
 ### Features Left to Implement
+-
 
 ## Technologies Used
 
@@ -148,7 +148,7 @@ Initial wireframes can be seen by clicking the following:
 - [Python](https://www.w3schools.com/python/)
 - [JavaScript](https://www.w3schools.com/js/)
 
-### Librares & frameworks
+### Libraries & frameworks
 
 - [JQuery](https://jquery.com/)
 - [Bootstrap](https://getbootstrap.com/)
