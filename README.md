@@ -182,14 +182,14 @@ This model is created with Many to Many relationship from Django and displayed a
 |              Name              |  Key in db  |        Validation       |         Field type        |
 |:------------------------------:|:-----------:|:-----------------------:|:-------------------------:|
 |      Price of the product      | print_price | blank=False, null=False |        IntegerField       |
-| Sizes of the product available | print_sizes | through='PrincingSizes' | ManytoManyField PrintSize |
+| Sizes of the product available | print_sizes | through='PricingSizes'  | ManytoManyField PrintSize |
 
 2. Second of these models is **Print Size model**:
 
 |               Name              |   Key in db  |        Validation       |         Field type         |
 |:-------------------------------:|:------------:|:-----------------------:|:--------------------------:|
 |       Size of the product       |  print_size  |      max_length=120     |          CharField         |
-| Prices of the product available | print_prices | through='PrincingSizes' | ManytoManyField PrintPrice |
+| Prices of the product available | print_prices | through='PricingSizes'  | ManytoManyField PrintPrice |
 
 3. Combined **model Pricing Sizes** is built as follows:
 
