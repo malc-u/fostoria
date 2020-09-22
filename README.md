@@ -332,6 +332,7 @@ Linux: pip3 install -r requirements.txt
 
 7. Set up the following environment variables within your IDE (create a file in the root of the project named "env.py", copy the code block below and populate with your details):
 
+```console
 import os
 os.environ['SECRET_KEY'] = '<Your Django Secret Key>'
 os.environ["STRIPE_PUBLISHABLE"] = '<Your Stripe Publishable Key>'
@@ -342,6 +343,7 @@ os.environ["EMAIL_HOST"] = '<Your SMTP Enabled Gmail Address>'
 os.environ["HOST_PASS"] = '<Your SMTP Enabled Gmail Password>'
 os.environ["DATABASE_URL"] = '<Your PostgreSQL Database URL>'
 os.environ["HEROKU"] = 'True'
+```
 
 8. **Migrate** admin panel models to create your database template with the terminal command:
 
