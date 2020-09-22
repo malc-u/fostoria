@@ -207,7 +207,7 @@ This model holds shipping information for an order user has placed.
 |           Name          |      Key in db      |              Validation              |    Field type   |
 |:-----------------------:|:-------------------:|:------------------------------------:|:---------------:|
 | Customer placing order  |       customer      |       on_delete=models.PROTECT       | ForeignKey User |
-|        User name        |      full_name      |      max_lenght=100, blank=False     |    CharField    |
+|        User name        |      full_name      |      max_length=100, blank=False     |    CharField    |
 |  First line of address  |  first_address_line |      max_length=75, blank=False      |    CharField    |
 |  Second line of address | second_address_line | max_length=75, blank=True, null=True |    CharField    |
 |       Town or city      |     town_or_city    |      max_length=50, blank=False      |    CharField    |
@@ -222,7 +222,7 @@ This model holds information of an order placed by the user. It relies on Order 
 
 |          Name         |    Key in db   |                Validation               |            Field type           |
 |:---------------------:|:--------------:|:---------------------------------------:|:-------------------------------:|
-|    Shipping detals    | order_shipping |   null=False, on_delete=models.CASCADE  | ForeignKey OrderShippingDetails |
+|    Shipping details   | order_shipping |   null=False, on_delete=models.CASCADE  | ForeignKey OrderShippingDetails |
 |    Product ordered    |     product    |   null=False, on_delete=models.PROTECT  |        ForeignKey Product       |
 |    Quantity ordered   |    quantity    |               blank=False               |           IntegerField          |
 | Date order was placed |  date_ordered  | blank=True, default=datetime.date.today |            DateField            |
@@ -295,7 +295,7 @@ You will also need to open accounts on listed below:
 
 Once all above are set-up please follow below steps:
 
-1. **Save** a zip **copy of [this](https://github.com/malc-u/fostoria)** Github **repository** using "Clone of download" green button or clone repository dircetly to your IDE using command
+1. **Save** a zip **copy of [this](https://github.com/malc-u/fostoria)** Github **repository** using "Clone of download" green button or clone repository directly to your IDE using command
 
 ```console
 git clone https://github.com/malc-u/fostoria
@@ -366,9 +366,9 @@ Windows: python manage.py runserver
 Linux: py manage.py runserver
 ```
 
-12. Once the program is running in a browser - add "/admin" to the existing host address to access django-login panel(e.g. http://127.0.0.1:8000/admin). Log in with your super-user details.
+12. Once the program is running in a browser - **add "/admin" to the existing host address** to access django-login panel(e.g. http://127.0.0.1:8000/admin). **Log in** with your super-user details.
 
-13. Add new ProductGroups followed by adding new Products, Print Size, Print Price and in PricingSizes match enetred earlier size from Print Size with the price from Print Price models. 
+13. **Add** new **ProductGroups** followed by adding new **Product**, sizes in Print Size, prices in Print Price** and in PricingSizes match entered earlier size from Print Size with the price from Print Price models. 
 
 14. After assigning prices to sizes to the database make sure they match contexts.py in Cart app. Sizes assigned by you must also be updated in templates/details.html in Products app where they exists as options in 'add_to_cart' form.
 
