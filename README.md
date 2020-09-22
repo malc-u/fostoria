@@ -198,6 +198,37 @@ This model is created with Many to Many relationship from Django and displayed a
 | Size of the product  |  print_size | on_delete=models.CASCADE |  ForeignKey PrintSize |
 | Price of the product | print_price | on_delete=models.CASCADE | ForeignKey PrintPrice |
 
+#### Checkout models
+
+##### Order Shipping Details model
+
+This model holds shipping information for an order user has placed.
+
+|           Name          |      Key in db      |              Validation              |    Field type   |
+|:-----------------------:|:-------------------:|:------------------------------------:|:---------------:|
+| Customer placing order  |       customer      |       on_delete=models.PROTECT       | ForeignKey User |
+|        User name        |      full_name      |      max_lenght=100, blank=False     |    CharField    |
+|  First line of address  |  first_address_line |      max_length=75, blank=False      |    CharField    |
+|  Second line of address | second_address_line | max_length=75, blank=True, null=True |    CharField    |
+|       Town or city      |     town_or_city    |      max_length=50, blank=False      |    CharField    |
+|          County         |        county       | max_length=50, blank=True, null=True |    CharField    |
+|         Postcode        |       postcode      |       max_length=10, null=True       |    CharField    |
+|         Country         |       country       |      max_length=50, blank=False      |    CharField    |
+|       Phone number      |     phone_number    |      max_length=20, blank=False      |    CharField    |
+
+##### Order Line Detail model
+
+This model holds information of an order placed by the user. It relies on Order Shipping Details model as it includes Foreign Key to that model.
+
+|          Name         |    Key in db   |                Validation               |            Field type           |
+|:---------------------:|:--------------:|:---------------------------------------:|:-------------------------------:|
+|    Shipping detals    | order_shipping |   null=False, on_delete=models.CASCADE  | ForeignKey OrderShippingDetails |
+|    Product ordered    |     product    |   null=False, on_delete=models.PROTECT  |        ForeignKey Product       |
+|    Quantity ordered   |    quantity    |               blank=False               |           IntegerField          |
+| Date order was placed |  date_ordered  | blank=True, default=datetime.date.today |            DateField            |
+|      Order total      |      total     |               blank=False               |           IntegerField          |
+|  Product size ordered |      size      |               max_length=3              |            CharField            |
+
 
 ## Technologies Used
 
