@@ -136,8 +136,10 @@ Initial wireframes can be seen by clicking the following:
 - Information about the charge about to be submitted
 - "Submit payment" button
 
-### Features Left to Implement
--
+### Features for future releases
+- Password reset by e-mail
+- Possibility of changing print size in cart view (not only quantity)
+- Admin view allowing to add products using front-end (not only Django admin panel)
 
 ## Technologies Used
 
