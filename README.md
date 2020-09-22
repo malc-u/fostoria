@@ -245,9 +245,32 @@ This model holds information of an order placed by the user. It relies on Order 
 - [Bootstrap](https://getbootstrap.com/)
 - [FontAwesome](https://fontawesome.com/)
 - [Google Fonts](https://fonts.google.com/)
-- [Django](https://www.djangoproject.com/)
+- [Django 3](https://docs.djangoproject.com/en/3.1/releases/3.0/)
 
 ### Tools
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Pip](https://pypi.org/project/pip/)
+- [Git](https://git-scm.com/)
+- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+- [GitHub](https://github.com/)
+- [Pillow](https://pypi.org/project/Pillow/)
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [Django Storages](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html)
+- [Amazon S3 bucket](https://aws.amazon.com/)
+- [imgbb](https://imgbb.com/)
+- [Django Cripsy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+- [Sweetify](https://pypi.org/project/sweetify/)
+- [Stripe](https://stripe.com/gb)
+- [Dj-Database-Url](https://pypi.org/project/dj-database-url/)
+- [Psycopq2](https://pypi.org/project/psycopg2-binary/)
+- [Heroku](https://heroku.com/)
+- [Travis CI](https://travis-ci.org/)
+- [Pylint](https://pypi.org/project/pylint/)
+- [Pylint-Django](https://pypi.org/project/pylint-django/)
+- [Autopep8](https://pypi.org/project/autopep8/)
+- [Balsamiq](https://balsamiq.com/)
+- [Gunicorn](https://gunicorn.org/)
+
 
 ## Testing
 
