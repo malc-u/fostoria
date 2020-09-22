@@ -270,6 +270,7 @@ This model holds information of an order placed by the user. It relies on Order 
 - [Autopep8](https://pypi.org/project/autopep8/)
 - [Balsamiq](https://balsamiq.com/)
 - [Gunicorn](https://gunicorn.org/)
+- [Tables generator](https://www.tablesgenerator.com/)
 
 
 ## Testing
@@ -277,6 +278,101 @@ This model holds information of an order placed by the user. It relies on Order 
 Please see [Testing](https://github.com/malc-u/fostoria/blob/master/TESTING.md) for all my testing
 
 ## Deployment
+
+### Running this project locally
+
+Please ensure you have all listed below tools - installed on your local machine:
+- IDE (Integrated Development Environment such as [Visual Studio Code](https://code.visualstudio.com/) or [PyCharm](https://www.jetbrains.com/pycharm/))
+- [Python 3](https://www.python.org/downloads/)
+- [PIP](https://pypi.org/project/pip/)
+- [GIT](https://git-scm.com/)
+- [SQLite3](https://www.sqlite.org/download.html)
+
+You will also need to open accounts on listed below:
+- [Stripe](https://dashboard.stripe.com/register)
+- [Amazon AWS](https://aws.amazon.com/) and [S3 Bucket](https://docs.aws.amazon.com/s3/index.html) set up
+- [Gmail](https://www.gmail.com/)
+
+Once all above are set-up please follow below steps:
+
+1. **Save** a zip **copy of [this](https://github.com/malc-u/fostoria)** Github **repository** using "Clone of download" green button or clone repository dircetly to your IDE using command
+
+```console
+git clone https://github.com/malc-u/fostoria
+```
+
+2. In the terminal of your IDE **open folder with the repository**
+3. **Create virtual environment** using command
+
+```console
+Windows: python -m venv <name of your virtual environment>
+Linux: py3 -m venv <name of your virtual environment>
+```
+
+4. **Activate** your **virtual environment** with command (this must be done everytie your machine is restarted)
+
+```console
+Windows: <name of your virtual environment>\Scripts\activate
+Linux: source <name of your virtual environment>\Scripts\activate
+```
+
+5. If needed upgrade pip locally using command
+
+```console
+Windows: python -m pip install --upgrade pip
+Linux: sudo -H pip3 install --upgrade pip
+```
+
+6. **Install** all Python **modules** this project depends on using command:
+
+```console
+Windows: pip install -r requirements.txt
+Linux: pip3 install -r requirements.txt
+```
+
+7. Set up the following environment variables within your IDE (create a file in the root of the project named "env.py", copy the code block below and populate with your details):
+
+import os
+os.environ['SECRET_KEY'] = '<Your Django Secret Key>'
+os.environ["STRIPE_PUBLISHABLE"] = '<Your Stripe Publishable Key>'
+os.environ["STRIPE_SECRET"] = '<Your Stripe Secret Key>'
+os.environ["AWS_ACCESS_KEY_ID"] = '<Your AWS Access Key'
+os.environ["AWS_SECRET_ACCESS_KEY"] = '<Your AWS Secret Access Key>'
+os.environ["EMAIL_HOST"] = '<Your SMTP Enabled Gmail Address>'
+os.environ["HOST_PASS"] = '<Your SMTP Enabled Gmail Password>'
+os.environ["DATABASE_URL"] = '<Your PostgreSQL Database URL>'
+os.environ["HEROKU"] = 'True'
+
+8. **Migrate** admin panel models to create your database template with the terminal command:
+
+```console
+Windows: python manage.py migrate
+Linux: py manage.py migrate
+```
+
+9. **Create your superuser** to access django admin panel and its features:
+
+```console
+Windows: python manage.py createsuperuser
+Linux: py manage.py createsuperuser
+```
+
+10. **Add** your **development IP** to the **ALLOWED_HOSTS** variable list in **settings.py**
+
+11. Run your project locally:
+
+```console
+Windows: python manage.py runserver
+Linux: py manage.py runserver
+```
+
+12. Once the program is running in a browser - add "/admin" to the existing host address to access django-login panel(e.g. http://127.0.0.1:8000/admin). Log in with your super-user details.
+
+13. Add new ProductGroups followed by adding new Products, Print Size, Print Price and in PricingSizes match enetred earlier size from Print Size with the price from Print Price models. 
+
+14. After assigning prices to sizes to the database make sure they match contexts.py in Cart app. Sizes assigned by you must also be updated in templates/details.html in Products app where they exists as options in 'add_to_cart' form.
+
+15. Once instances of these items exist in your database and match both contexts.py and form options in templates/details.html your local site will run as expected.
 
 
 ## Credits
