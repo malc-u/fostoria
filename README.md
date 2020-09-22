@@ -150,6 +150,10 @@ Initial wireframes can be seen by clicking the following:
 
 ### Data Models
 
+#### User
+
+User model is this project is utilizing default User model from ``` django.contrib.auth.models ```
+
 ## Technologies Used
 
 ### Languages 
