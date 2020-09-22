@@ -177,21 +177,21 @@ Within ``` products ``` app there are models that contain all details that are r
 ##### Pricing Sizes model
 
 This model is created with Many to Many relationship from Django and displayed as a through model that is combined of 2 separate models with Foreign Keys to this one. 
-1. First of these models is Print Price model:
+1. First of these models is **Print Price model**:
 
 |              Name              |  Key in db  |        Validation       |         Field type        |
 |:------------------------------:|:-----------:|:-----------------------:|:-------------------------:|
 |      Price of the product      | print_price | blank=False, null=False |        IntegerField       |
 | Sizes of the product available | print_sizes | through='PrincingSizes' | ManytoManyField PrintSize |
 
-2. Second of these models is Print Size model:
+2. Second of these models is **Print Size model**:
 
 |               Name              |   Key in db  |        Validation       |         Field type         |
 |:-------------------------------:|:------------:|:-----------------------:|:--------------------------:|
 |       Size of the product       |  print_size  |      max_length=120     |          CharField         |
 | Prices of the product available | print_prices | through='PrincingSizes' | ManytoManyField PrintPrice |
 
-3. Combined model Pricing Sizes is built as follows:
+3. Combined **model Pricing Sizes** is built as follows:
 
 |         Name         |  Key in db  |        Validation        |       Field type      |
 |:--------------------:|:-----------:|:------------------------:|:---------------------:|
