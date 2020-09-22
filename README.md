@@ -154,6 +154,51 @@ Initial wireframes can be seen by clicking the following:
 
 User model is this project is utilizing default User model from ``` django.contrib.auth.models ```
 
+#### Products 
+
+Within ``` products ``` app there are models that contain all details that are related to all items sold on this website
+
+##### Product Group model
+
+|         Name         |   Key in db  |   Validation   | Field type |
+|:--------------------:|:------------:|:--------------:|:----------:|
+|  Product group name  |     name     | max_length=254 |  CharField |
+| Product display name | display_name | max_length=254 |  CharField |
+
+##### Product model
+
+|                    Name                    |   Key in db   |                     Validation                    |        Field type       |
+|:------------------------------------------:|:-------------:|:-------------------------------------------------:|:-----------------------:|
+|             Product name/title             |     title     |                   max_length=254                  |        CharField        |
+|          Place of product's origin         |     place     |                   max_length=254                  |        CharField        |
+|               Product's image              | product_image |                    blank=False                    |        ImageField       |
+| Product Group this product is assigned to  | product_group | blank=False, null=False, on_delete=models.PROTECT | ForeignKey ProductGroup |
+
+##### Pricing Sizes model
+
+This model is created with Many to Many relationship from Django and displayed as a through model that is combined of 2 separate models with Foreign Keys to this one. 
+1. First of these models is Print Price model:
+
+|              Name              |  Key in db  |        Validation       |         Field type        |
+|:------------------------------:|:-----------:|:-----------------------:|:-------------------------:|
+|      Price of the product      | print_price | blank=False, null=False |        IntegerField       |
+| Sizes of the product available | print_sizes | through='PrincingSizes' | ManytoManyField PrintSize |
+
+2. Second of these models is Print Size model:
+
+|               Name              |   Key in db  |        Validation       |         Field type         |
+|:-------------------------------:|:------------:|:-----------------------:|:--------------------------:|
+|       Size of the product       |  print_size  |      max_length=120     |          CharField         |
+| Prices of the product available | print_prices | through='PrincingSizes' | ManytoManyField PrintPrice |
+
+3. Combined model Pricing Sizes is built as follows:
+
+|         Name         |  Key in db  |        Validation        |       Field type      |
+|:--------------------:|:-----------:|:------------------------:|:---------------------:|
+| Size of the product  |  print_size | on_delete=models.CASCADE |  ForeignKey PrintSize |
+| Price of the product | print_price | on_delete=models.CASCADE | ForeignKey PrintPrice |
+
+
 ## Technologies Used
 
 ### Languages 
