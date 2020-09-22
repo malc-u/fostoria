@@ -141,6 +141,15 @@ Initial wireframes can be seen by clicking the following:
 - Possibility of changing print size in cart view (not only quantity)
 - Admin view allowing to add products using front-end (not only Django admin panel)
 
+## Information Architecture
+
+### Database Choice
+
+- Database used during development (installed with Django) - sqlite3
+- Database used once the project was deployed - PostgreSQL (SQL database provided by Heroku)
+
+### Data Models
+
 ## Technologies Used
 
 ### Languages 
