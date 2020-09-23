@@ -46,6 +46,7 @@ Landscape photography of Poland with webshop (selling photo prints). Photographs
     - [Deploying to Heroku](#deploying-to-heroku)
   - [Credits](#credits)
     - [Acknowledgements](#acknowledgements)
+    - [Disclaimer](#disclaimer)
 
 ## UX
 
@@ -515,8 +516,14 @@ Once this is done please follow below steps:
 ## Credits
 
 - The photos used in this site were obtained from T. Zowada's [website](https://fostoria.pl/) and [Instagram](https://www.instagram.com/tomaszzowada_fostoria/)
-- ManytoMany relationship
+- ManytoMany relationship tutorial by [Chuck Severance](https://www.youtube.com/watch?v=gf2-J9YOMcc)
+- Django tutorial by [Corey Schafer](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
+- Using Gmail to send emails with Django tutorial by [Haritha Computers & Technology](https://www.youtube.com/watch?v=Wixs3SAlHgI)
 
 ### Acknowledgements
 
-- [Simen Daehlin](https://github.com/Eventyret) - my Code Institute mentor
+- [Simen Daehlin](https://github.com/Eventyret) and Reuben Ferrante - my Code Institute mentors
+
+### Disclaimer
+
+This project and its contents are for educational purposes only.
