@@ -410,6 +410,18 @@ Linux: echo web: py app.py > Procfile
 
 8. Go to "Settings" tab in your Heroku app's dashboard, scroll down and click "Reveal Confirm Vars". Set them to the following ones:
 
+|          Key          |                Value               |
+|:---------------------:|:----------------------------------:|
+|      SECRET_KEY       |      <Your Django Secret Key>      |
+|   AWS_ACCESS_KEY_ID   |        <Your AWS Access Key>       |
+| AWS_SECRET_ACCESS_KEY |    <Your AWS Secret Access Key>    |
+|      DATABASE_URL     |   <Your PostgreSQL Database URL>   |
+|       EMAIL_HOST      |  <Your SMTP Enabled Gmail Address> |
+|       HOST_PASS       | <Your SMTP Enabled Gmail Password> |
+|   STRIPE_PUBLISHABLE  |    <Your Stripe Publishable Key>   |
+|     STRIPE_SECRET     |      <Your Stripe Secret Key>      |
+|         HEROKU        |                <True>              |
+
 9. In your IDE ensure you are now using Heroku Postgress as a default database instead on your local SQLite3 (this can be done by updateing your local env.py file as indicated in section "Running this project locally" no. 7 or commenting out your local database settings in settings.py)
 
 10. Migrate your database to Heroku by using terminal command:
@@ -436,8 +448,7 @@ Linux: py manage.py createsuperuser
 
 ## Credits
 
-This project has been created by me, however some content has been imported:
-
+This project has been created by me, however some content has been :
 - The photos used in this site were obtained from T. Zowada's [website](https://fostoria.pl/) and [Instagram](https://www.instagram.com/tomaszzowada_fostoria/)
 
 ### Acknowledgements
