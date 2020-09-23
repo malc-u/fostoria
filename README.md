@@ -332,7 +332,7 @@ Linux: pip3 install -r requirements.txt
 
 7. Set up the following environment variables within your IDE (create a file in the root of the project named "env.py", copy the code block below and populate with your details):
 
-```console
+```python
 import os
 os.environ['SECRET_KEY'] = '<Your Django Secret Key>'
 os.environ["STRIPE_PUBLISHABLE"] = '<Your Stripe Publishable Key>'
