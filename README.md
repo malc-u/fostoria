@@ -376,6 +376,63 @@ Linux: py manage.py runserver
 
 15. Once instances of these items exist in your database and match both contexts.py and form options in templates/details.html your local site will run as expected.
 
+### Deploying to Heroku
+
+In order to deploy this project to Heroku you will need to open accounts on:
+- [Heroku](https://www.heroku.com/)
+- [GitHub](https://github.com/)
+
+Once this is done please follow below steps:
+
+1. In your environment create ```requirements.txt``` file with terminal command:
+
+```console
+Windows: pip freeze > requirments.txt
+Linux: pip freeze > requirments.txt
+```
+
+2. Create ```Procfile``` using terminal command:
+
+```console
+Windows: echo web: python app.py > Procfile
+Linux: echo web: py app.py > Procfile
+```
+
+3. Create new repository on GitHub for this project, you can follow [this advice](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository)
+
+4. ```git add``` and ```git commit``` all changes done so far for this project and ```git push``` to your remote repository on GitHub
+
+5. Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to the closest one to your actual location.
+
+6. Go to "Rescources" tab in app's dashboard and from "Add-ons" search list pick "Heroku Postgres" - this will create your database.
+
+7. Move to "Deploy" tab and pick deployment method as GitHub and link your Heroku app with chosen by you GitHub repository
+
+8. Go to "Settings" tab in your Heroku app's dashboard, scroll down and click "Reveal Confirm Vars". Set them to the following ones:
+
+9. In your IDE ensure you are now using Heroku Postgress as a default database instead on your local SQLite3 (this can be done by updateing your local env.py file as indicated in section "Running this project locally" no. 7 or commenting out your local database settings in settings.py)
+
+10. Migrate your database to Heroku by using terminal command:
+
+```console
+Windows: python manage.py migrate
+Linux: py manage.py migrate
+```
+
+11. Create super-user for your hosted project using terminal command:
+
+```console
+Windows: python manage.py createsuperuser
+Linux: py manage.py createsuperuser
+```
+
+12. Go back to Heroku app's dashboard - tab "Deploy" - scroll down to "Manual Deploy", pick master branch and click "Deploy Branch"
+
+13. Upon build completion you can view your app hosted on Herok by clicking "Open app" button provided.
+
+14. From the link provided by Heroku add ```/admin``` (e.g. https://yourappname.herokuapp.com/admin) to the end of the url, log in with your super-user account and create instances of ProductGroup and Product within the new database. 
+
+15. Once these are completed your app will work as expected.
 
 ## Credits
 

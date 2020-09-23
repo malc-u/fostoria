@@ -44,13 +44,6 @@ body {
   color: #000;
 }
 
-.yellow-font {
-  color: #EDFF71;
-}
-
-.blue-font {
-  color: #758ecd;
-}
 
 /* Navbar */
 #nav-row {
@@ -58,10 +51,13 @@ body {
 }
 
 a,
-a:visited,
-a:hover {
+a:visited {
   color: #000;
   text-decoration: none;
+}
+
+a:hover {
+  color:#5bc0de;
 }
 
 .brand-name {
@@ -133,7 +129,7 @@ a:hover {
 }
 
 #about-box {
-  background-image: url("https://i.ibb.co/yBPDZDx/about.jpg");
+  background-image: linear-gradient(rgb(0 0 0 / 62%), rgba(0, 0, 0, 0.3)), url("https://i.ibb.co/yBPDZDx/about.jpg");
   min-height: 100vh;
   background-size: cover;
   -webkit-background-size: cover;
@@ -148,4 +144,48 @@ a:hover {
 
 #checkout-btn-text {
   letter-spacing: 2px;
+}
+
+.footer-text, .fab {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  #qty-group {
+    justify-content: center;
+  }
+  .footer-text, .fab {
+    font-size: 0.55rem;
+  }
+  #top-footer-left,
+  #bottom-footer-left,
+  #bottom-footer-right,
+  #cart-item-details {
+    text-align: center !important;
+  }
+  #top-footer-right {
+    text-align: center !important;
+    padding-bottom: 1.2rem;
+  }
+  #search-page-content {
+    padding-top: 2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .footer-text, .fab {
+    font-size: 0.55rem;
+  }
+  #top-footer-left,
+  #bottom-footer-left,
+  #bottom-footer-right {
+    text-align: center !important;
+  }
+  #top-footer-right {
+    text-align: center !important;
+    padding-bottom: 1.2rem;
+  }
+  #search-page-content {
+    padding-top: 2rem;
+  }
 }
