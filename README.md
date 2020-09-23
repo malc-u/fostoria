@@ -412,15 +412,15 @@ Linux: echo web: py app.py > Procfile
 
 |          Key          |                Value               |
 |:---------------------:|:----------------------------------:|
-|      SECRET_KEY       |      <Your Django Secret Key>      |
-|   AWS_ACCESS_KEY_ID   |        <Your AWS Access Key>       |
-| AWS_SECRET_ACCESS_KEY |    <Your AWS Secret Access Key>    |
-|      DATABASE_URL     |   <Your PostgreSQL Database URL>   |
-|       EMAIL_HOST      |  <Your SMTP Enabled Gmail Address> |
-|       HOST_PASS       | <Your SMTP Enabled Gmail Password> |
-|   STRIPE_PUBLISHABLE  |    <Your Stripe Publishable Key>   |
-|     STRIPE_SECRET     |      <Your Stripe Secret Key>      |
-|         HEROKU        |                <True>              |
+|      SECRET_KEY       |      "Your Django Secret Key"      |
+|   AWS_ACCESS_KEY_ID   |        "Your AWS Access Key"       |
+| AWS_SECRET_ACCESS_KEY |    "Your AWS Secret Access Key"    |
+|      DATABASE_URL     |   "Your PostgreSQL Database URL"   |
+|       EMAIL_HOST      |  "Your SMTP Enabled Gmail Address" |
+|       HOST_PASS       | "Your SMTP Enabled Gmail Password" |
+|   STRIPE_PUBLISHABLE  |    "Your Stripe Publishable Key"   |
+|     STRIPE_SECRET     |      "Your Stripe Secret Key"      |
+|         HEROKU        |                "True"              |
 
 9. In your IDE ensure you are now using Heroku Postgress as a default database instead on your local SQLite3 (this can be done by updateing your local env.py file as indicated in section "Running this project locally" no. 7 or commenting out your local database settings in settings.py)
 
