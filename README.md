@@ -222,19 +222,20 @@ Within ``` products ``` app there are models that contain all details that are r
 
 ##### Product Group model
 
-    |         Name         |   Key in db  |   Validation   | Field type |
-    |:--------------------:|:------------:|:--------------:|:----------:|
-    |  Product group name  |     name     | max_length=254 |  CharField |
-    | Product display name | display_name | max_length=254 |  CharField |
+|             Name            |   Key in db  |    Validation    | Field type |
+|:---------------------------:|:------------:|:----------------:|:----------:|
+|      Product group name     |     name     |  max_length=254  |  CharField |
+| Product group  display name | display_name | mmax_length=254  |  CharField |
 
 ##### Product model
 
-    |                    Name                    |   Key in db   |                     Validation                    |        Field type       |
-    |:------------------------------------------:|:-------------:|:-------------------------------------------------:|:-----------------------:|
-    |             Product name/title             |     title     |                   max_length=254                  |        CharField        |
-    |          Place of product's origin         |     place     |                   max_length=254                  |        CharField        |
-    |               Product's image              | product_image |                    blank=False                    |        ImageField       |
-    | Product Group this product is assigned to  | product_group | blank=False, null=False, on_delete=models.PROTECT | ForeignKey ProductGroup |
+|        Name        |   Key in db   |                     Validation                    |        Field type       |
+|:------------------:|:-------------:|:-------------------------------------------------:|:-----------------------:|
+| Product name/title |     title     |                   max_length=254                  |        CharField        |
+|  Product's origin  |     place     |                  mmax_length=254                  |        CharField        |
+|   Product's image  | product_image |                    blank=False                    |        ImageField       |
+|   Product's group  | product_group | blank=False, null=False, on_delete=models.PROTECT | ForeignKey ProductGroup |
+|  Product has sizes |   has_sizes   |       default=True, null=False, blank=False       |       BooleanField      |
 
 ##### Pricing Sizes model
 
