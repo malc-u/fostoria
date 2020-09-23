@@ -4,6 +4,10 @@
 
 Landscape photography of Poland with webshop (selling photo prints). Photographs by Tomasz Zowada - based in Upper Silesia (Poland).
 
+<p align="center">
+<img src="https://i.ibb.co/C1SkTgs/mockup.jpg">
+</p>
+
 - [FOSTORIA](#fostoria)
   - [UX](#ux)
     - [Target Audience](#target-audience)
