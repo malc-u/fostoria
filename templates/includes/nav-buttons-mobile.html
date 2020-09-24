@@ -1,6 +1,6 @@
 <!--This is written after inspiration taken from the content of the Code Institute 
     course module Project - Boutique Ado.-->
-<li class="list-inline-item dropdown pt-2">
+<div class="list-inline-item dropdown pt-2">
     <!-- Button for My account section-->
     <a class="nav-link d-block d-lg-none" href="#" id="my-account" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
@@ -20,9 +20,9 @@
         
         {% endif %}
     </div>
-</li>
+</div>
 <!-- Button for cart -->
-<li class="list-inline-item pt-2">
+<div class="list-inline-item pt-2">
     <a class="{% if total %}font-weight-bold{% else %}dark-font{% endif %} nav-link d-block d-lg-none"
         href="{% url 'cart_view' %}">
         <div class="text-center pt-1">
@@ -32,4 +32,4 @@
                 {% endif %}</p>
         </div>
     </a>
-</li>
+</div>
