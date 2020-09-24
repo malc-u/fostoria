@@ -7,8 +7,7 @@
 {% block title_extension %} {% if title %}{{ title }} {% endif %} {% endblock %}
 
 {% block content %}
-<div class="container mt-5 mx-auto" id="page-content">
-
+<div class="container mt-5 mx-auto">
     <div class="row pt-5">
         <div class="col-12">
             <h1 class="text-info font-weight-bold">Create new account</h1>
@@ -18,7 +17,8 @@
     <div class="row">
         <div class="col-12">
             <p class="text-muted small">Already have an account?
-                <a href="{% url 'register' %}">Login here</a></p>
+                <a href="{% url 'register' %}">Login here</a>
+            </p>
         </div>
     </div>
     <hr class="border-info">
@@ -37,6 +37,5 @@
             <hr>
         </div>
     </div>
-
 </div>
 {% endblock %}
