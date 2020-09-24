@@ -16,19 +16,18 @@
     <hr class="border-info">
     <!-- Filled in user update form that allows for user to update their details -->
     <div class="row">
-            <div class="col-sm-12 col-md-6 pb-5">
-                <form method="POST" class="p-4 secondary-bg-color">
-                    {% csrf_token %}
-                    <fieldset class="form-group">
-                        {{ form|crispy }}
-                    </fieldset>
-                    <div class="form-group mr-5 text-center">
-                        <button class="btn btn-secondary" type="submit">Update</button>
-                    </div>
-                </form>
-                <hr>
-            </div>
-        
+        <div class="col-sm-12 col-md-6 pb-5">
+            <form method="POST" class="p-4 secondary-bg-color">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group mr-5 text-center">
+                    <button class="btn btn-secondary" type="submit">Update</button>
+                </div>
+            </form>
+            <hr>
+        </div>
         <div class="col-sm-12 col-md-6 pb-5">
             <h4>Orders:</h4>
             {% if order_line_record %}
@@ -55,18 +54,20 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <div class="col-12 py-5 text-center"><a href="{% url 'all_products' %}">
-                <p class="btn btn-info btn-lg">Order some more</p>
-            </a></div>
+            <div class="col-12 py-5 text-center">
+                <a href="{% url 'all_products' %}">
+                    <p class="btn btn-info btn-lg">Order some more</p>
+                </a>
+            </div>
             {% else %}
-                <h4 class="text-center">You haven't ordered yet.</h4>
-                <div class="col-12 py-5 text-center"><a href="{% url 'all_products' %}">
+            <h4 class="text-center">You haven't ordered yet.</h4>
+            <div class="col-12 py-5 text-center">
+                <a href="{% url 'all_products' %}">
                     <p class="btn btn-info btn-lg">Check out our offer</p>
-                </a></div>
+                </a>
+            </div>
             {% endif %}
-            
         </div>
     </div>
-
 </div>
 {% endblock %}
