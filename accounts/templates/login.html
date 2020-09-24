@@ -24,7 +24,7 @@
     <!-- Login form. -->
     <div class="row">
         <div class="col-12 py-4">
-            <form method="POST" class="px-4 pb-4">
+            <form method="POST" class="px-4 py-2 secondary-bg-color">
                 {% csrf_token %}
                 <fieldset class="form-group">
                     {{ form|crispy }}
