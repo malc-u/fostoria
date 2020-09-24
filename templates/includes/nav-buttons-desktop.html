@@ -2,21 +2,21 @@
 <div id="top-buttons" class="pt-lg-2 d-none d-lg-flex col-lg-3">
     <!-- Button for My account section-->
     <div class="col-12 col-lg-6 my-auto">
-        <a class="nav-link" href="#" id="my-account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link" href="#" id="my-account-desktop" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             <div class="text-center">
                 <i class="fas fa-user-alt fa-lg {% if total %} pt-2 {% endif %}"></i>
-
             </div>
         </a>
         <!-- Dropdown menu to My account button-->
-        <div class="dropdown-menu border-0" aria-labelledby="my-account">
+        <div class="dropdown-menu border-0" aria-labelledby="my-account-desktop">
             {% if request.user.is_authenticated %}
-                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
+            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+            <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
             {% else %}
-                <a href="{% url 'login' %}" class="dropdown-item">Login</a>
-                <a href="{% url 'register' %}" class="dropdown-item">Register</a>
-                
+            <a href="{% url 'login' %}" class="dropdown-item">Login</a>
+            <a href="{% url 'register' %}" class="dropdown-item">Register</a>
+
             {% endif %}
         </div>
     </div>
@@ -25,11 +25,10 @@
         <a class="{% if total %}font-weight-bold{% else %}dark-font{% endif %} nav-link" href="{% url 'cart_view' %}">
             <div class="text-center">
                 <i class="fas fa-shopping-cart pb-1"></i>
-                    <p class="m-0">{% if total %}
-                        £{{ total|floatformat:2 }}
-                        {% endif %}</p>
+                <p class="m-0">{% if total %}
+                    £{{ total|floatformat:2 }}
+                    {% endif %}</p>
             </div>
         </a>
-
     </div>
 </div>
