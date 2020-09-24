@@ -67,7 +67,7 @@ Landscape photography of Poland with webshop (selling photo prints). Photographs
 1. As a new user:
 
     - I want to be able create an account
-    - I want to visit gallery of photos available to purchase photos
+    - I want to visit gallery of available to purchase photos
     - I want to find out what print sizes are available to purchase
 
 2. As a returning/registered user:
@@ -440,11 +440,9 @@ Once all above are set-up please follow below steps:
 
 12. Once the program is running in a browser - **add "/admin" to the existing host address** to access django-login panel(e.g. http://127.0.0.1:8000/admin). **Log in** with your super-user details.
 
-13. **Add** new **ProductGroups** followed by adding new **Product**, sizes in Print Size, prices in Print Price** and in PricingSizes match entered earlier size from Print Size with the price from Print Price models.
+13. **Add** new **ProductGroups** followed by adding new **Product**, sizes in Print Size (these are in order A3, A2, A1, A0 and 2A0), prices in Print Price(in order - 60, 75, 90, 115, 140),  and in PricingSizes match entered earlier size from Print Size with the price from Print Price models (e.g. A3 - 60, A2 - 75...).
 
-14. After assigning prices to sizes to the database make sure they match contexts.py in Cart app. Sizes assigned by you must also be updated in templates/details.html in Products app where they exists as options in 'add_to_cart' form.
-
-15. Once instances of these items exist in your database and match both contexts.py and form options in templates/details.html your local site will run as expected.
+14. Once instances of these items exist in your database and match both contexts.py and form options in templates/details.html your local site will run as expected.
 
 ### Deploying to Heroku
 
