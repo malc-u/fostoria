@@ -6,8 +6,7 @@
 {% block title_extension %} {% if title %}{{ title }} {% endif %} {% endblock %}
 
 {% block content %}
-<div class="container mt-5 mb-5" id="page-content">
-
+<div class="container mt-5 mb-5">
     <div class="row pt-5">
         <div class="col-12">
             <h2 class="mt-4 text-info">Basket contents:</h2>
@@ -20,22 +19,23 @@
         <div class="col-12">
             <!-- Displaying info about each product added to cart. -->
             {% for item in cart_items %}
-                {% include 'components/basket-contents.html' %}
+            {% include 'components/basket-contents.html' %}
             {% endfor %}
             <div class="row">
                 <div class="col-sm-12 col-md-6 pb-2">
                     <p class="dark-font text-center text-md-right my-0">Standard delivery cost £0.00 </p>
-                    <p class="dark-font text-center text-md-right font-weight-bold">Total to be charged: £{{ total }}.00 </p>
+                    <p class="dark-font text-center text-md-right font-weight-bold">Total to be charged: £{{ total }}.00
+                    </p>
                 </div>
                 <!-- Button allowing to start proceeding with checkout. -->
                 <div class="col-sm-12 col-md-6 text-center text-md-left pt-2">
                     <a class="btn p-2 btn-info btn-lg p-2" href="{% url 'delivery' %}">
-                        <span id="checkout-btn-text" class="light-font">Checkout</span></a>
+                        <span id="checkout-btn-text" class="light-font">Checkout</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-
     {% else %}
     <!-- Displaying info that cart/basket is empty. -->
     <div class="row my-5 py-4">
@@ -44,9 +44,9 @@
         </div>
         <div class="col-12 py-5 text-center"><a href="{% url 'all_products' %}">
                 <p class="btn btn-info btn-lg">Keep browsing</p>
-            </a></div>
+            </a>
+        </div>
     </div>
     {% endif %}
-
 </div>
 {% endblock %}
