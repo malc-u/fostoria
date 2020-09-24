@@ -1,7 +1,7 @@
 <!-- Each item added to cart -->
 <div class="row">
     <div class="col-sm-12 col-md-4 py-1">
-        <img class="img-fluid" src="{{ item.product.product_image.url }}">
+        <img class="img-fluid" src="{{ item.product.product_image.url }}" alt="{{ item.product.title }}">
     </div>
     <div class="col-sm-12 col-md-8 text-md-left py-1" id="cart-item-details">
         <p class="font-weight-bold">{{ item.product.title }}</p>
@@ -15,20 +15,18 @@
                     <label for="id_qty_{{ item.article_id }}" class="pr-2">Quantity: </label>
                 </div>
                 <div class="qty-div">
-                    <input class="form-control form-control-sm update-form-field text-right" type="number"
-                    name="qty" value="{{ item.qty }}" min="0" max="10"
-                    data-article_id="{{ item.article_id }}" id="id_qty_{{ item.article_id }}">
+                    <input class="form-control form-control-sm update-form-field text-right" type="number" name="qty"
+                        value="{{ item.qty }}" min="0" max="10" data-article_id="{{ item.article_id }}"
+                        id="id_qty_{{ item.article_id }}">
                 </div>
-
                 {% if item.product.has_sizes %}
                 <input type="hidden" name="product_size" value="{{ item.size }}">
                 {% endif %}
             </div>
             <!-- Buttons allowing user to update the qty or to remove item form the basket. -->
-            <button type="submit" class="btn btn-secondary mt-2" id="update-btn">Update</button>
+            <button type="submit" class="btn btn-secondary mt-2">Update</button>
             <button class="btn btn-secondary mt-2 remove-from-cart">Remove</button>
         </form>
-
     </div>
 </div>
 <hr class="border-info">
