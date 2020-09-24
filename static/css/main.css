@@ -15,36 +15,21 @@ body {
 }
 
 /* Background and font classes */
-.dark-mode {
-  background-color: #393d3f;
+.light-font {
   color: #fff;
 }
 
-.primary-bg-color {
-  background-color: #fdfdff;
-}
-
 .secondary-bg-color {
-  background-color: #706f5c;
+  background-color: #CFEEFA;
 }
 
 .tertiary-bg-color {
   background-color: #393d3f;
 }
 
-.blue-color {
-  background-color: #758ecd;
-}
-
-.light-font {
-  color: #fff;
-}
-
 .dark-font {
   color: #000;
 }
-
-
 /* Navbar */
 #nav-row {
   background-color: #fdfdff;
@@ -121,11 +106,6 @@ a:hover {
   padding: 2px;
   border: 3px solid #706f5c;
   border-radius: 4px;
-}
-
-.back-btn:hover {
-  color: #000;
-  background-color: #758ecd;
 }
 
 #about-box {
