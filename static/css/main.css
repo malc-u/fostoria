@@ -19,6 +19,10 @@ body {
   color: #fff;
 }
 
+.dark-font {
+  color: #000;
+}
+
 .secondary-bg-color {
   background-color: #CFEEFA;
 }
@@ -27,9 +31,6 @@ body {
   background-color: #393d3f;
 }
 
-.dark-font {
-  color: #000;
-}
 /* Navbar */
 #nav-row {
   background-color: #fdfdff;
