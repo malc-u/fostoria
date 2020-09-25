@@ -110,7 +110,9 @@ def checkout_payment_view(request):
 def save_order_record(request):
     """
     Creates the order_line_record that will be
-    displayed in user profile
+    displayed in user profile.
+    It utilizes the data stored in cart_items created
+    via cart.contexts.py when adding items to the cart.
     """
 
     cart_items = cart_contents(request)['cart_items']
