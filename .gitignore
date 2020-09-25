@@ -9,3 +9,4 @@ media
 env.py
 *.sqlite3
 *.pyc
+.jshintrc
