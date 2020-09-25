@@ -2,7 +2,8 @@
 /* Variables */
 /* Page body */
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -104,13 +105,17 @@ a:hover {
 }
 
 #about-box {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0 0 0 / 62%)), to(rgba(0, 0, 0, 0.3))), url("https://i.ibb.co/yBPDZDx/about.jpg");
+  background-image: -o-linear-gradient(rgb(0 0 0 / 62%), rgba(0, 0, 0, 0.3)), url("https://i.ibb.co/yBPDZDx/about.jpg");
   background-image: linear-gradient(rgb(0 0 0 / 62%), rgba(0, 0, 0, 0.3)), url("https://i.ibb.co/yBPDZDx/about.jpg");
   min-height: 100vh;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .opacity {
@@ -131,7 +136,9 @@ a:hover {
 
 @media (max-width: 768px) {
   #qty-group {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .footer-text, .fab {
     font-size: 0.55rem;
