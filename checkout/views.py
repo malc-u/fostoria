@@ -20,6 +20,7 @@ def checkout_delivery_view(request):
     View for logged in users to enter delivery information.
     Renders order shipping form and once confirm button clicked
     checks its validity.
+    commit=False logic from https://stackoverflow.com/a/12848678
     """
     if request.method == 'POST':
         order_shipping_form = OrderShippingForm(request.POST)
@@ -107,8 +108,10 @@ def checkout_payment_view(request):
 
 # Helper function for profile_view and chekcout process
 def save_order_record(request):
-    """Creates the order_line_record that will be
-    displayed in user profile"""
+    """
+    Creates the order_line_record that will be
+    displayed in user profile
+    """
 
     cart_items = cart_contents(request)['cart_items']
 
