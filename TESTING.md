@@ -3,7 +3,13 @@
 This is TESTING.md file created as an extension to the [README.md](https://github.com/malc-u/fostoria/blob/master/README.md)
 
 - [Fostoria Testing](#fostoria-testing)
-  - [Manual testing](#manual-testing)
+  - [Automated testing](#automated-testing)
+    - [HTML validation](#html-validation)
+    - [CSS validation](#css-validation)
+    - [JavaScript validation](#javascript-validation)
+    - [Python validation](#python-validation)
+      - [Python testing](#python-testing)
+      - [Travis CI](#travis-ci)
   - [User stories testing](#user-stories-testing)
     - [As a new user I want to be able create an account](#as-a-new-user-i-want-to-be-able-create-an-account)
     - [As a new user I want to visit gallery of available to purchase photos](#as-a-new-user-i-want-to-visit-gallery-of-available-to-purchase-photos)
@@ -27,9 +33,60 @@ This is TESTING.md file created as an extension to the [README.md](https://githu
     - [As a browsing/visiting user I want to see photos grouped into categories](#as-a-browsingvisiting-user-i-want-to-see-photos-grouped-into-categories)
     - [As a browsing/visiting user I want to find frequently asked questions](#as-a-browsingvisiting-user-i-want-to-find-frequently-asked-questions)
     - [As a browsing/visiting user I want easy way of contacting page owner - via contact form](#as-a-browsingvisiting-user-i-want-easy-way-of-contacting-page-owner---via-contact-form)
-  - [Automated testing](#automated-testing)
+  - [Manual testing](#manual-testing)
 
-## Manual testing
+## Automated testing
+
+### HTML validation
+
+This was done using [W3C Markup Validation Service](https://validator.w3.org/) on both html files in hte development stage as well as on deployed project using live links.
+
+**Bugs in HTML:**
+
+There is 1 error found " Element ul not allowed as child of element small in this context" for the view https://fostoria.herokuapp.com/accounts/register/ . This cannot be addressed as it is an error within the crispy form code and it is automatically rendered by django-crispy-forms.
+
+### CSS validation
+
+CSS was prefixed with [Autoprefixer CSS online](https://autoprefixer.github.io/) with included last 3 versions of browsers.
+CSS was validated using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) with no errors found.
+
+### JavaScript validation
+
+JavaScript was validated using installed in Visiual Studio Code [JSHint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint) extension.
+
+### Python validation
+
+Python was validated using installed in Visual Studio Code [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension as well as [pylint](https://pypi.org/project/pylint/) linter and [pylint-django](https://marketplace.visualstudio.com/items?itemName=ms-python.python) plugin.
+
+#### Python testing
+
+To run existing Python tests follow below steps:
+1. Activate your virtual environment using terminal command:
+
+
+    ```console
+    Windows: <name of your virtual environment>\Scripts\activate
+    Linux: source <name of your virtual environment>\Scripts\activate
+    ```
+2. Run tests by using terminal command:
+
+    ```console
+    Windows: python manage.py test
+    Linux: py manage.py test
+    ```
+
+3. Test can be also run for a specific app using following terminal command:
+   
+    ```console
+    Windows: python manage.py test app_name_here
+    Linux: py manage.py test app_name_here
+    ```
+
+4. Test results will be summarised in the terminal.
+
+#### Travis CI
+
+[Travis CI](https://travis-ci.org/) was used to test the project. 
 
 ## User stories testing
 
@@ -135,4 +192,4 @@ There is a FAQ section of the About page that can be easily accessed from any pa
 
 The contact form can be accessed via link in the main navigation bar. It allows user to send an email message to the store owner. It is easy, hassle free process of submitting a form consisting of 3 fields - user's contact e-mail address, message subject and message text. It gives the website owner all information needed to be able to respond.
 
-## Automated testing
+## Manual testing
