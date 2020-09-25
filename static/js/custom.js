@@ -15,4 +15,4 @@ $('.remove-from-cart').click(function(e) {
         $('#update-form').submit(); 
         Swal.fire({title: 'Removed !',
         showConfirmButton: false});    
-})
+});
