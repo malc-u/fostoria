@@ -521,7 +521,9 @@ Once this is done please follow below steps:
 - ManytoMany relationship tutorial by [Chuck Severance](https://www.youtube.com/watch?v=gf2-J9YOMcc)
 - Django tutorial by [Corey Schafer](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
 - Using Gmail to send emails with Django tutorial by [Haritha Computers & Technology](https://www.youtube.com/watch?v=Wixs3SAlHgI)
-
+- Q [queryset logic](https://books.agiliq.com/projects/django-orm-cookbook/en/latest/query_relatedtool.html)
+- Problems researched mainly on [Stackoverflow](https://stackoverflow.com/)
+  
 ### Acknowledgements
 
 - [Simen Daehlin](https://github.com/Eventyret) and Reuben Ferrante - my Code Institute mentors
