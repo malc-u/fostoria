@@ -233,13 +233,13 @@ Throughout the development process I came across these bugs:
   - **Result**: this bug was removed and footer info is displayed as intended on all screens
 
 - **Qty in basket contents**
-  - **Bug**: quantity input field and label were not centered on small screens
+  - **Bug**: quantity input field and label were not centred on small screens
   - **Fix**: added media in CSS to adjust the alignment
   - **Result**: this bug was removed and footer info is displayed as intended on all screens
 
 ### Interaction
 
-- **Plan**: there are elements that are planned to be interactive on this page e.g. buttons throughout the page, navbar, photos in the gallery, forms (login, register, contact, update dteails in the user profile)etc.
+- **Plan**: there are elements that are planned to be interactive on this page e.g. buttons throughout the page, navbar, photos in the gallery, forms (login, register, contact, update details in the user profile)etc.
 - **Implementation**: interaction was carried out on many devices and on several browsers, including Chrome, Firefox and Opera. Following elements were tested by making sure they act in the way they were intended, that they lead to the page or action as planned.
   - Navbar toggle button
   - Navbar links
@@ -261,7 +261,7 @@ Throughout the development process I came across these bugs:
   - `Order some more` button within profile (orders previously placed)
   - Cart button
   - Size selector within product details display
-  - Quantity selectro within product details display
+  - Quantity selector within product details display
   - `Add to cart` button within product details display
   - `Keep browsing` button with product details display
   - `Go to cart` button within product details display
@@ -283,8 +283,8 @@ Throughout the development process I came across two bugs related to page intera
 
 - **Removed from cart message**
   - **Bug**: sweetify message was disappearing without confirmation button clicked
-  - **Fix**: relised that `Remove` button is placed within update form therefore JavaScript function that operates this (removal using update form) will not wait for a button click
-  - **Result**: this bug was removed and after removing item from the cart there is a message "Removed!" displayed that dissapears on its own.
+  - **Fix**: realised that `Remove` button is placed within update form therefore JavaScript function that operates this (removal using update form) will not wait for a button click
+  - **Result**: this bug was removed and after removing item from the cart there is a message "Removed!" displayed that disappears on its own.
 
 ### Logic
 
@@ -295,24 +295,24 @@ Throughout the development process I came across two bugs related to page intera
   - this page is intended to allow all user to use contact form but all fields of the form must be filled in before submission,
   - products/photos were intended to be displayed as a gallery as well as based on main subject of a photo
   - all products added to the cart can be revised - quantity added can be changed or item can be removed from the cart
-  - cart should be displaying total price of items within the cart at all times (if any items added, if none there is no total dispalyed)
+  - cart should be displaying total price of items within the cart at all times (if any items added, if none there is no total displayed)
   - user profile displays all previously placed orders by registered user
   - user profile view allow user to change username or e-mail associated with the profile
-  - user has possibility od setting delivery address during checkout
+  - user has possibility of setting delivery address during checkout
   - user has possibility to pay with card
 - **Implementation**:
   - attempted to access pages intended for registered users by pasting direct access address to the address bar in the browser eg. fostoria.herokuapp.com/accounts/profile (not successful - redirected to login page as a result)
-  - attempted to search for random keywords that do not exist in product names and places (not successful -message "no photos matching your search cirteria" displayed accordingly)
+  - attempted to search for random keywords that do not exist in product names and places (not successful -message "no photos matching your search criteria" displayed accordingly)
   - attempted to proceed to checkout without user being registered/logged in (not successful - redirected to login page)
   - attempted to submit the contact form without filling in all fields (not successful - warning messages displayed informing fields must be filled in)
   - attempted to display gallery not included in the navbar by amending address directly in the browser - e.g. fostoria.herokuapp.com/photos/trees/ (not successful - 404 page displayed)
   - checked if quantity of added to the cart products is actually amended when button `Update` pressed (successful)
-  - checked if product is removed from the cart when `Remove` button pressed (succcessful)
-  - attemped the brake the logic of cart total price by changing the quantity and number of products in the basked by adding, updating and removing several items (not successful - total price displayed correctly at all times)
-  - attempted to log in with old username after it was udated using user profile udate form (not successful - username was changed therefore login is possibile with updated/ new username)
-  - placed dummy order to check it displays in uder profile (successful)
+  - checked if product is removed from the cart when `Remove` button pressed (successful)
+  - attempted the brake the logic of cart total price by changing the quantity and number of products in the basked by adding, updating and removing several items (not successful - total price displayed correctly at all times)
+  - attempted to log in with old username after it was updated using user profile update form (not successful - username was changed therefore login is possible with updated/ new username)
+  - placed dummy order to check it displays in under profile (successful)
   - attempted checkout without setting delivery address (not successful)
-  - attempted to place the order wihotu giving card details (not successful)
+  - attempted to place the order without giving card details (not successful)
 - **Result**: all tested elements are working properly. There are no elements that present problems with logic
 - **Conclusion**: all tests that were run on logic were passed
 
@@ -320,19 +320,19 @@ Throughout the development process I came across two bugs related to page intera
 
 Throughout the development process I came across these bugs:
 
-- **Assigining correct price and size**
+- **Assigning correct price and size**
   - **Bug**: adding item to the cart was not assigning correct price for chosen size
   - **Fix**: added conditional in cart.contexts.py 
       ```python
       if size == 'A3':
-          price = 60
-        elif size == 'A2':
-          price = 75
-        elif size == 'A1':
-          price = 90
-        elif size == 'A0':
-          price = 115
-        else:
-          price = 140
+        price = 60
+      elif size == 'A2':
+        price = 75
+      elif size == 'A1':
+        price = 90
+      elif size == 'A0':
+        price = 115
+      else:
+        price = 140
       ```
   - **Result**: this bug was removed and all prices as well as total price for the order is now assigned correctly
