@@ -34,6 +34,12 @@ This is TESTING.md file created as an extension to the [README.md](https://githu
     - [As a browsing/visiting user I want to find frequently asked questions](#as-a-browsingvisiting-user-i-want-to-find-frequently-asked-questions)
     - [As a browsing/visiting user I want easy way of contacting page owner - via contact form](#as-a-browsingvisiting-user-i-want-easy-way-of-contacting-page-owner---via-contact-form)
   - [Manual testing](#manual-testing)
+    - [Responsiveness](#responsiveness)
+      - [Bugs - responsiveness](#bugs---responsiveness)
+    - [Interaction](#interaction)
+      - [Bugs - interaction](#bugs---interaction)
+    - [Logic](#logic)
+      - [Bugs - logic](#bugs---logic)
 
 ## Automated testing
 
@@ -193,3 +199,140 @@ There is a FAQ section of the About page that can be easily accessed from any pa
 The contact form can be accessed via link in the main navigation bar. It allows user to send an email message to the store owner. It is easy, hassle free process of submitting a form consisting of 3 fields - user's contact e-mail address, message subject and message text. It gives the website owner all information needed to be able to respond.
 
 ## Manual testing
+
+### Responsiveness
+
+- **Plan**: this page was planned to be responsive, working on all devices - mobile phones, tablets and desktops. Following this it was planned for Bootstrap library to be used for a page design.
+- **Implementation**: page was **tested in Chrome Developer Tools** throughout the process of putting it together to make sure it was responsive to all devices. "Responsive" slider was used to make sure content is shown correctly on desktop, tablet and mobile, that they look as desired by the developer. Bootstrap classes as well as media rules were used to adjust responsiveness. **Tested the pages on devices available in Chrome**, these were:
+  
+  - 240 x 360 Jio Phone 2
+  - 280 x 653 Galaxy Fold
+  - 320 x 568 iPhone 5/SE 
+  - 360 x 640 Blackberry Z30 & Galaxy Note
+  - 375 x 667 iPhone 6/7/8
+  - 375 x 812 iPhone X
+  - 411 x 731 Pixel 2
+  - 414 x 736 iPhone 6/7/8 Plus
+  - 540 x 720 Surface Pro
+  - 600 x 960 Nexus 7
+  - 600 x 1024 Blackberry PlayBook
+  - 768 x 1024 iPad
+  - 800 x 1280 Nexus 10
+  - 1024 x 1366 iPad Pro
+  
+- **Result**: page is responsive and can be used on all planned devices. There are no elements on this page that are not responding as planned.
+- **Conclusion**: all tests that were run on responsiveness were passed therefore page is fully responsive.
+
+#### Bugs - responsiveness
+
+Throughout the development process I came across these bugs:
+
+- **Footer**
+  - **Bug**: footer information was not displaying as intended
+  - **Fix**: added media in CSS to adjust the size and text-alignment
+  - **Result**: this bug was removed and footer info is displayed as intended on all screens
+
+- **Qty in basket contents**
+  - **Bug**: quantity input field and label were not centered on small screens
+  - **Fix**: added media in CSS to adjust the alignment
+  - **Result**: this bug was removed and footer info is displayed as intended on all screens
+
+### Interaction
+
+- **Plan**: there are elements that are planned to be interactive on this page e.g. buttons throughout the page, navbar, photos in the gallery, forms (login, register, contact, update dteails in the user profile)etc.
+- **Implementation**: interaction was carried out on many devices and on several browsers, including Chrome, Firefox and Opera. Following elements were tested by making sure they act in the way they were intended, that they lead to the page or action as planned.
+  - Navbar toggle button
+  - Navbar links
+  - Logo/project name
+  - User button
+  - Cart button
+  - `Read  more` button on index page
+  - `Order prints` button on index page
+  - Accordion on about page
+  - Gallery - each picture
+  - Gallery - pagination buttons
+  - Contact form + `Send` button
+  - Search bar
+  - User button
+  - Login form + `Submit` button
+  - Register form + `Sign up` button
+  - Update form + `Update` button
+  - `Check out our offer` button within profile (no previous orders)
+  - `Order some more` button within profile (orders previously placed)
+  - Cart button
+  - Size selector within product details display
+  - Quantity selectro within product details display
+  - `Add to cart` button within product details display
+  - `Keep browsing` button with product details display
+  - `Go to cart` button within product details display
+  - `Keep browsing` button - empty basket display
+  - Quantity selector - cart display
+  - `Update` button - cart display
+  - `Remove` button - cart display
+  - `Checkout` button - cart display
+  - Delivery details form + `Confirm` button within checkout
+  - Payment details form + `Submit payment` button within checkout
+  - Sweetify messages
+  - Footer icons
+- **Result**: all tested elements are interactive as planned . There are no elements on this page that are not responding as planned
+- **Conclusion**: all tests that were run on interactivity were passed therefore page is interactive
+
+#### Bugs - interaction
+
+Throughout the development process I came across two bugs related to page interaction:
+
+- **Removed from cart message**
+  - **Bug**: sweetify message was disappearing without confirmation button clicked
+  - **Fix**: relised that `Remove` button is placed within update form therefore JavaScript function that operates this (removal using update form) will not wait for a button click
+  - **Result**: this bug was removed and after removing item from the cart there is a message "Removed!" displayed that dissapears on its own.
+
+### Logic
+
+- **Plan**:
+  - the page was planned to have 2 tier access for unregistered and registered users,
+  - search bar is intended to allow users to search for photo title or name of the place where photo was taken
+  - it was planned to allow only registered users to proceed with the purchase,
+  - this page is intended to allow all user to use contact form but all fields of the form must be filled in before submission,
+  - products/photos were intended to be displayed as a gallery as well as based on main subject of a photo
+  - all products added to the cart can be revised - quantity added can be changed or item can be removed from the cart
+  - cart should be displaying total price of items within the cart at all times (if any items added, if none there is no total dispalyed)
+  - user profile displays all previously placed orders by registered user
+  - user profile view allow user to change username or e-mail associated with the profile
+  - user has possibility od setting delivery address during checkout
+  - user has possibility to pay with card
+- **Implementation**:
+  - attempted to access pages intended for registered users by pasting direct access address to the address bar in the browser eg. fostoria.herokuapp.com/accounts/profile (not successful - redirected to login page as a result)
+  - attempted to search for random keywords that do not exist in product names and places (not successful -message "no photos matching your search cirteria" displayed accordingly)
+  - attempted to proceed to checkout without user being registered/logged in (not successful - redirected to login page)
+  - attempted to submit the contact form without filling in all fields (not successful - warning messages displayed informing fields must be filled in)
+  - attempted to display gallery not included in the navbar by amending address directly in the browser - e.g. fostoria.herokuapp.com/photos/trees/ (not successful - 404 page displayed)
+  - checked if quantity of added to the cart products is actually amended when button `Update` pressed (successful)
+  - checked if product is removed from the cart when `Remove` button pressed (succcessful)
+  - attemped the brake the logic of cart total price by changing the quantity and number of products in the basked by adding, updating and removing several items (not successful - total price displayed correctly at all times)
+  - attempted to log in with old username after it was udated using user profile udate form (not successful - username was changed therefore login is possibile with updated/ new username)
+  - placed dummy order to check it displays in uder profile (successful)
+  - attempted checkout without setting delivery address (not successful)
+  - attempted to place the order wihotu giving card details (not successful)
+- **Result**: all tested elements are working properly. There are no elements that present problems with logic
+- **Conclusion**: all tests that were run on logic were passed
+
+#### Bugs - logic
+
+Throughout the development process I came across these bugs:
+
+- **Assigining correct price and size**
+  - **Bug**: adding item to the cart was not assigning correct price for chosen size
+  - **Fix**: added conditional in cart.contexts.py 
+      ```python
+      if size == 'A3':
+          price = 60
+        elif size == 'A2':
+          price = 75
+        elif size == 'A1':
+          price = 90
+        elif size == 'A0':
+          price = 115
+        else:
+          price = 140
+      ```
+  - **Result**: this bug was removed and all prices as well as total price for the order is now assigned correctly
