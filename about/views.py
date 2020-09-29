@@ -6,6 +6,6 @@ from django.shortcuts import render
 def about(request):
     """A view that returns about page"""
     context = {
-        'title': 'About Page'
+        'title': 'About'
     }
     return render(request, 'about.html', context)
