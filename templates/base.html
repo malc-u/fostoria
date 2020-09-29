@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    {% include 'includes/head.html' %}
+    <head>
+        {% include 'includes/head.html' %}
+        <!-- Page title section -->
+        <title>Fostoria -{% block title_extension %}{% endblock %}</title>
+    </head>
 
 <body>
     {% include 'includes/header.html' %}
