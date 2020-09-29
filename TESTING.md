@@ -336,3 +336,7 @@ Throughout the development process I came across these bugs:
         price = 140
       ```
   - **Result**: this bug was removed and all prices as well as total price for the order is now assigned correctly
+- **Removing fromt he cart**
+  - **Bug**: if user amends quantity in input field without pressing button `Update` then proceeds to press `Remove` the item is actually updated not removed
+  - **Fix**: left unfixed
+  - **Result**: this could be easily fixed by removing the `Remove` button as quantity could be updated to 0 thus removed. Nevertheless this button works if the quantity is not amended in the input field and button `Remove` simply pressed as an intention of removal from the cart for the quantity actually added/calculated in teh cart.
