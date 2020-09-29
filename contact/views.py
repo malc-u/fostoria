@@ -10,7 +10,13 @@ def contact(request):
     A contact view
     """
     if request.method == 'GET':
-        contact_form = ContactForm()
+        if request.user.is_authenticated:
+            existing_data = {
+                'from_email' : request.user.email}
+            contact_form = ContactForm(initial=existing_data)
+        else:
+            contact_form = ContactForm()
+
     else:
         contact_form = ContactForm(request.POST)
 
