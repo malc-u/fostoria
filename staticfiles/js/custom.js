@@ -11,7 +11,7 @@ $('.remove-from-cart').click(function(e) {
             .attr('size', size)
             .attr('name', 'qty')
             .attr('value', qty)
-            .appendTo('#my-form');
+            .appendTo('#update-form');
         $('#update-form').submit(); 
         Swal.fire({title: 'Removed !',
         showConfirmButton: false});    
