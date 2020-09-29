@@ -522,7 +522,9 @@ Once this is done please follow below steps:
 - Django tutorial by [Corey Schafer](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
 - Using Gmail to send emails with Django tutorial by [Haritha Computers & Technology](https://www.youtube.com/watch?v=Wixs3SAlHgI)
 - Q [queryset logic](https://books.agiliq.com/projects/django-orm-cookbook/en/latest/query_relatedtool.html)
-- Problems researched mainly on [Stackoverflow](https://stackoverflow.com/)
+- Importing static and ImageField to work found [here](https://matthiasomisore.com/web-programming/display-image-in-a-django-template-using-imagefield/) written by Matthrias Omnisore
+- Problems researched mainly on [Stackoverflow](https://stackoverflow.com/) and Django [documentation](https://docs.djangoproject.com/en/3.0/)
+  
   
 ### Acknowledgements
 
