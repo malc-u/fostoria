@@ -12,7 +12,6 @@ def cart_contents(request):
     total = 0
     product_count = 0
     cart = request.session.get('cart', {})
-    size = None
 
     for article_id, article_detail in cart.items():
         product = get_object_or_404(Product, pk=article_id)
