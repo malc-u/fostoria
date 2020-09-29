@@ -5,7 +5,7 @@ from django.shortcuts import render
 def index(request):
     """ A view that is returning index page """
     context = {
-        'title': 'Index Page'
+        'title': 'Index'
     }
     return render(request, 'index.html', context)
     
