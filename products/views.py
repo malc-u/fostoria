@@ -16,7 +16,7 @@ class Products(ListView):
     def get_context_data(self, **kwargs):
         context = super(Products, self).get_context_data(**kwargs)
         context['group'] = "Gallery"
-        context['title'] = "Gallery/Portfolio"
+        context['title'] = "Gallery"
         return context
 
 class ProductDetails(DetailView):
@@ -29,7 +29,7 @@ class ProductDetails(DetailView):
         context = super(ProductDetails, self).get_context_data(**kwargs)
         priced_sizes = PricingSizes.objects.all()
         context['priced_sizes'] = priced_sizes
-        context['title'] = "Product Details Page"
+        context['title'] = "Product Details"
         return context
 
 
