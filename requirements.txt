@@ -38,5 +38,5 @@ sqlparse==0.4.4
 stripe==2.50.0
 sweetify==2.0.0
 toml==0.10.1
-urllib3==1.26.5
+urllib3==1.26.19
 wrapt==1.12.1
